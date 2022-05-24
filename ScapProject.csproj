@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{76409320-56D0-42AC-89FF-623ADDA97559}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ScapProject0</RootNamespace>
+    <AssemblyName>ScapProject0.1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="MySql.Data.EntityFramework">
+      <HintPath>mysql-connector-net-8.0.28-noinstall\v4.5.2\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="MySql.Data">
+      <HintPath>mysql-connector-net-8.0.28-noinstall\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\icons8-save-26.png" />
+    <EmbeddedResource Include="Icons\Roundicons-100-Free-Solid-Add-alarm.ico" />
+    <EmbeddedResource Include="Icons\icons8-delete-24.png" />
+    <EmbeddedResource Include="Icons\Icons8-Windows-8-Files-Add-List.ico" />
+    <EmbeddedResource Include="Icons\Iconsmind-Outline-Files.ico" />
+    <EmbeddedResource Include="Icons\Custom-Icon-Design-Mono-General-2-Edit.ico" />
+    <EmbeddedResource Include="Icons\icons8-search-24.png" />
+    <EmbeddedResource Include="Icons\icons8-new-window-30.png" />
+    <EmbeddedResource Include="Icons\icons8-edit-production-order-32.png" />
+    <EmbeddedResource Include="Icons\Custom-Icon-Design-Mono-General-1-Add.ico" />
+    <EmbeddedResource Include="Icons\icons8-cancel-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Departamentos.FrmAddDpto.cs" />
+    <Compile Include="Departamentos\FrmAddDpto.cs" />
+    <Compile Include="Departamentos\FrmModDpto.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Departamentos.FrmModDpto.cs" />
+    <Compile Include="Horarios\Horario.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Horarios.Horario.cs" />
+    <Compile Include="Departamentos\FrmDpto.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Departamentos.FrmDpto.cs" />
+    <Compile Include="Horarios\FrmAddHor.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Horarios.FrmAddHor.cs" />
+    <Compile Include="Horarios\FrmModHor.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Horarios.FrmModHor.cs" />
+    <Compile Include="Entidades\Tbl_user.cs" />
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="RegistrosES\FrmRegistros.cs" />
+    <Compile Include="gtk-gui\ScapProject0.RegistrosES.FrmRegistros.cs" />
+    <Compile Include="RegistrosES\FrmJustificaciones.cs" />
+    <Compile Include="gtk-gui\ScapProject0.RegistrosES.FrmJustificaciones.cs" />
+    <Compile Include="Empleados\FrmEmp.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Empleados.FrmEmp.cs" />
+    <Compile Include="Empleados\FrmAddEmp.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Empleados.FrmAddEmp.cs" />
+    <Compile Include="Empleados\FrmModEmp.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Empleados.FrmModEmp.cs" />
+    <Compile Include="Entidades\Tbl_EmpCar.cs" />
+    <Compile Include="Entidades\Tbl_rolOpcion.cs" />
+    <Compile Include="Entidades\Tbl_rol.cs" />
+    <Compile Include="Entidades\Tbl_opcion.cs" />
+    <Compile Include="Entidades\Tbl_UserRol.cs" />
+    <Compile Include="Entidades\Tbl_Cargo.cs" />
+    <Compile Include="Entidades\Tbl_Departamento.cs" />
+    <Compile Include="Entidades\Tbl_Empleado.cs" />
+    <Compile Include="Entidades\Tbl_registroES.cs" />
+    <Compile Include="Entidades\Tbl_empleadoRegistro.cs" />
+    <Compile Include="Cargos\FrmCargos.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Cargos.FrmCargos.cs" />
+    <Compile Include="Cargos\FrmAddCargos.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Cargos.FrmAddCargos.cs" />
+    <Compile Include="Cargos\FrmModCargos.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Cargos.FrmModCargos.cs" />
+    <Compile Include="AdminPswd\FrmAdminPswd.cs" />
+    <Compile Include="gtk-gui\ScapProject0.AdminPswd.FrmAdminPswd.cs" />
+    <Compile Include="AdminPswd\FrmAddPswd.cs" />
+    <Compile Include="gtk-gui\ScapProject0.AdminPswd.FrmAddPswd.cs" />
+    <Compile Include="gtk-gui\ScapProject0.AdminPswd.FrmModPswd.cs" />
+    <Compile Include="AdminPswd\FrmModPswd.cs" />
+    <Compile Include="FrmAccesoPrincipal.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmAccesoPrincipal.cs" />
+    <Compile Include="FrmConfig.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmConfig.cs" />
+    <Compile Include="FrmGenerarReportes.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmGenerarReportes.cs" />
+    <Compile Include="FrmLoginAdmin.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmLoginAdmin.cs" />
+    <Compile Include="FrmLoginEmpleado.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmLoginEmpleado.cs" />
+    <Compile Include="FrmMarcarES.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmMarcarES.cs" />
+    <Compile Include="FrmMenuAdmin.cs" />
+    <Compile Include="gtk-gui\ScapProject0.FrmMenuAdmin.cs" />
+    <Compile Include="Datos\Dt_tbl_empleado.cs" />
+    <Compile Include="Datos\Dt_tbl_cargo.cs" />
+    <Compile Include="Datos\Dt_tbl_departamento.cs" />
+    <Compile Include="Datos\Dt_tbl_user.cs" />
+    <Compile Include="Datos\Dt_tbl_registroES.cs" />
+    <Compile Include="Datos\Dt_tbl_horario.cs" />
+    <Compile Include="Entidades\Tbl_horario.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Departamentos\" />
+    <Folder Include="Horarios\" />
+    <Folder Include="Icons\" />
+    <Folder Include="RegistrosES\" />
+    <Folder Include="Datos\" />
+    <Folder Include="Entidades\" />
+    <Folder Include="Empleados\" />
+    <Folder Include="Cargos\" />
+    <Folder Include="AdminPswd\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
