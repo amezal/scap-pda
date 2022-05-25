@@ -248,6 +248,45 @@ namespace ScapProject0.Datos
             }
         }
 
+        public bool EliminarEmpleado(int idEmp)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+            sb.Clear();
+            sb.Append("UPDATE LMBA.Empleado SET ");
+            sb.Append(
+            "estado='" + 3 + "' " +
+            "WHERE idEmpleado=" + idEmp + ";");
+
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+                return guardado;
+
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
+
+
         #endregion
 
 

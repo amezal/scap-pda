@@ -136,6 +136,7 @@ namespace ScapProject0.Empleados
 			this.DefaultHeight = 466;
 			this.Show();
 			this.AgregarAction1.Activated += new global::System.EventHandler(this.OnAgregarAction1Activated);
+			this.EliminarAction1.Activated += new global::System.EventHandler(this.OnEliminarAction1Activated);
 			this.ModificarAction1.Activated += new global::System.EventHandler(this.OnModificarAction1Activated);
 			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
 			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
