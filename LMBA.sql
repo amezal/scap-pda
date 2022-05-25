@@ -234,7 +234,8 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `nombre`,
  1 AS `horaInicio`,
  1 AS `horaSalida`,
- 1 AS `estado`*/;
+ 1 AS `estado`,
+ 1 AS `almuerzo`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -521,7 +522,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwHorario` AS select `Horario`.`idHorario` AS `idHorario`,`Horario`.`nombre` AS `nombre`,`Horario`.`horaInicio` AS `horaInicio`,`Horario`.`horaSalida` AS `horaSalida`,`Horario`.`estado` AS `estado` from `Horario` */;
+/*!50001 VIEW `VwHorario` AS select `Horario`.`idHorario` AS `idHorario`,`Horario`.`nombre` AS `nombre`,`Horario`.`horaInicio` AS `horaInicio`,`Horario`.`horaSalida` AS `horaSalida`,`Horario`.`estado` AS `estado`,`Horario`.`almuerzo` AS `almuerzo` from `Horario` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -571,4 +572,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-24 17:15:23
+
+-- Dump completed on 2022-05-24 19:31:00
