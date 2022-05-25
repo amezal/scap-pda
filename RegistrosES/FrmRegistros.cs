@@ -22,8 +22,8 @@ namespace ScapProject0.RegistrosES
             this.idEmpActivo = 1;
             this.llenarCbxeEmpleado();
 
-            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string));
-            string[] titulos = { "Fecha", "Hora Entrada", "Hora Salida" };
+            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof (string), typeof(string));
+            string[] titulos = { "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra" };
 
             for (int i = 0; i < titulos.Length; i++)
             {
@@ -33,7 +33,10 @@ namespace ScapProject0.RegistrosES
 
         protected void llenarRegistros()
         {
-            this.trvwRegistros.Model = dtreg.ListarRegistros(idEmpActivo);
+            //this.trvwRegistros.Model = dtreg.ListarRegistros(idEmpActivo);
+            ListStore model = dtreg.ListarRegistros(idEmpActivo);
+            this.trvwRegistros.Model = model;
+
         }
 
         protected void llenarDatosEmpleado()

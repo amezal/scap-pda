@@ -17,7 +17,7 @@ namespace ScapProject0.Datos
         public ListStore ListarRegistros(int idEmpleado)
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string), typeof(string)
+            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
             );
             IDataReader idr = null;
             sb.Clear();
@@ -30,8 +30,19 @@ namespace ScapProject0.Datos
                 idr = con.Leer(CommandType.Text, sb.ToString());
                 while (idr.Read())
                 {
-                    datos.AppendValues(idr[0].ToString().Split(' ')[0], idr[1].ToString(),
-                        idr[2].ToString());
+                    var fecha = idr["fecha"].ToString().Split(' ')[0];
+                    TimeSpan horaEntrada = TimeSpan.Parse(idr["horaEntrada"].ToString());
+                    TimeSpan horaSalida = TimeSpan.Parse(idr["horaSalida"].ToString());
+                    TimeSpan entradaH = TimeSpan.Parse(idr["entradaH"].ToString());
+                    TimeSpan salidaH = TimeSpan.Parse(idr["salidaH"].ToString());
+                    TimeSpan almuerzo = TimeSpan.Parse(idr["almuerzo"].ToString());
+                    TimeSpan horasNecesitadas = salidaH.Subtract(entradaH).Subtract(almuerzo);
+                    TimeSpan horasTrabajadas = horaSalida.Subtract(horaEntrada).Subtract(almuerzo);
+                    TimeSpan horasExtra = horasTrabajadas.Subtract(horasNecesitadas);
+
+                    datos.AppendValues(fecha, horaEntrada.ToString(),
+                    horaSalida.ToString(), horasTrabajadas.ToString(),
+                        horasExtra.ToString());
                 }
             }
             catch (Exception e)
