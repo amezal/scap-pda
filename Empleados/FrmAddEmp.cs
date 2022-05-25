@@ -119,7 +119,14 @@ namespace ScapProject0.Empleados
                 IdHorario = idHorario
             };
 
-            dtemp.NuevoEmpleado(emp);
+            if (dtemp.NuevoEmpleado(emp))
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Usuario guardado correctamente");
+                ms.Run();
+                ms.Destroy();
+
+            }
         }
     }
 }
