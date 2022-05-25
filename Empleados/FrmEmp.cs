@@ -8,8 +8,7 @@ namespace ScapProject0.Empleados
     {
 
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
-        private int empActual = 1;
-
+        private int empActual;
         public FrmEmp() :
                 base(Gtk.WindowType.Toplevel)
         {

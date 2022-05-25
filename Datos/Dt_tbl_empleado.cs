@@ -87,8 +87,8 @@ namespace ScapProject0.Datos
             //Tbl_Empleado emp = new Tbl_Empleado();
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT * FROM LMBA.VwEmpleado ");
-            sb.Append("WHERE ID=" + idEmp + ";");
+            sb.Append("SELECT Empleado.*, VwEmpleado.idDepartamento FROM LMBA.Empleado, LMBA.VwEmpleado ");
+            sb.Append("WHERE ID=" + idEmp + " AND idEmpleado=" + idEmp + ";");
 
             try
             {
@@ -98,15 +98,25 @@ namespace ScapProject0.Datos
 
                 Tbl_Empleado emp = new Tbl_Empleado()
                 {
-                    IdEmpleado = (Int32)idr["ID"],
-                    NumCedula = idr["Cedula"].ToString(),
-                    PrimerNombre = idr["Nombres"].ToString().Split(' ')[0],
-                    SegundoNombre = idr["Nombres"].ToString().Split(' ')[1],
-                    PrimerApellido = idr["Apellidos"].ToString().Split(' ')[0],
-                    SegundoApellido = idr["Apellidos"].ToString().Split(' ')[1],
-                    Telefono = idr["Telefono"].ToString(),
-                    EmailCorporativo = idr["Email"].ToString(),
+                    IdEmpleado = (Int32)idr["idEmpleado"],
+                    NumCedula = idr["numCedula"].ToString(),
+                    //Estado = (Int32)idr["estado"],
+                    PrimerNombre = idr["primerNombre"].ToString(),
+                    SegundoNombre = idr["segundoNombre"].ToString(),
+                    PrimerApellido = idr["primerApellido"].ToString(),
+                    SegundoApellido = idr["segundoApellido"].ToString(),
+                    FechaNacimiento = DateTime.Parse(idr["fechaNacimiento"].ToString()),
+                    FechaIngreso = DateTime.Parse(idr["fechaIngreso"].ToString()),
+                    Sexo = idr["sexo"].ToString().Equals("1") ? true : false,
+                    Telefono = idr["telefono"].ToString(),
+                    EmailCorporativo = idr["emailCorporativo"].ToString(),
+                    EmailPersonal = idr["emailPersonal"].ToString(),
+                    Direccion = idr["direccion"].ToString(),
+                    Observacion = idr["observacion"].ToString(),
                     IdCargo = (Int32)idr["idCargo"],
+                    //Id_user = (Int32)idr["id_user"],
+                    PIN = idr["PIN"].ToString(),
+                    IdHorario = (Int32)idr["idHorario"],
                     IdDepartamento = (Int32)idr["idDepartamento"]
                 };
 

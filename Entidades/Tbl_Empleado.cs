@@ -5,7 +5,7 @@ namespace ScapProject0.Entidades
     {
         private Int32 idEmpleado;
         private String numCedula;
-        private Boolean estado;
+        private Int32 estado;
         private String primerNombre;
         private String segundoNombre;
         private String primerApellido;
@@ -21,9 +21,12 @@ namespace ScapProject0.Entidades
         private String emailCorporativo;
         private Int32 idCargo;
         private Int32 idDepartamento;
+        private Int32 id_user;
+        private String pin;
+        private Int32 idHorario;
 
         public string NumCedula { get => numCedula; set => numCedula = value; }
-        public bool Estado { get => estado; set => estado = value; }
+        public int Estado { get => estado; set => estado = value; }
         public string PrimerNombre { get => primerNombre; set => primerNombre = value; }
         public string SegundoNombre { get => segundoNombre; set => segundoNombre = value; }
         public string PrimerApellido { get => primerApellido; set => primerApellido = value; }
@@ -40,5 +43,8 @@ namespace ScapProject0.Entidades
         public int IdEmpleado { get => idEmpleado; set => idEmpleado = value; }
         public int IdCargo { get => idCargo; set => idCargo = value; }
         public int IdDepartamento { get => idDepartamento; set => idDepartamento = value; }
+        public int Id_user { get => id_user; set => id_user = value; }
+        public string PIN { get => pin; set => pin = value; }
+        public int IdHorario { get => idHorario; set => idHorario = value; }
     }
 }
