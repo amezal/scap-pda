@@ -84,5 +84,25 @@ namespace ScapProject0.Empleados
         {
             this.trvwEmpleado.Model = dtem.ListarEmpleados(entBuscar.Text.Trim());
         }
+
+        protected void OnEliminarAction1Activated(object sender, EventArgs e)
+        {
+            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Warning,
+            ButtonsType.YesNo, "Desea eliminar a este usuario?");
+
+            int result = md.Run();
+            if(result == -8)
+            {
+                if (dtem.EliminarEmpleado(empActual))
+                {
+                    MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                    ButtonsType.Ok, "Usuario eliminado");
+                    ms.Run();
+                    ms.Destroy();
+                }
+            }
+            md.Destroy();
+            this.trvwEmpleado.Model = dtem.ListarEmpleados(query);
+        }
     }
 }

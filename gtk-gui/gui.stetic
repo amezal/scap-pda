@@ -1161,6 +1161,7 @@
         <property name="Label" translatable="yes">  Eliminar</property>
         <property name="ShortLabel" translatable="yes">  Eliminar</property>
         <property name="StockId">delete</property>
+        <signal name="Activated" handler="OnEliminarAction1Activated" />
       </action>
       <action id="ModificarAction1">
         <property name="Type">Action</property>
