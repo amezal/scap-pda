@@ -37,6 +37,7 @@ namespace ScapProject0.Empleados
             entObservacion.Text = emp.Observacion;
             cldNac.Date = emp.FechaNacimiento;
             cldIngreso.Date = emp.FechaIngreso;
+
         }
 
         protected void llenarCbxDpto()
