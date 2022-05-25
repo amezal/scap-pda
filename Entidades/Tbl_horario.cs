@@ -9,7 +9,7 @@ namespace ScapProject0.Entidades
         private DateTime horaSalida;
         private DateTime almuerzo;
         private Int32 estado;
-        private DateTime almuerzo;
+        //private DateTime almuerzo;
 
 
         public Tbl_horario()
