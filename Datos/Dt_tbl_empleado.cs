@@ -15,14 +15,15 @@ namespace ScapProject0.Datos
         StringBuilder sb = new StringBuilder();
 
         #region Metodos
-        public ListStore ListarEmpleados()
+        public ListStore ListarEmpleados(String query)
         {
             ListStore datos = new ListStore(
             typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
             );
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT ID, Nombres, Apellidos, Cargo, Departamento From LMBA.VwEmpleado;");
+            sb.Append("SELECT ID, Nombres, Apellidos, Cargo, Departamento From LMBA.VwEmpleado ");
+            sb.Append("WHERE concat(Nombres, Apellidos) LIKE '" + query + "%';");
 
             try
             {
