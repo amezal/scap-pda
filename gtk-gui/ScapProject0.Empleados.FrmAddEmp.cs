@@ -10,19 +10,53 @@ namespace ScapProject0.Empleados
 
 		private global::Gtk.Action CancelarAction;
 
-		private global::Gtk.Fixed fixed3;
+		private global::Gtk.Action searchAction;
+
+		private global::Gtk.Action GuardarAction1;
+
+		private global::Gtk.Action CancelarAction1;
+
+		private global::Gtk.Fixed fixed4;
+
+		private global::Gtk.Label label9;
+
+		private global::Gtk.Label label10;
+
+		private global::Gtk.Label label11;
+
+		private global::Gtk.Entry entId;
+
+		private global::Gtk.Entry entPrimerNombre;
+
+		private global::Gtk.Entry entPrimerApellido;
 
 		private global::Gtk.Toolbar toolbar3;
 
+		private global::Gtk.Label label14;
+
+		private global::Gtk.ComboBoxEntry cbxCargo;
+
+		private global::Gtk.Entry entCedula;
+
+		private global::Gtk.Label label12;
+
+		private global::Gtk.Entry entEmailCorp;
+
+		private global::Gtk.Label label16;
+
+		private global::Gtk.Entry entTel;
+
+		private global::Gtk.Label label15;
+
+		private global::Gtk.ComboBoxEntry cbxDpto;
+
+		private global::Gtk.Label label13;
+
 		private global::Gtk.Label label1;
 
-		private global::Gtk.Label label2;
+		private global::Gtk.Label label18;
 
-		private global::Gtk.Label label3;
-
-		private global::Gtk.Label label4;
-
-		private global::Gtk.Label label5;
+		private global::Gtk.Label label19;
 
 		private global::Gtk.Label label6;
 
@@ -30,23 +64,43 @@ namespace ScapProject0.Empleados
 
 		private global::Gtk.Label label8;
 
+		private global::Gtk.Label label17;
+
+		private global::Gtk.Entry entSegundoNombre;
+
+		private global::Gtk.Entry entSegundoApellido;
+
+		private global::Gtk.Entry entEmailPer;
+
+		private global::Gtk.ComboBox cbxSexo;
+
 		private global::Gtk.Entry entry4;
 
 		private global::Gtk.Entry entry5;
 
-		private global::Gtk.Entry entry6;
-
-		private global::Gtk.Entry entry7;
-
-		private global::Gtk.Entry entry8;
-
-		private global::Gtk.Entry entry9;
-
 		private global::Gtk.Button button2;
 
-		private global::Gtk.ComboBox cbxDpto;
+		private global::Gtk.Button button1;
 
-		private global::Gtk.ComboBox cbxCargo;
+		private global::Gtk.ComboBox cbxHorario;
+
+		private global::Gtk.Entry entDireccion;
+
+		private global::Gtk.Label label3;
+
+		private global::Gtk.Label label4;
+
+		private global::Gtk.Entry entObservacion;
+
+		private global::Gtk.Label label5;
+
+		private global::Gtk.Calendar cldIngreso;
+
+		private global::Gtk.Calendar cldNac;
+
+		private global::Gtk.Label label20;
+
+		private global::Gtk.Button button3;
 
 		protected virtual void Build()
 		{
@@ -58,190 +112,418 @@ namespace ScapProject0.Empleados
 			this.GuardarAction.IsImportant = true;
 			this.GuardarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
 			w1.Add(this.GuardarAction, null);
-			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("Cancelar"), null, "cancel");
+			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
 			this.CancelarAction.IsImportant = true;
-			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Cancelar");
+			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
 			w1.Add(this.CancelarAction, null);
+			this.searchAction = new global::Gtk.Action("searchAction", null, null, "search");
+			w1.Add(this.searchAction, null);
+			this.GuardarAction1 = new global::Gtk.Action("GuardarAction1", global::Mono.Unix.Catalog.GetString("  Guardar"), null, "save");
+			this.GuardarAction1.IsImportant = true;
+			this.GuardarAction1.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
+			w1.Add(this.GuardarAction1, null);
+			this.CancelarAction1 = new global::Gtk.Action("CancelarAction1", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
+			this.CancelarAction1.IsImportant = true;
+			this.CancelarAction1.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
+			w1.Add(this.CancelarAction1, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Empleados.FrmAddEmp";
 			this.Title = global::Mono.Unix.Catalog.GetString("FrmAddEmp");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			// Container child ScapProject0.Empleados.FrmAddEmp.Gtk.Container+ContainerChild
-			this.fixed3 = new global::Gtk.Fixed();
-			this.fixed3.Name = "fixed3";
-			this.fixed3.HasWindow = false;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar3\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
-					"\'/><separator/><toolitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolba" +
-					"r></ui>");
+			this.fixed4 = new global::Gtk.Fixed();
+			this.fixed4.WidthRequest = 212;
+			this.fixed4.Name = "fixed4";
+			this.fixed4.HasWindow = false;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label9 = new global::Gtk.Label();
+			this.label9.Name = "label9";
+			this.label9.LabelProp = global::Mono.Unix.Catalog.GetString("ID:");
+			this.fixed4.Add(this.label9);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label9]));
+			w2.X = 25;
+			w2.Y = 80;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label10 = new global::Gtk.Label();
+			this.label10.Name = "label10";
+			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString("Primer Nombre:");
+			this.fixed4.Add(this.label10);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label10]));
+			w3.X = 25;
+			w3.Y = 120;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label11 = new global::Gtk.Label();
+			this.label11.Name = "label11";
+			this.label11.LabelProp = global::Mono.Unix.Catalog.GetString("Primer Apellido:");
+			this.fixed4.Add(this.label11);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label11]));
+			w4.X = 25;
+			w4.Y = 160;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entId = new global::Gtk.Entry();
+			this.entId.CanFocus = true;
+			this.entId.Name = "entId";
+			this.entId.IsEditable = true;
+			this.entId.InvisibleChar = '•';
+			this.fixed4.Add(this.entId);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entId]));
+			w5.X = 160;
+			w5.Y = 70;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entPrimerNombre = new global::Gtk.Entry();
+			this.entPrimerNombre.CanFocus = true;
+			this.entPrimerNombre.Name = "entPrimerNombre";
+			this.entPrimerNombre.IsEditable = true;
+			this.entPrimerNombre.InvisibleChar = '•';
+			this.fixed4.Add(this.entPrimerNombre);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entPrimerNombre]));
+			w6.X = 160;
+			w6.Y = 110;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entPrimerApellido = new global::Gtk.Entry();
+			this.entPrimerApellido.CanFocus = true;
+			this.entPrimerApellido.Name = "entPrimerApellido";
+			this.entPrimerApellido.IsEditable = true;
+			this.entPrimerApellido.InvisibleChar = '•';
+			this.fixed4.Add(this.entPrimerApellido);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entPrimerApellido]));
+			w7.X = 160;
+			w7.Y = 150;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar3\'><toolitem name=\'GuardarAction1\' action=\'GuardarActio" +
+					"n1\'/><separator/><toolitem name=\'CancelarAction1\' action=\'CancelarAction1\'/></to" +
+					"olbar></ui>");
 			this.toolbar3 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar3")));
 			this.toolbar3.Name = "toolbar3";
 			this.toolbar3.ShowArrow = false;
-			this.fixed3.Add(this.toolbar3);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.toolbar3]));
-			w2.X = 4;
-			w2.Y = 7;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.fixed4.Add(this.toolbar3);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.toolbar3]));
+			w8.X = 3;
+			w8.Y = 7;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label14 = new global::Gtk.Label();
+			this.label14.Name = "label14";
+			this.label14.LabelProp = global::Mono.Unix.Catalog.GetString("Cargo:");
+			this.fixed4.Add(this.label14);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label14]));
+			w9.X = 86;
+			w9.Y = 199;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cbxCargo = global::Gtk.ComboBoxEntry.NewText();
+			this.cbxCargo.WidthRequest = 172;
+			this.cbxCargo.Name = "cbxCargo";
+			this.fixed4.Add(this.cbxCargo);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cbxCargo]));
+			w10.X = 157;
+			w10.Y = 197;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entCedula = new global::Gtk.Entry();
+			this.entCedula.CanFocus = true;
+			this.entCedula.Name = "entCedula";
+			this.entCedula.IsEditable = true;
+			this.entCedula.InvisibleChar = '•';
+			this.fixed4.Add(this.entCedula);
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entCedula]));
+			w11.X = 480;
+			w11.Y = 67;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label12 = new global::Gtk.Label();
+			this.label12.Name = "label12";
+			this.label12.LabelProp = global::Mono.Unix.Catalog.GetString("Cedula:");
+			this.fixed4.Add(this.label12);
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label12]));
+			w12.X = 409;
+			w12.Y = 69;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entEmailCorp = new global::Gtk.Entry();
+			this.entEmailCorp.CanFocus = true;
+			this.entEmailCorp.Name = "entEmailCorp";
+			this.entEmailCorp.IsEditable = true;
+			this.entEmailCorp.InvisibleChar = '•';
+			this.fixed4.Add(this.entEmailCorp);
+			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entEmailCorp]));
+			w13.X = 159;
+			w13.Y = 241;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label16 = new global::Gtk.Label();
+			this.label16.Name = "label16";
+			this.label16.LabelProp = global::Mono.Unix.Catalog.GetString("Email Corp.:");
+			this.fixed4.Add(this.label16);
+			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label16]));
+			w14.X = 55;
+			w14.Y = 246;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entTel = new global::Gtk.Entry();
+			this.entTel.CanFocus = true;
+			this.entTel.Name = "entTel";
+			this.entTel.IsEditable = true;
+			this.entTel.InvisibleChar = '•';
+			this.fixed4.Add(this.entTel);
+			global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entTel]));
+			w15.X = 158;
+			w15.Y = 287;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label15 = new global::Gtk.Label();
+			this.label15.Name = "label15";
+			this.label15.LabelProp = global::Mono.Unix.Catalog.GetString("Telefono:");
+			this.fixed4.Add(this.label15);
+			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label15]));
+			w16.X = 72;
+			w16.Y = 291;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cbxDpto = global::Gtk.ComboBoxEntry.NewText();
+			this.cbxDpto.WidthRequest = 172;
+			this.cbxDpto.Name = "cbxDpto";
+			this.fixed4.Add(this.cbxDpto);
+			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cbxDpto]));
+			w17.X = 480;
+			w17.Y = 197;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label13 = new global::Gtk.Label();
+			this.label13.Name = "label13";
+			this.label13.LabelProp = global::Mono.Unix.Catalog.GetString("Departamento:");
+			this.fixed4.Add(this.label13);
+			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label13]));
+			w18.X = 361;
+			w18.Y = 201;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label1 = new global::Gtk.Label();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("ID:");
-			this.fixed3.Add(this.label1);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label1]));
-			w3.X = 25;
-			w3.Y = 80;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label2 = new global::Gtk.Label();
-			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
-			this.fixed3.Add(this.label2);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label2]));
-			w4.X = 25;
-			w4.Y = 120;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Apellidos:");
-			this.fixed3.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label3]));
-			w5.X = 25;
-			w5.Y = 160;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label4 = new global::Gtk.Label();
-			this.label4.Name = "label4";
-			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Cedula:");
-			this.fixed3.Add(this.label4);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label4]));
-			w6.X = 25;
-			w6.Y = 200;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label5 = new global::Gtk.Label();
-			this.label5.Name = "label5";
-			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Departamento:");
-			this.fixed3.Add(this.label5);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label5]));
-			w7.X = 25;
-			w7.Y = 240;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Horario:");
+			this.fixed4.Add(this.label1);
+			global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label1]));
+			w19.X = 85;
+			w19.Y = 335;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label18 = new global::Gtk.Label();
+			this.label18.Name = "label18";
+			this.label18.LabelProp = global::Mono.Unix.Catalog.GetString("Seg. Nombre:");
+			this.fixed4.Add(this.label18);
+			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label18]));
+			w20.X = 370;
+			w20.Y = 115;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label19 = new global::Gtk.Label();
+			this.label19.Name = "label19";
+			this.label19.LabelProp = global::Mono.Unix.Catalog.GetString("Seg. Apellido:");
+			this.fixed4.Add(this.label19);
+			global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label19]));
+			w21.X = 371;
+			w21.Y = 153;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label6 = new global::Gtk.Label();
 			this.label6.Name = "label6";
-			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("Cargo:");
-			this.fixed3.Add(this.label6);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label6]));
-			w8.X = 25;
-			w8.Y = 280;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("Email personal:");
+			this.fixed4.Add(this.label6);
+			global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label6]));
+			w22.X = 361;
+			w22.Y = 253;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label7 = new global::Gtk.Label();
 			this.label7.Name = "label7";
-			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString("Telefono:");
-			this.fixed3.Add(this.label7);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label7]));
-			w9.X = 25;
-			w9.Y = 320;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString("Sexo:");
+			this.fixed4.Add(this.label7);
+			global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label7]));
+			w23.X = 427;
+			w23.Y = 293;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label8 = new global::Gtk.Label();
 			this.label8.Name = "label8";
-			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString("Email:");
-			this.fixed3.Add(this.label8);
-			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label8]));
-			w10.X = 25;
-			w10.Y = 360;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString("PIN:");
+			this.fixed4.Add(this.label8);
+			global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label8]));
+			w24.X = 435;
+			w24.Y = 331;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label17 = new global::Gtk.Label();
+			this.label17.Name = "label17";
+			this.label17.LabelProp = global::Mono.Unix.Catalog.GetString("Confirmar PIN:");
+			this.fixed4.Add(this.label17);
+			global::Gtk.Fixed.FixedChild w25 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label17]));
+			w25.X = 363;
+			w25.Y = 371;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entSegundoNombre = new global::Gtk.Entry();
+			this.entSegundoNombre.CanFocus = true;
+			this.entSegundoNombre.Name = "entSegundoNombre";
+			this.entSegundoNombre.IsEditable = true;
+			this.entSegundoNombre.InvisibleChar = '•';
+			this.fixed4.Add(this.entSegundoNombre);
+			global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entSegundoNombre]));
+			w26.X = 480;
+			w26.Y = 109;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entSegundoApellido = new global::Gtk.Entry();
+			this.entSegundoApellido.CanFocus = true;
+			this.entSegundoApellido.Name = "entSegundoApellido";
+			this.entSegundoApellido.IsEditable = true;
+			this.entSegundoApellido.InvisibleChar = '•';
+			this.fixed4.Add(this.entSegundoApellido);
+			global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entSegundoApellido]));
+			w27.X = 480;
+			w27.Y = 148;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entEmailPer = new global::Gtk.Entry();
+			this.entEmailPer.CanFocus = true;
+			this.entEmailPer.Name = "entEmailPer";
+			this.entEmailPer.IsEditable = true;
+			this.entEmailPer.InvisibleChar = '•';
+			this.fixed4.Add(this.entEmailPer);
+			global::Gtk.Fixed.FixedChild w28 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entEmailPer]));
+			w28.X = 480;
+			w28.Y = 245;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cbxSexo = global::Gtk.ComboBox.NewText();
+			this.cbxSexo.WidthRequest = 172;
+			this.cbxSexo.Name = "cbxSexo";
+			this.fixed4.Add(this.cbxSexo);
+			global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cbxSexo]));
+			w29.X = 478;
+			w29.Y = 287;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.entry4 = new global::Gtk.Entry();
+			this.entry4.WidthRequest = 120;
 			this.entry4.CanFocus = true;
 			this.entry4.Name = "entry4";
 			this.entry4.IsEditable = true;
+			this.entry4.MaxLength = 4;
 			this.entry4.InvisibleChar = '•';
-			this.fixed3.Add(this.entry4);
-			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry4]));
-			w11.X = 160;
-			w11.Y = 70;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.fixed4.Add(this.entry4);
+			global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entry4]));
+			w30.X = 478;
+			w30.Y = 327;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.entry5 = new global::Gtk.Entry();
+			this.entry5.WidthRequest = 120;
 			this.entry5.CanFocus = true;
 			this.entry5.Name = "entry5";
 			this.entry5.IsEditable = true;
+			this.entry5.MaxLength = 4;
 			this.entry5.InvisibleChar = '•';
-			this.fixed3.Add(this.entry5);
-			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry5]));
-			w12.X = 160;
-			w12.Y = 110;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry6 = new global::Gtk.Entry();
-			this.entry6.CanFocus = true;
-			this.entry6.Name = "entry6";
-			this.entry6.IsEditable = true;
-			this.entry6.InvisibleChar = '•';
-			this.fixed3.Add(this.entry6);
-			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry6]));
-			w13.X = 160;
-			w13.Y = 150;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry7 = new global::Gtk.Entry();
-			this.entry7.CanFocus = true;
-			this.entry7.Name = "entry7";
-			this.entry7.IsEditable = true;
-			this.entry7.InvisibleChar = '•';
-			this.fixed3.Add(this.entry7);
-			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry7]));
-			w14.X = 160;
-			w14.Y = 190;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry8 = new global::Gtk.Entry();
-			this.entry8.CanFocus = true;
-			this.entry8.Name = "entry8";
-			this.entry8.IsEditable = true;
-			this.entry8.InvisibleChar = '•';
-			this.fixed3.Add(this.entry8);
-			global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry8]));
-			w15.X = 160;
-			w15.Y = 310;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry9 = new global::Gtk.Entry();
-			this.entry9.CanFocus = true;
-			this.entry9.Name = "entry9";
-			this.entry9.IsEditable = true;
-			this.entry9.InvisibleChar = '•';
-			this.fixed3.Add(this.entry9);
-			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry9]));
-			w16.X = 160;
-			w16.Y = 350;
-			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.fixed4.Add(this.entry5);
+			global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entry5]));
+			w31.X = 478;
+			w31.Y = 365;
+			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.button2 = new global::Gtk.Button();
 			this.button2.CanFocus = true;
 			this.button2.Name = "button2";
 			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString("Regresar");
-			this.fixed3.Add(this.button2);
-			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button2]));
-			w17.X = 19;
-			w17.Y = 419;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.cbxDpto = global::Gtk.ComboBox.NewText();
-			this.cbxDpto.WidthRequest = 172;
-			this.cbxDpto.Name = "cbxDpto";
-			this.fixed3.Add(this.cbxDpto);
-			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.cbxDpto]));
-			w18.X = 159;
-			w18.Y = 231;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.cbxCargo = global::Gtk.ComboBox.NewText();
-			this.cbxCargo.WidthRequest = 172;
-			this.cbxCargo.Name = "cbxCargo";
-			this.fixed3.Add(this.cbxCargo);
-			global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.cbxCargo]));
-			w19.X = 159;
-			w19.Y = 269;
-			this.Add(this.fixed3);
+			this.button2.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed4.Add(this.button2);
+			global::Gtk.Fixed.FixedChild w32 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button2]));
+			w32.X = 606;
+			w32.Y = 365;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.button1 = new global::Gtk.Button();
+			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
+			this.button1.UseUnderline = true;
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed4.Add(this.button1);
+			global::Gtk.Fixed.FixedChild w33 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button1]));
+			w33.X = 607;
+			w33.Y = 327;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cbxHorario = global::Gtk.ComboBox.NewText();
+			this.cbxHorario.WidthRequest = 172;
+			this.cbxHorario.Name = "cbxHorario";
+			this.fixed4.Add(this.cbxHorario);
+			global::Gtk.Fixed.FixedChild w34 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cbxHorario]));
+			w34.X = 157;
+			w34.Y = 331;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entDireccion = new global::Gtk.Entry();
+			this.entDireccion.WidthRequest = 492;
+			this.entDireccion.CanFocus = true;
+			this.entDireccion.Name = "entDireccion";
+			this.entDireccion.IsEditable = true;
+			this.entDireccion.InvisibleChar = '•';
+			this.fixed4.Add(this.entDireccion);
+			global::Gtk.Fixed.FixedChild w35 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entDireccion]));
+			w35.X = 155;
+			w35.Y = 408;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label3 = new global::Gtk.Label();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Direccion:");
+			this.fixed4.Add(this.label3);
+			global::Gtk.Fixed.FixedChild w36 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label3]));
+			w36.X = 72;
+			w36.Y = 412;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label4 = new global::Gtk.Label();
+			this.label4.Name = "label4";
+			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Observacion:");
+			this.fixed4.Add(this.label4);
+			global::Gtk.Fixed.FixedChild w37 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label4]));
+			w37.X = 49;
+			w37.Y = 458;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.entObservacion = new global::Gtk.Entry();
+			this.entObservacion.WidthRequest = 492;
+			this.entObservacion.CanFocus = true;
+			this.entObservacion.Name = "entObservacion";
+			this.entObservacion.IsEditable = true;
+			this.entObservacion.InvisibleChar = '•';
+			this.fixed4.Add(this.entObservacion);
+			global::Gtk.Fixed.FixedChild w38 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entObservacion]));
+			w38.X = 154;
+			w38.Y = 452;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label5 = new global::Gtk.Label();
+			this.label5.Name = "label5";
+			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Fecha de Ingreso:");
+			this.fixed4.Add(this.label5);
+			global::Gtk.Fixed.FixedChild w39 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label5]));
+			w39.X = 45;
+			w39.Y = 512;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cldIngreso = new global::Gtk.Calendar();
+			this.cldIngreso.CanFocus = true;
+			this.cldIngreso.Name = "cldIngreso";
+			this.cldIngreso.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
+			this.fixed4.Add(this.cldIngreso);
+			global::Gtk.Fixed.FixedChild w40 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cldIngreso]));
+			w40.X = 62;
+			w40.Y = 552;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.cldNac = new global::Gtk.Calendar();
+			this.cldNac.CanFocus = true;
+			this.cldNac.Name = "cldNac";
+			this.cldNac.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
+			this.fixed4.Add(this.cldNac);
+			global::Gtk.Fixed.FixedChild w41 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.cldNac]));
+			w41.X = 386;
+			w41.Y = 547;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.label20 = new global::Gtk.Label();
+			this.label20.Name = "label20";
+			this.label20.LabelProp = global::Mono.Unix.Catalog.GetString("Fecha de Nacimiento:");
+			this.fixed4.Add(this.label20);
+			global::Gtk.Fixed.FixedChild w42 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.label20]));
+			w42.X = 367;
+			w42.Y = 511;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.button3 = new global::Gtk.Button();
+			this.button3.CanFocus = true;
+			this.button3.Name = "button3";
+			this.button3.UseUnderline = true;
+			this.button3.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed4.Add(this.button3);
+			global::Gtk.Fixed.FixedChild w43 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button3]));
+			w43.X = 49;
+			w43.Y = 785;
+			this.Add(this.fixed4);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 410;
-			this.DefaultHeight = 508;
+			this.DefaultWidth = 704;
+			this.DefaultHeight = 864;
 			this.Show();
-			this.button2.Clicked += new global::System.EventHandler(this.OnButton2Clicked);
-			this.cbxDpto.Changed += new global::System.EventHandler(this.OnCbxDptoChanged);
+			//this.button3.Clicked += new global::System.EventHandler(this.OnButton3Clicked);
 		}
 	}
 }

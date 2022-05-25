@@ -23,11 +23,11 @@ namespace ScapProject0.Empleados
         {
             //Tbl_Empleado emp = dtem.DatosEmpleado(idEmp);
             entId.Text = emp.IdEmpleado.ToString();
-            entNombres.Text = String.Concat(emp.PrimerNombre, " ", emp.SegundoNombre);
-            entApellidos.Text = String.Concat(emp.PrimerApellido, " ", emp.SegundoApellido);
+            entPrimerNombre.Text = String.Concat(emp.PrimerNombre, " ", emp.SegundoNombre);
+            entPrimerApellido.Text = String.Concat(emp.PrimerApellido, " ", emp.SegundoApellido);
             entCedula.Text = emp.NumCedula;
             entTel.Text = emp.Telefono;
-            entEmail.Text = emp.EmailCorporativo;
+            entEmailCorp.Text = emp.EmailCorporativo;
         }
 
         protected void llenarCbxDpto()
