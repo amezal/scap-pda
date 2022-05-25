@@ -16,6 +16,7 @@ namespace ScapProject0.Empleados
         {
             this.Build();
             this.llenarEmpleados();
+            
         }
 
         protected void llenarEmpleados()
@@ -27,6 +28,12 @@ namespace ScapProject0.Empleados
             {
                 this.trvwEmpleado.AppendColumn(titulos[i], new CellRendererText(), "text", i);
             }
+
+            TreePath p = new TreePath(new int[]{ 0 });
+            var model = trvwEmpleado.Model;
+            model.GetIter(out TreeIter iter, p);
+            int idEmpleado = Convert.ToInt32(model.GetValue(iter, 0).ToString());
+            empActual = idEmpleado;
         }
 
         protected void OnAgregarAction1Activated(object sender, EventArgs e)

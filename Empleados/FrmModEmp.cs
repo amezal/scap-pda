@@ -42,34 +42,27 @@ namespace ScapProject0.Empleados
 
         protected void llenarCbxDpto()
         {
-            List<Tbl_Departamento> listDpto = dtdp.cbxDpto();
-            foreach (Tbl_Departamento tdpto in listDpto)
-            {
-                this.cbxDpto.InsertText(tdpto.IdDepartamento, tdpto.NombreDepartamento);
-            }
-            this.cbxDpto.Active = emp.IdDepartamento - 1;
+            this.cbxDpto.Model = dtdp.ListarDpto();
+            this.cbxDpto.TextColumn = 1;
         }
 
         protected void llenarCbxCargo()
         {
-            List<Tbl_Cargo> listCargo = dtcar.cbxCargo();
-           
-            foreach (Tbl_Cargo tcar in listCargo)
-            {
-                this.cbxCargo.InsertText(tcar.IdCargo, tcar.NombreCargo);
-                Console.WriteLine(tcar.IdCargo + tcar.NombreCargo);
-            }
-            this.cbxCargo.Active = emp.IdCargo - 1;
+            this.cbxCargo.Model = dtcar.listarCargos();
+            this.cbxCargo.TextColumn = 1;
         }
 
         protected void llenarCbxHorario()
         {
-            List<Tbl_horario> listHorario = dthor.CbxHorario();
-            foreach (Tbl_horario thor in listHorario)
-            {
-                this.cbxHorario.InsertText(thor.Id_Horario, thor.Nombre);
-            }
-            this.cbxHorario.Active = emp.IdHorario - 1;
+            this.cbxHorario.Model = dthor.ListarHorario();
+            this.cbxCargo.TextColumn = 1;
+        }
+
+        protected void llenarCbxSexo()
+        {
+            this.cbxSexo.InsertText(0, "Mujer");
+            this.cbxSexo.InsertText(1, "Hombre");
+            this.cbxSexo.Active = emp.Sexo ? 1 : 0;
         }
 
         protected void llenarCbxSexo()

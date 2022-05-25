@@ -136,6 +136,63 @@ namespace ScapProject0.Datos
             }
         }
 
+        public bool NuevoEmpleado(Tbl_Empleado temp)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+            string sexo = temp.Sexo ? "1" : "0";
+            sb.Clear();
+            sb.Append("INSERT INTO LMBA.Empleado ");
+            sb.Append("(numCedula, estado, primerNombre, segundoNombre, primerApellido, segundoApellido, ");
+            sb.Append("fechaNacimiento, fechaIngreso, sexo, direccion, observacion, telefono, emailPersonal, ");
+            sb.Append("emailCorporativo, idCargo, PIN, idHorario) ");
+            sb.Append("VALUES ('" + 
+            temp.NumCedula + "','" + 
+            1 + "','" +
+            temp.PrimerNombre + "','" +
+            temp.SegundoNombre + "','" +
+            temp.PrimerApellido + "','" +
+            temp.SegundoApellido + "','" +
+            temp.FechaNacimiento.Date.ToString("yyyy-MM-dd") + "','" +
+            temp.FechaIngreso.Date.ToString("yyyy-MM-dd") + "',b'" +
+            sexo + "','" +
+            temp.Direccion + "','" +
+            temp.Observacion + "','" +
+            temp.Telefono + "','" +
+            temp.EmailPersonal + "','" +
+            temp.EmailCorporativo + "','" +
+            temp.IdCargo + "','" +
+            temp.PIN + "','" +
+            temp.IdHorario +
+            "');");
+
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+                return guardado;
+
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
 
         #endregion
 

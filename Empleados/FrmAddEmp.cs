@@ -10,38 +10,28 @@ namespace ScapProject0.Empleados
     {
         private Gtk.Window caller;
         Dt_tbl_cargo dtcar = new Dt_tbl_cargo();
-        Dt_tbl_departamento dtdp= new Dt_tbl_departamento();
+        Dt_tbl_departamento dtdp = new Dt_tbl_departamento();
         Dt_tbl_horario dthor = new Dt_tbl_horario();
-
+        Dt_tbl_empleado dtemp = new Dt_tbl_empleado();
 
         public Window Caller { get => caller; set => caller = value; }
 
         protected void llenarCbxDpto()
         {
-            List<Tbl_Departamento> listDpto =  dtdp.cbxDpto();
-            foreach(Tbl_Departamento tdpto in listDpto)
-            {
-                this.cbxDpto.InsertText(tdpto.IdDepartamento, tdpto.NombreDepartamento);
-            }
-
-       }
+            this.cbxDpto.Model = dtdp.ListarDpto();
+            this.cbxDpto.TextColumn = 1;
+        }
 
         protected void llenarCbxCargo()
         {
-            List<Tbl_Cargo> listCargo = dtcar.cbxCargo();
-            foreach (Tbl_Cargo tcar in listCargo)
-            {
-                this.cbxCargo.InsertText(tcar.IdCargo, tcar.NombreCargo);
-            }
+            this.cbxCargo.Model = dtcar.listarCargos();
+            this.cbxCargo.TextColumn = 1;
         }
 
         protected void llenarCbxHorario()
         {
-            List<Tbl_horario> listHorario = dthor.CbxHorario();
-            foreach (Tbl_horario thor in listHorario)
-            {
-                this.cbxHorario.InsertText(thor.Id_Horario, thor.Nombre);
-            }
+            this.cbxHorario.Model = dthor.ListarHorario();
+            this.cbxCargo.TextColumn = 1;
         }
 
         protected void llenarCbxSexo()
@@ -69,20 +59,10 @@ namespace ScapProject0.Empleados
             this.Hide();
         }
 
-        protected void OnCbxDptoChanged(object sender, EventArgs e)
-        {
-            //Console.WriteLine(this.cbxDpto.A);
-        }
-
         protected void OnCancelarAction1Activated(object sender, EventArgs e)
         {
             caller.Show();
             this.Hide();
-        }
-
-        protected void OnGuardarAction1Activated(object sender, EventArgs e)
-        {
-
         }
 
         protected void OnButton3Clicked(object sender, EventArgs e)
@@ -109,6 +89,37 @@ namespace ScapProject0.Empleados
         protected void OnBtnPIN2Released(object sender, EventArgs e)
         {
             entPIN2.Visibility = false;
+        }
+
+        protected void OnGuardarAction1Activated(object sender, EventArgs e)
+        {
+            cbxCargo.GetActiveIter(out TreeIter cargoiter);
+            cbxHorario.GetActiveIter(out TreeIter horiter);
+
+            var idCargo = Convert.ToInt32(cbxCargo.Model.GetValue(cargoiter, 0));
+            var idHorario = Convert.ToInt32(cbxHorario.Model.GetValue(horiter, 0));
+
+            Tbl_Empleado emp = new Tbl_Empleado()
+            {
+                NumCedula = entCedula.Text,
+                PrimerNombre = entPrimerNombre.Text,
+                SegundoNombre = entSegundoNombre.Text,
+                PrimerApellido = entPrimerApellido.Text,
+                SegundoApellido = entSegundoApellido.Text,
+                FechaNacimiento = cldNac.Date,
+                FechaIngreso = cldIngreso.Date,
+                Sexo = cbxSexo.Active == 1,
+                Telefono = entTel.Text,
+                EmailPersonal = entEmailPer.Text,
+                EmailCorporativo = entEmailCorp.Text,
+                Direccion = entDireccion.Text,
+                Observacion = entObservacion.Text,
+                PIN = entPIN.Text,
+                IdCargo = idCargo,
+                IdHorario = idHorario
+            };
+
+            dtemp.NuevoEmpleado(emp);
         }
     }
 }
