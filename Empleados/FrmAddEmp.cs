@@ -14,7 +14,6 @@ namespace ScapProject0.Empleados
         Dt_tbl_horario dthor = new Dt_tbl_horario();
         Dt_tbl_empleado dtemp = new Dt_tbl_empleado();
 
-
         public Window Caller { get => caller; set => caller = value; }
 
         protected void llenarCbxDpto()
@@ -122,6 +121,5 @@ namespace ScapProject0.Empleados
 
             dtemp.NuevoEmpleado(emp);
         }
-
     }
 }
