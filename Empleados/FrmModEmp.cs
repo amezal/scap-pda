@@ -12,6 +12,7 @@ namespace ScapProject0.Empleados
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
         Dt_tbl_cargo dtcar = new Dt_tbl_cargo();
         Dt_tbl_departamento dtdp = new Dt_tbl_departamento();
+        Dt_tbl_horario dthor = new Dt_tbl_horario();
         private int idEmp;
         private Tbl_Empleado emp;
 
@@ -23,11 +24,19 @@ namespace ScapProject0.Empleados
         {
             //Tbl_Empleado emp = dtem.DatosEmpleado(idEmp);
             entId.Text = emp.IdEmpleado.ToString();
-            entPrimerNombre.Text = String.Concat(emp.PrimerNombre, " ", emp.SegundoNombre);
-            entPrimerApellido.Text = String.Concat(emp.PrimerApellido, " ", emp.SegundoApellido);
+            entPrimerNombre.Text = emp.PrimerNombre;
+            entSegundoNombre.Text = emp.SegundoNombre;
+            entPrimerApellido.Text = emp.PrimerApellido;
+            entSegundoApellido.Text = emp.SegundoApellido;
             entCedula.Text = emp.NumCedula;
             entTel.Text = emp.Telefono;
             entEmailCorp.Text = emp.EmailCorporativo;
+            entEmailPer.Text = emp.EmailPersonal;
+            entPIN.Text = emp.PIN;
+            entDireccion.Text = emp.Direccion;
+            entObservacion.Text = emp.Observacion;
+            cldNac.Date = emp.FechaNacimiento;
+            cldIngreso.Date = emp.FechaIngreso;
         }
 
         protected void llenarCbxDpto()
@@ -52,6 +61,16 @@ namespace ScapProject0.Empleados
             this.cbxCargo.Active = emp.IdCargo - 1;
         }
 
+        protected void llenarCbxHorario()
+        {
+            List<Tbl_horario> listHorario = dthor.CbxHorario();
+            foreach (Tbl_horario thor in listHorario)
+            {
+                this.cbxHorario.InsertText(thor.Id_Horario, thor.Nombre);
+            }
+            this.cbxHorario.Active = emp.IdHorario - 1;
+        }
+
         public FrmModEmp(int idEmpActual) :
                 base(Gtk.WindowType.Toplevel)
         {
@@ -61,10 +80,17 @@ namespace ScapProject0.Empleados
             this.llenarCampos();
             this.llenarCbxDpto();
             this.llenarCbxCargo();
+            this.llenarCbxHorario();
         }
 
 
         protected void OnButton3Clicked(object sender, EventArgs e)
+        {
+            this.caller.Show();
+            this.Hide();
+        }
+
+        protected void OnCancelarAction1Activated(object sender, EventArgs e)
         {
             this.caller.Show();
             this.Hide();

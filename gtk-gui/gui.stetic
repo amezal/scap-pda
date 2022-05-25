@@ -1813,6 +1813,7 @@
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelarAction1Activated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -2133,7 +2134,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry4">
+          <widget class="Gtk.Entry" id="entPIN">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
@@ -2147,7 +2148,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry5">
+          <widget class="Gtk.Entry" id="entPIN2">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
@@ -2161,7 +2162,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <widget class="Gtk.Button" id="btnPIN2">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
@@ -2174,7 +2175,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="btnPIN">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>

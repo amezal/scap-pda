@@ -56,6 +56,40 @@ namespace ScapProject0.Datos
             //}
         }
 
+        public List<Tbl_horario> CbxHorario()
+        {
+            List<Tbl_horario> listaHorario = new List<Tbl_horario>();
+            IDataReader idr = null;
+            sb.Clear();
+            sb.Append("SELECT * FROM LMBA.VwHorario;");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                while (idr.Read())
+                {
+                    Tbl_horario thor = new Tbl_horario()
+                    {
+                        Id_Horario = (Int32)idr["idHorario"],
+                        Nombre = idr["nombre"].ToString()
+                    };
+                    listaHorario.Add(thor);
+                }
+                idr.Close();
+                return listaHorario;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
 
         public bool GuardarHorario(Tbl_horario thor)
         {
