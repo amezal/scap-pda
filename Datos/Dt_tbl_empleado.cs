@@ -206,7 +206,7 @@ namespace ScapProject0.Datos
             "estado='" + 2 + "'," +
             "primerNombre='" + temp.PrimerNombre + "'," +
             "segundoNombre='" + temp.SegundoNombre + "'," +
-            "primerNombre='" + temp.PrimerApellido + "'," +
+            "primerApellido='" + temp.PrimerApellido + "'," +
             "segundoApellido='" + temp.SegundoApellido + "'," +
             "fechaNacimiento='" + temp.FechaNacimiento.Date.ToString("yyyy-MM-dd") + "'," +
             "fechaIngreso='" + temp.FechaIngreso.Date.ToString("yyyy-MM-dd") + "'," +

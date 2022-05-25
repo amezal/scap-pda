@@ -19,6 +19,11 @@ namespace ScapProject0.Empleados
             
         }
 
+        public void refresh()
+        {
+            this.trvwEmpleado.Model = dtem.ListarEmpleados(query);
+        }
+
         protected void llenarEmpleados()
         {
             this.trvwEmpleado.Model = dtem.ListarEmpleados(query);

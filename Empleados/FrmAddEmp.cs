@@ -8,13 +8,13 @@ namespace ScapProject0.Empleados
 {
     public partial class FrmAddEmp : Gtk.Window
     {
-        private Gtk.Window caller;
+        private Empleados.FrmEmp caller;
         Dt_tbl_cargo dtcar = new Dt_tbl_cargo();
         Dt_tbl_departamento dtdp = new Dt_tbl_departamento();
         Dt_tbl_horario dthor = new Dt_tbl_horario();
         Dt_tbl_empleado dtemp = new Dt_tbl_empleado();
 
-        public Window Caller { get => caller; set => caller = value; }
+        public Empleados.FrmEmp Caller { get => caller; set => caller = value; }
 
         protected void llenarCbxDpto()
         {
@@ -125,6 +125,7 @@ namespace ScapProject0.Empleados
                 ButtonsType.Ok, "Usuario guardado correctamente");
                 ms.Run();
                 ms.Destroy();
+                this.caller.refresh();
             }
         }
     }
