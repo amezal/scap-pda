@@ -1814,6 +1814,7 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarAction1Activated" />
       </action>
       <action id="CancelarAction1">
         <property name="Type">Action</property>

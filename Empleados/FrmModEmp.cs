@@ -44,18 +44,50 @@ namespace ScapProject0.Empleados
         {
             this.cbxDpto.Model = dtdp.ListarDpto();
             this.cbxDpto.TextColumn = 1;
+            for (int i = 0; i < cbxDpto.Model.NColumns; i++)
+            {
+                TreePath path = new TreePath(new int[] { i });
+                cbxDpto.Model.GetIter(out TreeIter iter, path);
+                int id = Convert.ToInt32(cbxDpto.Model.GetValue(iter, 0));
+                if (emp.IdDepartamento == id)
+                {
+                    cbxDpto.Active = i;
+                }
+            }
         }
 
         protected void llenarCbxCargo()
         {
             this.cbxCargo.Model = dtcar.listarCargos();
             this.cbxCargo.TextColumn = 1;
+
+            for (int i = 0; i < cbxCargo.Model.NColumns; i++)
+            {
+                TreePath path = new TreePath(new int[] { i });
+                cbxCargo.Model.GetIter(out TreeIter iter, path);
+                int id = Convert.ToInt32(cbxCargo.Model.GetValue(iter, 0));
+                if(emp.IdCargo == id)
+                {
+                    cbxCargo.Active = i;
+                }
+            }
         }
 
         protected void llenarCbxHorario()
         {
             this.cbxHorario.Model = dthor.ListarHorario();
             this.cbxCargo.TextColumn = 1;
+            for (int i = 0; i < cbxHorario.Model.NColumns; i++)
+            {
+                TreePath path = new TreePath(new int[] { i });
+                cbxHorario.Model.GetIter(out TreeIter iter, path);
+                int id = Convert.ToInt32(cbxHorario.Model.GetValue(iter, 0));
+                if (emp.IdHorario == id)
+                {
+                    cbxHorario.Active = i;
+                }
+            }
+
         }
 
         protected void llenarCbxSexo()
@@ -111,6 +143,11 @@ namespace ScapProject0.Empleados
         protected void OnBtnPIN2Released(object sender, EventArgs e)
         {
             entPIN2.Visibility = false;
+        }
+
+        protected void OnGuardarAction1Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }
