@@ -28,7 +28,7 @@ namespace ScapProject0.Empleados
 
 		private global::Gtk.Toolbar toolbar2;
 
-		private global::Gtk.Entry entry2;
+		private global::Gtk.Entry entBuscar;
 
 		private global::Gtk.Button button1;
 
@@ -93,13 +93,13 @@ namespace ScapProject0.Empleados
 			w2.X = 19;
 			w2.Y = 12;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.entry2 = new global::Gtk.Entry();
-			this.entry2.CanFocus = true;
-			this.entry2.Name = "entry2";
-			this.entry2.IsEditable = true;
-			this.entry2.InvisibleChar = '•';
-			this.fixed2.Add(this.entry2);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entry2]));
+			this.entBuscar = new global::Gtk.Entry();
+			this.entBuscar.CanFocus = true;
+			this.entBuscar.Name = "entBuscar";
+			this.entBuscar.IsEditable = true;
+			this.entBuscar.InvisibleChar = '•';
+			this.fixed2.Add(this.entBuscar);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entBuscar]));
 			w3.X = 434;
 			w3.Y = 18;
 			// Container child fixed2.Gtk.Fixed+FixedChild
@@ -137,6 +137,7 @@ namespace ScapProject0.Empleados
 			this.Show();
 			this.AgregarAction1.Activated += new global::System.EventHandler(this.OnAgregarAction1Activated);
 			this.ModificarAction1.Activated += new global::System.EventHandler(this.OnModificarAction1Activated);
+			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
 			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
 			this.trvwEmpleado.CursorChanged += new global::System.EventHandler(this.OnTrvwEmpleadoCursorChanged);
 			this.trvwEmpleado.RowActivated += new global::Gtk.RowActivatedHandler(this.OnTrvwEmpleadoRowActivated);

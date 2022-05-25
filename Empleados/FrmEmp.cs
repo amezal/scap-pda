@@ -9,6 +9,8 @@ namespace ScapProject0.Empleados
 
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
         private int empActual;
+        private string query = "";
+
         public FrmEmp() :
                 base(Gtk.WindowType.Toplevel)
         {
@@ -18,8 +20,7 @@ namespace ScapProject0.Empleados
 
         protected void llenarEmpleados()
         {
-            this.trvwEmpleado.Model = dtem.ListarEmpleados();
-
+            this.trvwEmpleado.Model = dtem.ListarEmpleados(query);
             string[] titulos = { "ID", "Nombres", "Apellidos", "Cargo", "Departamento" };
 
             for (int i = 0; i < titulos.Length; i++)
@@ -70,6 +71,11 @@ namespace ScapProject0.Empleados
         {
             this.caller.Show();
             this.Hide();
+        }
+
+        protected void OnBuscarActionActivated(object sender, EventArgs e)
+        {
+            this.trvwEmpleado.Model = dtem.ListarEmpleados(entBuscar.Text.Trim());
         }
     }
 }
