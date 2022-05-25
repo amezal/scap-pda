@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `LMBA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `LMBA`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Linux (x86_64)
 --
 -- Host: localhost    Database: LMBA
@@ -103,7 +101,7 @@ CREATE TABLE `Empleado` (
   PRIMARY KEY (`idEmpleado`),
   UNIQUE KEY `id_user_UNIQUE` (`id_user`),
   KEY `RefCargo16` (`idCargo`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +110,7 @@ CREATE TABLE `Empleado` (
 
 LOCK TABLES `Empleado` WRITE;
 /*!40000 ALTER TABLE `Empleado` DISABLE KEYS */;
-INSERT INTO `Empleado` VALUES (1,'001-190101-1009G',1,'Armando','Alexander','Meza','Lopez','2001-01-19 00:00:00',_binary '','2022-04-28 00:00:00','asdf',NULL,NULL,'77665604',NULL,'armando@lmba.com',1,NULL,'1234',1),(2,'001-151001-2192A',1,'Alejandra',NULL,'Prado','Sanchez','2001-10-15 00:00:00',_binary '\0','2022-04-28 00:00:00','fdsa',NULL,NULL,'55558888',NULL,'ale@lmba.com',2,NULL,'1234',1),(3,'001-010101-0101M',1,'Mabel','Aryeris','Garcia','Hernandez','2001-01-01 00:00:00',_binary '\0','2022-04-28 00:00:00','asdfasdfasdf',NULL,NULL,'11111111',NULL,'mabel@lmba.com',3,NULL,'1234',1),(4,'002-020202-0202B',1,'Blanca','Tais','Rosales','Martinez','2002-02-02 00:00:00',_binary '\0','2022-04-28 00:00:00','pqwoiejr',NULL,NULL,'22222222',NULL,'blanca@lmba.com',4,NULL,'1234',1),(5,'003-030303-0303L',1,'Luis','Antonio','Jimenez','Rizo','2003-03-03 00:00:00',_binary '','2002-04-28 00:00:00','sdngap',NULL,NULL,'33333333',NULL,'luis@lmba.com',5,NULL,'1234',1),(6,'asdf',3,'asdf','asdf','asdf',NULL,'2003-03-03 00:00:00',_binary '','2003-03-03 00:00:00','984984',NULL,NULL,'89879874',NULL,'asdf@lmba.com',1,NULL,'1234',1);
+INSERT INTO `Empleado` VALUES (1,'001-190101-1009G',2,'Armando','Alexander','Meza','Lopez','2001-01-19 00:00:00',_binary '','2022-04-28 00:00:00','asdf','Observa bien.',NULL,'77665604','a','armando@lmba.com',1,NULL,'1234',1),(2,'001-151001-2192A',1,'Alejandra',NULL,'Prado','Sanchez','2001-10-15 00:00:00',_binary '\0','2022-04-28 00:00:00','fdsa',NULL,NULL,'55558888',NULL,'ale@lmba.com',2,NULL,'1234',1),(3,'001-010101-0101M',1,'Mabel','Aryeris','Garcia','Hernandez','2001-01-01 00:00:00',_binary '\0','2022-04-28 00:00:00','asdfasdfasdf',NULL,NULL,'11111111',NULL,'mabel@lmba.com',3,NULL,'1234',1),(4,'002-020202-0202B',1,'Blanca','Tais','Rosales','Martinez','2002-02-02 00:00:00',_binary '\0','2022-04-28 00:00:00','pqwoiejr',NULL,NULL,'22222222',NULL,'blanca@lmba.com',4,NULL,'1234',1),(5,'003-030303-0303L',1,'Luis','Antonio','Jimenez','Rizo','2003-03-03 00:00:00',_binary '','2002-04-28 00:00:00','sdngap',NULL,NULL,'33333333',NULL,'luis@lmba.com',5,NULL,'1234',1),(6,'asdf',3,'asdf','asdf','asdf','xdxdxd','2003-03-03 00:00:00',_binary '\0','2003-03-03 00:00:00','984984',NULL,NULL,'89879874',NULL,'asdf@lmba.com',1,NULL,'1234',1),(7,'1234',1,'1234','','1234','','2022-05-25 00:00:00',_binary '\0','2022-05-25 00:00:00','1234','1234',NULL,'666','','',1,NULL,'1234',1),(8,'asdf',3,'Hola','','Test','','2022-05-25 00:00:00',_binary '','2022-05-25 00:00:00','1234','1234',NULL,'asdfasdf','','asdf',1,NULL,'1234',2);
 /*!40000 ALTER TABLE `Empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +129,7 @@ CREATE TABLE `Horario` (
   `estado` int NOT NULL DEFAULT '1',
   `almuerzo` time DEFAULT NULL,
   PRIMARY KEY (`idHorario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +138,7 @@ CREATE TABLE `Horario` (
 
 LOCK TABLES `Horario` WRITE;
 /*!40000 ALTER TABLE `Horario` DISABLE KEYS */;
-INSERT INTO `Horario` VALUES (1,'regular','08:00:00','17:00:00',1,'01:00:00'),(2,' seguridad1','06:00:00','18:00:00',1,'01:00:00');
+INSERT INTO `Horario` VALUES (1,'regular','08:00:00','17:00:00',1,'01:00:00'),(2,' seguridad1','06:00:00','18:00:00',1,'01:00:00'),(3,'123','08:00:00','20:00:00',1,NULL);
 /*!40000 ALTER TABLE `Horario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,9 +245,15 @@ DROP TABLE IF EXISTS `VwRegistro`;
 SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
 /*!50001 CREATE VIEW `VwRegistro` AS SELECT 
- 1 AS `Fecha`,
- 1 AS `Hora Entrada`,
- 1 AS `Hora Salida`,
+ 1 AS `idRegistro`,
+ 1 AS `estado`,
+ 1 AS `fecha`,
+ 1 AS `horaEntrada`,
+ 1 AS `horaSalida`,
+ 1 AS `idJustificacion`,
+ 1 AS `entradaH`,
+ 1 AS `salidaH`,
+ 1 AS `almuerzo`,
  1 AS `idEmpleado`*/;
 SET character_set_client = @saved_cs_client;
 
@@ -540,7 +544,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwRegistro` AS select `registroES`.`fecha` AS `Fecha`,`registroES`.`horaEntrada` AS `Hora Entrada`,`registroES`.`horaSalida` AS `Hora Salida`,`Empleado`.`idEmpleado` AS `idEmpleado` from ((`registroES` join `empleadoRegistro` on((`registroES`.`idRegistro` = `empleadoRegistro`.`idRegistro`))) join `Empleado` on((`empleadoRegistro`.`idEmpleado` = `Empleado`.`idEmpleado`))) */;
+/*!50001 VIEW `VwRegistro` AS select `registroES`.`idRegistro` AS `idRegistro`,`registroES`.`estado` AS `estado`,`registroES`.`fecha` AS `fecha`,`registroES`.`horaEntrada` AS `horaEntrada`,`registroES`.`horaSalida` AS `horaSalida`,`registroES`.`idJustificacion` AS `idJustificacion`,`Horario`.`horaInicio` AS `entradaH`,`Horario`.`horaSalida` AS `salidaH`,`Horario`.`almuerzo` AS `almuerzo`,`Empleado`.`idEmpleado` AS `idEmpleado` from (((`registroES` join `empleadoRegistro` on((`registroES`.`idRegistro` = `empleadoRegistro`.`idRegistro`))) join `Empleado` on((`empleadoRegistro`.`idEmpleado` = `Empleado`.`idEmpleado`))) join `Horario` on((`Empleado`.`idHorario` = `Horario`.`idHorario`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -572,5 +576,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
--- Dump completed on 2022-05-24 19:31:00
+-- Dump completed on 2022-05-25  8:46:40
