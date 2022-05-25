@@ -523,6 +523,7 @@ namespace ScapProject0.Empleados
 			this.DefaultWidth = 704;
 			this.DefaultHeight = 864;
 			this.Show();
+			this.GuardarAction1.Activated += new global::System.EventHandler(this.OnGuardarAction1Activated);
 			this.CancelarAction1.Activated += new global::System.EventHandler(this.OnCancelarAction1Activated);
 			this.btnPIN2.Pressed += new global::System.EventHandler(this.OnBtnPIN2Pressed);
 			this.btnPIN2.Released += new global::System.EventHandler(this.OnBtnPIN2Released);
