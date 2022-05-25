@@ -72,6 +72,13 @@ namespace ScapProject0.Empleados
             this.cbxHorario.Active = emp.IdHorario - 1;
         }
 
+        protected void llenarCbxSexo()
+        {
+            this.cbxSexo.InsertText(0, "Mujer");
+            this.cbxSexo.InsertText(1, "Hombre");
+            this.cbxSexo.Active = emp.Sexo ? 1 : 0;
+        }
+
         public FrmModEmp(int idEmpActual) :
                 base(Gtk.WindowType.Toplevel)
         {
@@ -82,6 +89,9 @@ namespace ScapProject0.Empleados
             this.llenarCbxDpto();
             this.llenarCbxCargo();
             this.llenarCbxHorario();
+            this.llenarCbxSexo();
+            entPIN.Visibility = false;
+            entPIN2.Visibility = false;
         }
 
 
@@ -95,6 +105,26 @@ namespace ScapProject0.Empleados
         {
             this.caller.Show();
             this.Hide();
+        }
+
+        protected void OnBtnPINPressed(object sender, EventArgs e)
+        {
+            entPIN.Visibility = true;
+        }
+
+        protected void OnBtnPINReleased(object sender, EventArgs e)
+        {
+            entPIN.Visibility = false;
+        }
+
+        protected void OnBtnPIN2Pressed(object sender, EventArgs e)
+        {
+            entPIN2.Visibility = true;
+        }
+
+        protected void OnBtnPIN2Released(object sender, EventArgs e)
+        {
+            entPIN2.Visibility = false;
         }
     }
 }
