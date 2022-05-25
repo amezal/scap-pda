@@ -65,13 +65,6 @@ namespace ScapProject0.Empleados
             this.cbxSexo.Active = emp.Sexo ? 1 : 0;
         }
 
-        protected void llenarCbxSexo()
-        {
-            this.cbxSexo.InsertText(0, "Mujer");
-            this.cbxSexo.InsertText(1, "Hombre");
-            this.cbxSexo.Active = emp.Sexo ? 1 : 0;
-        }
-
         public FrmModEmp(int idEmpActual) :
                 base(Gtk.WindowType.Toplevel)
         {
