@@ -125,7 +125,6 @@ namespace ScapProject0.Empleados
                 ButtonsType.Ok, "Usuario guardado correctamente");
                 ms.Run();
                 ms.Destroy();
-
             }
         }
     }

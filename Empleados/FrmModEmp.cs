@@ -147,7 +147,40 @@ namespace ScapProject0.Empleados
 
         protected void OnGuardarAction1Activated(object sender, EventArgs e)
         {
+            cbxCargo.GetActiveIter(out TreeIter cargoiter);
+            cbxHorario.GetActiveIter(out TreeIter horiter);
 
+            var idCargo = Convert.ToInt32(cbxCargo.Model.GetValue(cargoiter, 0));
+            var idHorario = Convert.ToInt32(cbxHorario.Model.GetValue(horiter, 0));
+
+            Tbl_Empleado em = new Tbl_Empleado()
+            {
+                IdEmpleado = idEmp,
+                NumCedula = entCedula.Text,
+                PrimerNombre = entPrimerNombre.Text,
+                SegundoNombre = entSegundoNombre.Text,
+                PrimerApellido = entPrimerApellido.Text,
+                SegundoApellido = entSegundoApellido.Text,
+                FechaNacimiento = cldNac.Date,
+                FechaIngreso = cldIngreso.Date,
+                Sexo = cbxSexo.Active == 1,
+                Telefono = entTel.Text,
+                EmailPersonal = entEmailPer.Text,
+                EmailCorporativo = entEmailCorp.Text,
+                Direccion = entDireccion.Text,
+                Observacion = entObservacion.Text,
+                PIN = entPIN.Text,
+                IdCargo = idCargo,
+                IdHorario = idHorario
+            };
+
+            if (dtem.ModificarEmpleado(em))
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Usuario modificado correctamente");
+                ms.Run();
+                ms.Destroy();
+            }
         }
     }
 }
