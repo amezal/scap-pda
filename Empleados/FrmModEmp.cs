@@ -8,7 +8,7 @@ namespace ScapProject0.Empleados
 {
     public partial class FrmModEmp : Gtk.Window
     {
-        private Gtk.Window caller;
+        private Empleados.FrmEmp caller;
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
         Dt_tbl_cargo dtcar = new Dt_tbl_cargo();
         Dt_tbl_departamento dtdp = new Dt_tbl_departamento();
@@ -17,7 +17,7 @@ namespace ScapProject0.Empleados
         private Tbl_Empleado emp;
 
 
-        public Window Caller { get => caller; set => caller = value; }
+        public Empleados.FrmEmp Caller { get => caller; set => caller = value; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
 
         protected void llenarCampos()
@@ -192,6 +192,7 @@ namespace ScapProject0.Empleados
                 ButtonsType.Ok, "Usuario modificado correctamente");
                 ms.Run();
                 ms.Destroy();
+                this.caller.refresh();
             }
         }
     }
