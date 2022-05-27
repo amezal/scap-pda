@@ -75,13 +75,25 @@ namespace ScapProject0.Empleados
 
         protected void llenarCbxHorario()
         {
-            this.cbxHorario.Model = dthor.ListarHorario();
-            this.cbxCargo.TextColumn = 1;
+            TreeModel model = dthor.ListarHorario();
+            model.GetIterFirst(out TreeIter ti);
+
+            do
+            {
+                int id = Convert.ToInt32(model.GetValue(ti, 0));
+                string nombre = model.GetValue(ti, 1).ToString();
+                Console.WriteLine("ID: " + id + " Nombre: " + nombre);
+                model.SetValue(ti, 0, nombre);
+                model.SetValue(ti, 1, id.ToString());
+            } while (model.IterNext(ref ti));
+
+            cbxHorario.Model = model;
+
             for (int i = 0; i < cbxHorario.Model.NColumns; i++)
             {
                 TreePath path = new TreePath(new int[] { i });
                 cbxHorario.Model.GetIter(out TreeIter iter, path);
-                int id = Convert.ToInt32(cbxHorario.Model.GetValue(iter, 0));
+                int id = Convert.ToInt32(cbxHorario.Model.GetValue(iter, 1));
                 if (emp.IdHorario == id)
                 {
                     cbxHorario.Active = i;
@@ -151,7 +163,7 @@ namespace ScapProject0.Empleados
             cbxHorario.GetActiveIter(out TreeIter horiter);
 
             var idCargo = Convert.ToInt32(cbxCargo.Model.GetValue(cargoiter, 0));
-            var idHorario = Convert.ToInt32(cbxHorario.Model.GetValue(horiter, 0));
+            var idHorario = Convert.ToInt32(cbxHorario.Model.GetValue(horiter, 1));
 
             Tbl_Empleado em = new Tbl_Empleado()
             {
