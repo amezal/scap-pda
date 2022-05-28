@@ -138,7 +138,7 @@ CREATE TABLE `Horario` (
 
 LOCK TABLES `Horario` WRITE;
 /*!40000 ALTER TABLE `Horario` DISABLE KEYS */;
-INSERT INTO `Horario` VALUES (1,'regular','08:00:00','17:00:00',1,'01:00:00'),(2,' seguridad1','06:00:00','18:00:00',1,'01:00:00'),(3,'123','08:00:00','20:00:00',1,NULL);
+INSERT INTO `Horario` VALUES (1,'regular','08:00:00','17:00:00',1,'01:00:00'),(2,' seguridad1','06:00:00','18:00:00',1,'01:00:00'),(3,'123','08:00:00','20:00:00',1,'01:00:00');
 /*!40000 ALTER TABLE `Horario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,8 +155,8 @@ CREATE TABLE `Justificacion` (
   `descripcion` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
   `fechaEntrada` datetime NOT NULL,
   `fechaSalida` datetime NOT NULL,
-  `horaEntrada` datetime NOT NULL,
-  `horaSalida` datetime DEFAULT NULL,
+  `horaEntrada` time NOT NULL,
+  `horaSalida` time DEFAULT NULL,
   PRIMARY KEY (`idJustificacion`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -312,7 +312,7 @@ CREATE TABLE `opcion` (
   `opcion` varchar(50) NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_opcion`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,6 +321,7 @@ CREATE TABLE `opcion` (
 
 LOCK TABLES `opcion` WRITE;
 /*!40000 ALTER TABLE `opcion` DISABLE KEYS */;
+INSERT INTO `opcion` VALUES (1,'empleados',1),(2,'empleados',1);
 /*!40000 ALTER TABLE `opcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,7 +350,7 @@ CREATE TABLE `registroES` (
 
 LOCK TABLES `registroES` WRITE;
 /*!40000 ALTER TABLE `registroES` DISABLE KEYS */;
-INSERT INTO `registroES` VALUES (1,1,'2022-05-03 19:23:27','08:00:00','17:00:00',NULL),(2,1,'2022-05-03 19:40:18','08:05:00','17:05:00',NULL),(3,1,'2022-05-03 19:40:18','07:59:00','16:58:00',NULL);
+INSERT INTO `registroES` VALUES (1,1,'2022-05-03 19:23:27','08:00:00','17:00:00',NULL),(2,1,'2022-05-04 19:40:18','08:00:00','15:00:00',1),(3,1,'2022-05-05 19:40:18','07:59:00','16:58:00',NULL);
 /*!40000 ALTER TABLE `registroES` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -576,4 +577,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-25  8:46:40
+-- Dump completed on 2022-05-27 18:57:15
