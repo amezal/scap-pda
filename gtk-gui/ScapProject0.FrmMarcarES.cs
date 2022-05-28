@@ -6,13 +6,13 @@ namespace ScapProject0
 	{
 		private global::Gtk.Fixed fixed7;
 
-		private global::Gtk.Label label10;
-
 		private global::Gtk.Button button15;
 
 		private global::Gtk.Button button16;
 
 		private global::Gtk.Button button17;
+
+		private global::Gtk.Label labelHora;
 
 		protected virtual void Build()
 		{
@@ -26,14 +26,6 @@ namespace ScapProject0
 			this.fixed7.Name = "fixed7";
 			this.fixed7.HasWindow = false;
 			// Container child fixed7.Gtk.Fixed+FixedChild
-			this.label10 = new global::Gtk.Label();
-			this.label10.Name = "label10";
-			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString("*Mensaje de bienvenida*");
-			this.fixed7.Add(this.label10);
-			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.label10]));
-			w1.X = 5;
-			w1.Y = 5;
-			// Container child fixed7.Gtk.Fixed+FixedChild
 			this.button15 = new global::Gtk.Button();
 			this.button15.WidthRequest = 92;
 			this.button15.HeightRequest = 48;
@@ -42,9 +34,9 @@ namespace ScapProject0
 			this.button15.UseUnderline = true;
 			this.button15.Label = global::Mono.Unix.Catalog.GetString("Entrada");
 			this.fixed7.Add(this.button15);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button15]));
-			w2.X = 105;
-			w2.Y = 177;
+			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button15]));
+			w1.X = 105;
+			w1.Y = 177;
 			// Container child fixed7.Gtk.Fixed+FixedChild
 			this.button16 = new global::Gtk.Button();
 			this.button16.WidthRequest = 92;
@@ -54,9 +46,9 @@ namespace ScapProject0
 			this.button16.UseUnderline = true;
 			this.button16.Label = global::Mono.Unix.Catalog.GetString("Salida");
 			this.fixed7.Add(this.button16);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button16]));
-			w3.X = 291;
-			w3.Y = 177;
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button16]));
+			w2.X = 291;
+			w2.Y = 177;
 			// Container child fixed7.Gtk.Fixed+FixedChild
 			this.button17 = new global::Gtk.Button();
 			this.button17.WidthRequest = 119;
@@ -66,9 +58,20 @@ namespace ScapProject0
 			this.button17.UseUnderline = true;
 			this.button17.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed7.Add(this.button17);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button17]));
-			w4.X = 28;
-			w4.Y = 321;
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button17]));
+			w3.X = 28;
+			w3.Y = 321;
+			// Container child fixed7.Gtk.Fixed+FixedChild
+			this.labelHora = new global::Gtk.Label();
+			this.labelHora.WidthRequest = 240;
+			this.labelHora.HeightRequest = 120;
+			this.labelHora.Name = "labelHora";
+			this.labelHora.LabelProp = global::Mono.Unix.Catalog.GetString("00:00:00");
+			this.labelHora.Justify = ((global::Gtk.Justification)(2));
+			this.fixed7.Add(this.labelHora);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.labelHora]));
+			w4.X = 131;
+			w4.Y = 46;
 			this.Add(this.fixed7);
 			if ((this.Child != null))
 			{
@@ -77,7 +80,6 @@ namespace ScapProject0
 			this.DefaultWidth = 499;
 			this.DefaultHeight = 369;
 			this.Show();
-			this.button17.Clicked += new global::System.EventHandler(this.OnButton17Clicked);
 		}
 	}
 }
