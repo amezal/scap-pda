@@ -150,8 +150,8 @@ namespace ScapProject0.Datos
             sb.Append("USE LMBA; ");
             sb.Append("INSERT INTO registroES ");
             sb.Append("(estado, fecha, horaEntrada) VALUES");
-            sb.Append($"('1', '{reg.Fecha.ToString("yyyy-MM-dd")}', '{reg.HoraEntrada.ToString("hh:mm:ss")}'); ");
-            sb.Append($"SELECT Max(idRegistro) FROM LMBA.VwRegistro;");
+            sb.Append($"('1', '{reg.Fecha.ToString("yyyy-MM-dd")}', '{reg.HoraEntrada.ToString("HH:mm:ss")}'); ");
+            sb.Append($"SELECT Max(idRegistro) FROM LMBA.registroES;");
 
             try
             {
@@ -175,6 +175,45 @@ namespace ScapProject0.Datos
                 con.CerrarConexion();
             }
             return idReg;
+        }
+
+        public bool MarcarSalida(Tbl_registroES reg)
+        {
+            int x = 0;
+            bool guardado = false;
+            IDataReader idr = null;
+            //UPDATE `LMBA`.`registroES` SET `horaEntrada` = '02:47:25' WHERE (`idRegistro` = '18');
+            sb.Clear();
+            //sb.Append("USE LMBA; ");
+            sb.Append("UPDATE LMBA.registroES ");
+            sb.Append($"SET horaSalida = '{reg.HoraSalida.ToString("HH:mm:ss")}' ");
+            sb.Append($"WHERE idRegistro = '{reg.IdRegistro}';");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                idr.Read();
+                if(x > 0)
+                {
+                    guardado = true;
+                }
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+            return guardado;
         }
     }
 }

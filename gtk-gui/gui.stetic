@@ -834,6 +834,7 @@
         <child>
           <widget class="Gtk.ComboBoxEntry" id="cbxeEmp">
             <property name="MemberName" />
+            <property name="WidthRequest">285</property>
             <property name="IsTextCombo">True</property>
             <property name="Items" translatable="yes" />
             <signal name="Changed" handler="OnCbxeEmpChanged" />
