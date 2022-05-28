@@ -7,7 +7,9 @@ namespace ScapProject0.Entidades
         private string nombre;
         private DateTime horaInicio;
         private DateTime horaSalida;
+        private DateTime almuerzo;
         private Int32 estado;
+        //private DateTime almuerzo;
 
 
         public Tbl_horario()
@@ -19,5 +21,6 @@ namespace ScapProject0.Entidades
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
         public DateTime HoraSalida { get => horaSalida; set => horaSalida = value; }
         public int Estado { get => estado; set => estado = value; }
+        public DateTime Almuerzo { get => almuerzo; set => almuerzo = value; }
     }
 }

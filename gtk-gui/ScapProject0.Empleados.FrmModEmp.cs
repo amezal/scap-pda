@@ -74,13 +74,13 @@ namespace ScapProject0.Empleados
 
 		private global::Gtk.ComboBox cbxSexo;
 
-		private global::Gtk.Entry entry4;
+		private global::Gtk.Entry entPIN;
 
-		private global::Gtk.Entry entry5;
+		private global::Gtk.Entry entPIN2;
 
-		private global::Gtk.Button button2;
+		private global::Gtk.Button btnPIN2;
 
-		private global::Gtk.Button button1;
+		private global::Gtk.Button btnPIN;
 
 		private global::Gtk.ComboBox cbxHorario;
 
@@ -382,47 +382,47 @@ namespace ScapProject0.Empleados
 			w29.X = 478;
 			w29.Y = 287;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.entry4 = new global::Gtk.Entry();
-			this.entry4.WidthRequest = 120;
-			this.entry4.CanFocus = true;
-			this.entry4.Name = "entry4";
-			this.entry4.IsEditable = true;
-			this.entry4.MaxLength = 4;
-			this.entry4.InvisibleChar = '•';
-			this.fixed4.Add(this.entry4);
-			global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entry4]));
+			this.entPIN = new global::Gtk.Entry();
+			this.entPIN.WidthRequest = 120;
+			this.entPIN.CanFocus = true;
+			this.entPIN.Name = "entPIN";
+			this.entPIN.IsEditable = true;
+			this.entPIN.MaxLength = 4;
+			this.entPIN.InvisibleChar = '•';
+			this.fixed4.Add(this.entPIN);
+			global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entPIN]));
 			w30.X = 478;
 			w30.Y = 327;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.entry5 = new global::Gtk.Entry();
-			this.entry5.WidthRequest = 120;
-			this.entry5.CanFocus = true;
-			this.entry5.Name = "entry5";
-			this.entry5.IsEditable = true;
-			this.entry5.MaxLength = 4;
-			this.entry5.InvisibleChar = '•';
-			this.fixed4.Add(this.entry5);
-			global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entry5]));
+			this.entPIN2 = new global::Gtk.Entry();
+			this.entPIN2.WidthRequest = 120;
+			this.entPIN2.CanFocus = true;
+			this.entPIN2.Name = "entPIN2";
+			this.entPIN2.IsEditable = true;
+			this.entPIN2.MaxLength = 4;
+			this.entPIN2.InvisibleChar = '•';
+			this.fixed4.Add(this.entPIN2);
+			global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entPIN2]));
 			w31.X = 478;
 			w31.Y = 365;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.button2 = new global::Gtk.Button();
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString("Ver");
-			this.fixed4.Add(this.button2);
-			global::Gtk.Fixed.FixedChild w32 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button2]));
+			this.btnPIN2 = new global::Gtk.Button();
+			this.btnPIN2.CanFocus = true;
+			this.btnPIN2.Name = "btnPIN2";
+			this.btnPIN2.UseUnderline = true;
+			this.btnPIN2.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed4.Add(this.btnPIN2);
+			global::Gtk.Fixed.FixedChild w32 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnPIN2]));
 			w32.X = 606;
 			w32.Y = 365;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.button1 = new global::Gtk.Button();
-			this.button1.CanFocus = true;
-			this.button1.Name = "button1";
-			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString("Ver");
-			this.fixed4.Add(this.button1);
-			global::Gtk.Fixed.FixedChild w33 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button1]));
+			this.btnPIN = new global::Gtk.Button();
+			this.btnPIN.CanFocus = true;
+			this.btnPIN.Name = "btnPIN";
+			this.btnPIN.UseUnderline = true;
+			this.btnPIN.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed4.Add(this.btnPIN);
+			global::Gtk.Fixed.FixedChild w33 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnPIN]));
 			w33.X = 607;
 			w33.Y = 327;
 			// Container child fixed4.Gtk.Fixed+FixedChild
@@ -523,6 +523,12 @@ namespace ScapProject0.Empleados
 			this.DefaultWidth = 704;
 			this.DefaultHeight = 864;
 			this.Show();
+			this.GuardarAction1.Activated += new global::System.EventHandler(this.OnGuardarAction1Activated);
+			this.CancelarAction1.Activated += new global::System.EventHandler(this.OnCancelarAction1Activated);
+			this.btnPIN2.Pressed += new global::System.EventHandler(this.OnBtnPIN2Pressed);
+			this.btnPIN2.Released += new global::System.EventHandler(this.OnBtnPIN2Released);
+			this.btnPIN.Pressed += new global::System.EventHandler(this.OnBtnPINPressed);
+			this.btnPIN.Released += new global::System.EventHandler(this.OnBtnPINReleased);
 			this.button3.Clicked += new global::System.EventHandler(this.OnButton3Clicked);
 		}
 	}

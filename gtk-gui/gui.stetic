@@ -1161,6 +1161,7 @@
         <property name="Label" translatable="yes">  Eliminar</property>
         <property name="ShortLabel" translatable="yes">  Eliminar</property>
         <property name="StockId">delete</property>
+        <signal name="Activated" handler="OnEliminarAction1Activated" />
       </action>
       <action id="ModificarAction1">
         <property name="Type">Action</property>
@@ -1176,6 +1177,7 @@
         <property name="Label" translatable="yes">  Buscar</property>
         <property name="ShortLabel" translatable="yes">  Buscar</property>
         <property name="StockId">search</property>
+        <signal name="Activated" handler="OnBuscarActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -1203,7 +1205,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry2">
+          <widget class="Gtk.Entry" id="entBuscar">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
@@ -1255,7 +1257,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Empleados.FrmAddEmp" design-size="410 508">
+  <widget class="Gtk.Window" id="ScapProject0.Empleados.FrmAddEmp" design-size="714 825">
     <action-group name="Default">
       <action id="GuardarAction">
         <property name="Type">Action</property>
@@ -1282,6 +1284,7 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarAction1Activated" />
       </action>
       <action id="CancelarAction1">
         <property name="Type">Action</property>
@@ -1289,6 +1292,7 @@
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelarAction1Activated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -1609,12 +1613,13 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry4">
+          <widget class="Gtk.Entry" id="entPIN">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="MaxLength">4</property>
+            <property name="Visibility">False</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
@@ -1623,7 +1628,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry5">
+          <widget class="Gtk.Entry" id="entPIN2">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
@@ -1637,12 +1642,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <widget class="Gtk.Button" id="btnPIN2">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Ver</property>
             <property name="UseUnderline">True</property>
+            <signal name="Pressed" handler="OnBtnPIN2Pressed" />
+            <signal name="Released" handler="OnBtnPIN2Released" />
           </widget>
           <packing>
             <property name="X">606</property>
@@ -1650,12 +1657,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="btnPIN">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Ver</property>
             <property name="UseUnderline">True</property>
+            <signal name="Pressed" handler="OnBtnPINPressed" />
+            <signal name="Released" handler="OnBtnPINReleased" />
           </widget>
           <packing>
             <property name="X">607</property>
@@ -1772,8 +1781,8 @@
             <signal name="Clicked" handler="OnButton3Clicked" />
           </widget>
           <packing>
-            <property name="X">49</property>
-            <property name="Y">785</property>
+            <property name="X">46</property>
+            <property name="Y">764</property>
           </packing>
         </child>
       </widget>
@@ -1806,6 +1815,7 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarAction1Activated" />
       </action>
       <action id="CancelarAction1">
         <property name="Type">Action</property>
@@ -1813,6 +1823,7 @@
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelarAction1Activated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -2133,7 +2144,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry4">
+          <widget class="Gtk.Entry" id="entPIN">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
@@ -2147,7 +2158,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry5">
+          <widget class="Gtk.Entry" id="entPIN2">
             <property name="MemberName" />
             <property name="WidthRequest">120</property>
             <property name="CanFocus">True</property>
@@ -2161,12 +2172,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <widget class="Gtk.Button" id="btnPIN2">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Ver</property>
             <property name="UseUnderline">True</property>
+            <signal name="Pressed" handler="OnBtnPIN2Pressed" />
+            <signal name="Released" handler="OnBtnPIN2Released" />
           </widget>
           <packing>
             <property name="X">606</property>
@@ -2174,12 +2187,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="btnPIN">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Ver</property>
             <property name="UseUnderline">True</property>
+            <signal name="Pressed" handler="OnBtnPINPressed" />
+            <signal name="Released" handler="OnBtnPINReleased" />
           </widget>
           <packing>
             <property name="X">607</property>
