@@ -62,22 +62,22 @@ namespace ScapProject0.Datos
             return datos;
         }
     
-        public bool Justificar(List<int> ids)
+        public bool Justificar(List<int> ids, int idJustificacion)
         {
             bool guardado = false; //Bandera
             int x = 0; //Variable de control
 
             sb.Clear();
-            //sb.Append("INSERT INTO LMBA.Justificacion ");
-            //sb.Append("(estado, descripcion, fechaEntrada, fechaSalida, horaEntrada, horaSalida) ");
-            //sb.Append("VALUES ('" +
-            //tjus.Estado + "', " +
-            //tjus.Descripcion + "', " +
-            //tjus.FechaEntrada + "', " +
-            //tjus.FechaSalida + "', " +
-            //tjus.HoraEntrada + "', " +
-            //tjus.HoraSalida + "', " +
-            //"';");
+            sb.Append("USE LMBA; ");
+            ids.ForEach((id) =>
+            {
+                sb.Append("UPDATE registroES ");
+                sb.Append($"INNER JOIN Justificacion ON Justificacion.idJustificacion = {idJustificacion} ");
+                sb.Append("SET registroES.idJustificacion = Justificacion.idJustificacion ");
+                sb.Append($"WHERE registroES.idRegistro = {id} ");
+                sb.Append("AND registroES.fecha >= Justificacion.fechaEntrada ");
+                sb.Append("AND registroES.fecha <= Justificacion.fechaSalida; ");
+            });
 
             try
             {

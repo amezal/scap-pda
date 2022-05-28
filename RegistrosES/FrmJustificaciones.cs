@@ -12,6 +12,7 @@ namespace ScapProject0.RegistrosES
         private List<int> ids;
         private int idEmp;
         Dt_tbl_justificaciones dtjus = new Dt_tbl_justificaciones();
+        Dt_tbl_registroES dtreg = new Dt_tbl_registroES();
 
         public Window Caller { get => caller; set => caller = value; }
         public List<int> Ids { get => ids; set => ids = value; }
@@ -49,8 +50,9 @@ namespace ScapProject0.RegistrosES
                 HoraSalida = DateTime.Parse(entHoraFin.Text + ":" + entMinFin.Text + ":00"),
             };
 
-            guardado = dtjus.NuevaJustificacion(tjus);
-            //guardado = 
+            int idJustificacion = dtjus.NuevaJustificacion(tjus);
+            //int idJustificacion = 14;
+            guardado = dtreg.Justificar(ids, idJustificacion);
 
             if (guardado)
             {
