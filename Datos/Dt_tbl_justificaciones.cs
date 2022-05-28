@@ -14,11 +14,10 @@ namespace ScapProject0.Datos
         MessageDialog ms = null;
         StringBuilder sb = new StringBuilder();
 
-        public bool NuevaJustificacion(Tbl_Justificacion tjus)
+        public int NuevaJustificacion(Tbl_Justificacion tjus)
         {
-            bool guardado = false; //Bandera
-            int x = 0; //Variable de control
-
+            int id;
+            IDataReader idr = null;
             sb.Clear();
             sb.Append("INSERT INTO LMBA.Justificacion ");
             sb.Append("(estado, descripcion, fechaEntrada, fechaSalida, horaEntrada, horaSalida) ");
@@ -28,17 +27,15 @@ namespace ScapProject0.Datos
             tjus.FechaEntrada.ToString("yyyy-MM-dd") + "', '" +
             tjus.FechaSalida.ToString("yyyy-MM-dd") + "', '" +
             tjus.HoraEntrada.TimeOfDay.ToString() + "', '" +
-            tjus.HoraSalida.TimeOfDay.ToString() + "');");
+            tjus.HoraSalida.TimeOfDay.ToString() + "'); ");
+            sb.Append("SELECT Max(idJustificacion) FROM LMBA.Justificacion;");
 
             try
             {
                 con.AbrirConexion();
-                x = con.Ejecutar(CommandType.Text, sb.ToString());
-
-                if (x > 0)
-                {
-                    guardado = true;
-                }
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                idr.Read();
+                id = Convert.ToInt32(idr[0]);
             }
             catch (Exception e)
             {
@@ -55,8 +52,7 @@ namespace ScapProject0.Datos
             {
                 con.CerrarConexion();
             }
-            return guardado;
-
+            return id;
         }
 
     }
