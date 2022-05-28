@@ -17,7 +17,7 @@ namespace ScapProject0.Datos
         public ListStore ListarRegistros(int idEmpleado)
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
+            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
             );
             IDataReader idr = null;
             sb.Clear();
@@ -30,6 +30,7 @@ namespace ScapProject0.Datos
                 idr = con.Leer(CommandType.Text, sb.ToString());
                 while (idr.Read())
                 {
+                    var id = idr["idRegistro"].ToString();
                     var fecha = idr["fecha"].ToString().Split(' ')[0];
                     TimeSpan horaEntrada = TimeSpan.Parse(idr["horaEntrada"].ToString());
                     TimeSpan horaSalida = TimeSpan.Parse(idr["horaSalida"].ToString());
@@ -40,7 +41,7 @@ namespace ScapProject0.Datos
                     TimeSpan horasTrabajadas = horaSalida.Subtract(horaEntrada).Subtract(almuerzo);
                     TimeSpan horasExtra = horasTrabajadas.Subtract(horasNecesitadas);
 
-                    datos.AppendValues(fecha, horaEntrada.ToString(),
+                    datos.AppendValues(id, fecha, horaEntrada.ToString(),
                     horaSalida.ToString(), horasTrabajadas.ToString(),
                         horasExtra.ToString());
                 }
@@ -60,5 +61,51 @@ namespace ScapProject0.Datos
 
             return datos;
         }
+    
+        public bool Justificar(List<int> ids)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+
+            sb.Clear();
+            //sb.Append("INSERT INTO LMBA.Justificacion ");
+            //sb.Append("(estado, descripcion, fechaEntrada, fechaSalida, horaEntrada, horaSalida) ");
+            //sb.Append("VALUES ('" +
+            //tjus.Estado + "', " +
+            //tjus.Descripcion + "', " +
+            //tjus.FechaEntrada + "', " +
+            //tjus.FechaSalida + "', " +
+            //tjus.HoraEntrada + "', " +
+            //tjus.HoraSalida + "', " +
+            //"';");
+
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                return false;
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+            return guardado;
+        }
+
     }
 }
