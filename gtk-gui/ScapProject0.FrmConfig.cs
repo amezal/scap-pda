@@ -14,6 +14,10 @@ namespace ScapProject0
 
 		private global::Gtk.Button button7;
 
+		private global::Gtk.Button button1;
+
+		private global::Gtk.Button button2;
+
 		private global::Gtk.Button button8;
 
 		protected virtual void Build()
@@ -34,7 +38,7 @@ namespace ScapProject0
 			this.button4.CanFocus = true;
 			this.button4.Name = "button4";
 			this.button4.UseUnderline = true;
-			this.button4.Label = global::Mono.Unix.Catalog.GetString("ADMINISTRAR CONTRASENAS");
+			this.button4.Label = global::Mono.Unix.Catalog.GetString("Usuarios");
 			this.fixed2.Add(this.button4);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button4]));
 			w1.X = 90;
@@ -46,7 +50,7 @@ namespace ScapProject0
 			this.button5.CanFocus = true;
 			this.button5.Name = "button5";
 			this.button5.UseUnderline = true;
-			this.button5.Label = global::Mono.Unix.Catalog.GetString("HORARIOS");
+			this.button5.Label = global::Mono.Unix.Catalog.GetString("Horarios");
 			this.fixed2.Add(this.button5);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button5]));
 			w2.X = 90;
@@ -58,7 +62,7 @@ namespace ScapProject0
 			this.button6.CanFocus = true;
 			this.button6.Name = "button6";
 			this.button6.UseUnderline = true;
-			this.button6.Label = global::Mono.Unix.Catalog.GetString("CARGOS");
+			this.button6.Label = global::Mono.Unix.Catalog.GetString("Cargos");
 			this.fixed2.Add(this.button6);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button6]));
 			w3.X = 90;
@@ -70,11 +74,35 @@ namespace ScapProject0
 			this.button7.CanFocus = true;
 			this.button7.Name = "button7";
 			this.button7.UseUnderline = true;
-			this.button7.Label = global::Mono.Unix.Catalog.GetString("DEPARTAMENTOS");
+			this.button7.Label = global::Mono.Unix.Catalog.GetString("Departamentos");
 			this.fixed2.Add(this.button7);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button7]));
 			w4.X = 90;
 			w4.Y = 201;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.button1 = new global::Gtk.Button();
+			this.button1.WidthRequest = 221;
+			this.button1.HeightRequest = 29;
+			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
+			this.button1.UseUnderline = true;
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("Rol");
+			this.fixed2.Add(this.button1);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button1]));
+			w5.X = 90;
+			w5.Y = 260;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.button2 = new global::Gtk.Button();
+			this.button2.WidthRequest = 221;
+			this.button2.HeightRequest = 29;
+			this.button2.CanFocus = true;
+			this.button2.Name = "button2";
+			this.button2.UseUnderline = true;
+			this.button2.Label = global::Mono.Unix.Catalog.GetString("Opcion");
+			this.fixed2.Add(this.button2);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button2]));
+			w6.X = 90;
+			w6.Y = 321;
 			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.button8 = new global::Gtk.Button();
 			this.button8.WidthRequest = 119;
@@ -82,18 +110,18 @@ namespace ScapProject0
 			this.button8.CanFocus = true;
 			this.button8.Name = "button8";
 			this.button8.UseUnderline = true;
-			this.button8.Label = global::Mono.Unix.Catalog.GetString("REGRESAR");
+			this.button8.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed2.Add(this.button8);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button8]));
-			w5.X = 15;
-			w5.Y = 260;
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button8]));
+			w7.X = 13;
+			w7.Y = 404;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
 			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultHeight = 476;
 			this.Show();
 			this.button4.Clicked += new global::System.EventHandler(this.OnButton4Clicked);
 			this.button5.Clicked += new global::System.EventHandler(this.OnButton5Clicked);

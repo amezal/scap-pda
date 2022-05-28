@@ -3002,7 +3002,7 @@
         <child>
           <widget class="Gtk.Label" id="label1">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">ACCEDER COMO:</property>
+            <property name="LabelProp" translatable="yes">Acceder como:</property>
             <property name="Justify">Center</property>
           </widget>
           <packing>
@@ -3016,7 +3016,7 @@
             <property name="WidthRequest">152</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">EMPLEADO</property>
+            <property name="Label" translatable="yes">Empleado</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton1Clicked" />
           </widget>
@@ -3031,7 +3031,7 @@
             <property name="WidthRequest">152</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">ADMINISTRADOR</property>
+            <property name="Label" translatable="yes">Administrador</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton2Clicked" />
           </widget>
@@ -3047,7 +3047,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">SALIR</property>
+            <property name="Label" translatable="yes">Salir</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3058,7 +3058,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.FrmConfig" design-size="400 300">
+  <widget class="Gtk.Window" id="ScapProject0.FrmConfig" design-size="400 476">
     <property name="MemberName" />
     <property name="Title" translatable="yes">FrmConfig</property>
     <property name="WindowPosition">Center</property>
@@ -3073,7 +3073,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">ADMINISTRAR CONTRASENAS</property>
+            <property name="Label" translatable="yes">Usuarios</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton4Clicked" />
           </widget>
@@ -3089,7 +3089,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">HORARIOS</property>
+            <property name="Label" translatable="yes">Horarios</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton5Clicked" />
           </widget>
@@ -3105,7 +3105,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">CARGOS</property>
+            <property name="Label" translatable="yes">Cargos</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton6Clicked" />
           </widget>
@@ -3121,7 +3121,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">DEPARTAMENTOS</property>
+            <property name="Label" translatable="yes">Departamentos</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton7Clicked" />
           </widget>
@@ -3131,19 +3131,49 @@
           </packing>
         </child>
         <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="WidthRequest">221</property>
+            <property name="HeightRequest">29</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Rol</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">90</property>
+            <property name="Y">260</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button2">
+            <property name="MemberName" />
+            <property name="WidthRequest">221</property>
+            <property name="HeightRequest">29</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Opcion</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">90</property>
+            <property name="Y">321</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Button" id="button8">
             <property name="MemberName" />
             <property name="WidthRequest">119</property>
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">REGRESAR</property>
+            <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton8Clicked" />
           </widget>
           <packing>
-            <property name="X">15</property>
-            <property name="Y">260</property>
+            <property name="X">13</property>
+            <property name="Y">404</property>
           </packing>
         </child>
       </widget>
@@ -3306,7 +3336,7 @@
         <child>
           <widget class="Gtk.Label" id="label4">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">AREA:</property>
+            <property name="LabelProp" translatable="yes">Area:</property>
           </widget>
           <packing>
             <property name="X">88</property>
@@ -3329,7 +3359,7 @@
         <child>
           <widget class="Gtk.Label" id="label5">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">USUARIO:</property>
+            <property name="LabelProp" translatable="yes">Usuario:</property>
           </widget>
           <packing>
             <property name="X">88</property>
@@ -3379,7 +3409,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">SALIR</property>
+            <property name="Label" translatable="yes">Salir</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3394,7 +3424,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">INGRESAR</property>
+            <property name="Label" translatable="yes">Ingresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton12Clicked" />
           </widget>
@@ -3417,7 +3447,7 @@
         <child>
           <widget class="Gtk.Label" id="label7">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">EMPLEADO:</property>
+            <property name="LabelProp" translatable="yes">Empleado:</property>
           </widget>
           <packing>
             <property name="X">88</property>
@@ -3467,7 +3497,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">SALIR</property>
+            <property name="Label" translatable="yes">Salir</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3482,7 +3512,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">INGRESAR</property>
+            <property name="Label" translatable="yes">Ingresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton14Clicked" />
           </widget>
@@ -3519,7 +3549,7 @@
             <property name="HeightRequest">48</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">ENTRADA</property>
+            <property name="Label" translatable="yes">Entrada</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3534,7 +3564,7 @@
             <property name="HeightRequest">48</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">SALIDA</property>
+            <property name="Label" translatable="yes">Salida</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3549,7 +3579,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">REGRESAR</property>
+            <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton17Clicked" />
           </widget>
@@ -3589,7 +3619,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">EMPLEADOS</property>
+            <property name="Label" translatable="yes">Empleados</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton22Clicked" />
           </widget>
@@ -3605,7 +3635,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">REGRESAR</property>
+            <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton25Clicked" />
           </widget>
@@ -3621,7 +3651,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GENERAR REPORTES</property>
+            <property name="Label" translatable="yes">Generar reportes</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton24Clicked" />
           </widget>
@@ -3637,7 +3667,7 @@
             <property name="HeightRequest">29</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">REGISTROS</property>
+            <property name="Label" translatable="yes">Registros</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton23Clicked" />
           </widget>

@@ -40,7 +40,7 @@ namespace ScapProject0
 			this.button15.CanFocus = true;
 			this.button15.Name = "button15";
 			this.button15.UseUnderline = true;
-			this.button15.Label = global::Mono.Unix.Catalog.GetString("ENTRADA");
+			this.button15.Label = global::Mono.Unix.Catalog.GetString("Entrada");
 			this.fixed7.Add(this.button15);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button15]));
 			w2.X = 105;
@@ -52,7 +52,7 @@ namespace ScapProject0
 			this.button16.CanFocus = true;
 			this.button16.Name = "button16";
 			this.button16.UseUnderline = true;
-			this.button16.Label = global::Mono.Unix.Catalog.GetString("SALIDA");
+			this.button16.Label = global::Mono.Unix.Catalog.GetString("Salida");
 			this.fixed7.Add(this.button16);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button16]));
 			w3.X = 291;
@@ -64,7 +64,7 @@ namespace ScapProject0
 			this.button17.CanFocus = true;
 			this.button17.Name = "button17";
 			this.button17.UseUnderline = true;
-			this.button17.Label = global::Mono.Unix.Catalog.GetString("REGRESAR");
+			this.button17.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed7.Add(this.button17);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed7[this.button17]));
 			w4.X = 28;

@@ -28,7 +28,7 @@ namespace ScapProject0
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label1 = new global::Gtk.Label();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("ACCEDER COMO:");
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Acceder como:");
 			this.label1.Justify = ((global::Gtk.Justification)(2));
 			this.fixed1.Add(this.label1);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
@@ -40,7 +40,7 @@ namespace ScapProject0
 			this.button1.CanFocus = true;
 			this.button1.Name = "button1";
 			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString("EMPLEADO");
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("Empleado");
 			this.fixed1.Add(this.button1);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button1]));
 			w2.X = 122;
@@ -51,7 +51,7 @@ namespace ScapProject0
 			this.button2.CanFocus = true;
 			this.button2.Name = "button2";
 			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString("ADMINISTRADOR");
+			this.button2.Label = global::Mono.Unix.Catalog.GetString("Administrador");
 			this.fixed1.Add(this.button2);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button2]));
 			w3.X = 122;
@@ -63,7 +63,7 @@ namespace ScapProject0
 			this.button3.CanFocus = true;
 			this.button3.Name = "button3";
 			this.button3.UseUnderline = true;
-			this.button3.Label = global::Mono.Unix.Catalog.GetString("SALIR");
+			this.button3.Label = global::Mono.Unix.Catalog.GetString("Salir");
 			this.fixed1.Add(this.button3);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button3]));
 			w4.X = 15;
