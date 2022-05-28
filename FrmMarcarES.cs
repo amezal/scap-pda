@@ -114,7 +114,23 @@ namespace ScapProject0
 
         protected void OnBtnSalidaClicked(object sender, EventArgs e)
         {
+            bool guardado = false;
             btnSalida.Sensitive = false;
-        }
+            Tbl_registroES reg = new Tbl_registroES()
+            {
+                IdRegistro = dtreg.UltimoRegistro(idEmp),
+                HoraSalida = DateTime.Now
+            };
+            guardado = dtreg.MarcarSalida(reg);
+
+            if (guardado)
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Salida marcada correctamente");
+                ms.Run();
+                ms.Destroy();
+            }
+
+        }   
     }
 }
