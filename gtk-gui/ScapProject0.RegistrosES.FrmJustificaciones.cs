@@ -6,7 +6,7 @@ namespace ScapProject0.RegistrosES
 	{
 		private global::Gtk.UIManager UIManager;
 
-		private global::Gtk.Action CancelarAction;
+		private global::Gtk.Action GuardarAction;
 
 		private global::Gtk.Action cancelAction;
 
@@ -14,29 +14,29 @@ namespace ScapProject0.RegistrosES
 
 		private global::Gtk.Toolbar toolbar1;
 
-		private global::Gtk.Calendar calendar6;
+		private global::Gtk.Calendar cldFin;
 
 		private global::Gtk.Label label1;
 
-		private global::Gtk.Calendar calendar5;
+		private global::Gtk.Calendar cldInicio;
 
 		private global::Gtk.Label label2;
 
 		private global::Gtk.Label label3;
 
-		private global::Gtk.SpinButton spinbutton2;
+		private global::Gtk.SpinButton entHoraInicio;
 
 		private global::Gtk.Label label4;
 
-		private global::Gtk.SpinButton spinbutton3;
+		private global::Gtk.SpinButton entMinInicio;
 
 		private global::Gtk.Label label5;
 
-		private global::Gtk.SpinButton spinbutton4;
+		private global::Gtk.SpinButton entHoraFin;
 
 		private global::Gtk.Label label6;
 
-		private global::Gtk.SpinButton spinbutton5;
+		private global::Gtk.SpinButton entMinFin;
 
 		private global::Gtk.Label label7;
 
@@ -44,7 +44,7 @@ namespace ScapProject0.RegistrosES
 
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
-		private global::Gtk.TextView textview5;
+		private global::Gtk.TextView entDesc;
 
 		protected virtual void Build()
 		{
@@ -52,10 +52,10 @@ namespace ScapProject0.RegistrosES
 			// Widget ScapProject0.RegistrosES.FrmJustificaciones
 			this.UIManager = new global::Gtk.UIManager();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
-			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "save");
-			this.CancelarAction.IsImportant = true;
-			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
-			w1.Add(this.CancelarAction, null);
+			this.GuardarAction = new global::Gtk.Action("GuardarAction", global::Mono.Unix.Catalog.GetString("  Guardar"), null, "save");
+			this.GuardarAction.IsImportant = true;
+			this.GuardarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
+			w1.Add(this.GuardarAction, null);
 			this.cancelAction = new global::Gtk.Action("cancelAction", null, null, "cancel");
 			this.cancelAction.IsImportant = true;
 			this.cancelAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
@@ -72,9 +72,9 @@ namespace ScapProject0.RegistrosES
 			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar1\'><toolitem name=\'CancelarAction\' action=\'CancelarActi" +
-					"on\'/><separator/><toolitem name=\'cancelAction\' action=\'cancelAction\'/></toolbar>" +
-					"</ui>");
+			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar1\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
+					"\'/><separator/><toolitem name=\'cancelAction\' action=\'cancelAction\'/></toolbar></" +
+					"ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -83,12 +83,12 @@ namespace ScapProject0.RegistrosES
 			w2.X = 3;
 			w2.Y = 9;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.calendar6 = new global::Gtk.Calendar();
-			this.calendar6.CanFocus = true;
-			this.calendar6.Name = "calendar6";
-			this.calendar6.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
-			this.fixed1.Add(this.calendar6);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.calendar6]));
+			this.cldFin = new global::Gtk.Calendar();
+			this.cldFin.CanFocus = true;
+			this.cldFin.Name = "cldFin";
+			this.cldFin.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
+			this.fixed1.Add(this.cldFin);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cldFin]));
 			w3.X = 496;
 			w3.Y = 73;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -100,12 +100,12 @@ namespace ScapProject0.RegistrosES
 			w4.X = 16;
 			w4.Y = 99;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.calendar5 = new global::Gtk.Calendar();
-			this.calendar5.CanFocus = true;
-			this.calendar5.Name = "calendar5";
-			this.calendar5.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
-			this.fixed1.Add(this.calendar5);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.calendar5]));
+			this.cldInicio = new global::Gtk.Calendar();
+			this.cldInicio.CanFocus = true;
+			this.cldInicio.Name = "cldInicio";
+			this.cldInicio.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
+			this.fixed1.Add(this.cldInicio);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cldInicio]));
 			w5.X = 116;
 			w5.Y = 71;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -125,14 +125,14 @@ namespace ScapProject0.RegistrosES
 			w7.X = 23;
 			w7.Y = 298;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.spinbutton2 = new global::Gtk.SpinButton(0D, 24D, 1D);
-			this.spinbutton2.CanFocus = true;
-			this.spinbutton2.Name = "spinbutton2";
-			this.spinbutton2.Adjustment.PageIncrement = 10D;
-			this.spinbutton2.ClimbRate = 1D;
-			this.spinbutton2.Numeric = true;
-			this.fixed1.Add(this.spinbutton2);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.spinbutton2]));
+			this.entHoraInicio = new global::Gtk.SpinButton(0D, 23D, 1D);
+			this.entHoraInicio.CanFocus = true;
+			this.entHoraInicio.Name = "entHoraInicio";
+			this.entHoraInicio.Adjustment.PageIncrement = 10D;
+			this.entHoraInicio.ClimbRate = 1D;
+			this.entHoraInicio.Numeric = true;
+			this.fixed1.Add(this.entHoraInicio);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entHoraInicio]));
 			w8.X = 114;
 			w8.Y = 291;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -144,14 +144,14 @@ namespace ScapProject0.RegistrosES
 			w9.X = 193;
 			w9.Y = 298;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.spinbutton3 = new global::Gtk.SpinButton(0D, 59D, 1D);
-			this.spinbutton3.CanFocus = true;
-			this.spinbutton3.Name = "spinbutton3";
-			this.spinbutton3.Adjustment.PageIncrement = 10D;
-			this.spinbutton3.ClimbRate = 1D;
-			this.spinbutton3.Numeric = true;
-			this.fixed1.Add(this.spinbutton3);
-			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.spinbutton3]));
+			this.entMinInicio = new global::Gtk.SpinButton(0D, 59D, 1D);
+			this.entMinInicio.CanFocus = true;
+			this.entMinInicio.Name = "entMinInicio";
+			this.entMinInicio.Adjustment.PageIncrement = 10D;
+			this.entMinInicio.ClimbRate = 1D;
+			this.entMinInicio.Numeric = true;
+			this.fixed1.Add(this.entMinInicio);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entMinInicio]));
 			w10.X = 204;
 			w10.Y = 291;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -163,14 +163,14 @@ namespace ScapProject0.RegistrosES
 			w11.X = 415;
 			w11.Y = 298;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.spinbutton4 = new global::Gtk.SpinButton(0D, 24D, 1D);
-			this.spinbutton4.CanFocus = true;
-			this.spinbutton4.Name = "spinbutton4";
-			this.spinbutton4.Adjustment.PageIncrement = 10D;
-			this.spinbutton4.ClimbRate = 1D;
-			this.spinbutton4.Numeric = true;
-			this.fixed1.Add(this.spinbutton4);
-			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.spinbutton4]));
+			this.entHoraFin = new global::Gtk.SpinButton(0D, 23D, 1D);
+			this.entHoraFin.CanFocus = true;
+			this.entHoraFin.Name = "entHoraFin";
+			this.entHoraFin.Adjustment.PageIncrement = 10D;
+			this.entHoraFin.ClimbRate = 1D;
+			this.entHoraFin.Numeric = true;
+			this.fixed1.Add(this.entHoraFin);
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entHoraFin]));
 			w12.X = 494;
 			w12.Y = 291;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -182,14 +182,14 @@ namespace ScapProject0.RegistrosES
 			w13.X = 573;
 			w13.Y = 298;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.spinbutton5 = new global::Gtk.SpinButton(0D, 59D, 1D);
-			this.spinbutton5.CanFocus = true;
-			this.spinbutton5.Name = "spinbutton5";
-			this.spinbutton5.Adjustment.PageIncrement = 10D;
-			this.spinbutton5.ClimbRate = 1D;
-			this.spinbutton5.Numeric = true;
-			this.fixed1.Add(this.spinbutton5);
-			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.spinbutton5]));
+			this.entMinFin = new global::Gtk.SpinButton(0D, 59D, 1D);
+			this.entMinFin.CanFocus = true;
+			this.entMinFin.Name = "entMinFin";
+			this.entMinFin.Adjustment.PageIncrement = 10D;
+			this.entMinFin.ClimbRate = 1D;
+			this.entMinFin.Numeric = true;
+			this.fixed1.Add(this.entMinFin);
+			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entMinFin]));
 			w14.X = 584;
 			w14.Y = 291;
 			// Container child fixed1.Gtk.Fixed+FixedChild
@@ -212,29 +212,29 @@ namespace ScapProject0.RegistrosES
 			w16.Y = 611;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow.WidthRequest = 575;
+			this.GtkScrolledWindow.HeightRequest = 227;
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.textview5 = new global::Gtk.TextView();
-			this.textview5.WidthRequest = 563;
-			this.textview5.HeightRequest = 219;
-			this.textview5.CanFocus = true;
-			this.textview5.Name = "textview5";
-			this.textview5.LeftMargin = 10;
-			this.textview5.RightMargin = 10;
-			this.GtkScrolledWindow.Add(this.textview5);
+			this.entDesc = new global::Gtk.TextView();
+			this.entDesc.CanFocus = true;
+			this.entDesc.Name = "entDesc";
+			this.GtkScrolledWindow.Add(this.entDesc);
 			this.fixed1.Add(this.GtkScrolledWindow);
 			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
-			w18.X = 142;
-			w18.Y = 371;
+			w18.X = 144;
+			w18.Y = 375;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 779;
+			this.DefaultWidth = 788;
 			this.DefaultHeight = 705;
 			this.Show();
+			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
+			this.cancelAction.Activated += new global::System.EventHandler(this.OnCancelActionActivated);
 			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
 		}
 	}

@@ -882,14 +882,15 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.RegistrosES.FrmJustificaciones" design-size="779 705">
+  <widget class="Gtk.Window" id="ScapProject0.RegistrosES.FrmJustificaciones" design-size="788 705">
     <action-group name="Default">
-      <action id="CancelarAction">
+      <action id="GuardarAction">
         <property name="Type">Action</property>
         <property name="IsImportant">True</property>
-        <property name="Label" translatable="yes">  Cancelar</property>
-        <property name="ShortLabel" translatable="yes">  Cancelar</property>
+        <property name="Label" translatable="yes">  Guardar</property>
+        <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarActionActivated" />
       </action>
       <action id="cancelAction">
         <property name="Type">Action</property>
@@ -897,6 +898,7 @@
         <property name="Label" translatable="yes" />
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -913,7 +915,7 @@
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
             <node name="toolbar1" type="Toolbar">
-              <node type="Toolitem" action="CancelarAction" />
+              <node type="Toolitem" action="GuardarAction" />
               <node type="Separator" />
               <node type="Toolitem" action="cancelAction" />
             </node>
@@ -924,7 +926,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Calendar" id="calendar6">
+          <widget class="Gtk.Calendar" id="cldFin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="DisplayOptions">35</property>
@@ -945,7 +947,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Calendar" id="calendar5">
+          <widget class="Gtk.Calendar" id="cldInicio">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="DisplayOptions">35</property>
@@ -976,10 +978,10 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.SpinButton" id="spinbutton2">
+          <widget class="Gtk.SpinButton" id="entHoraInicio">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Upper">24</property>
+            <property name="Upper">23</property>
             <property name="PageIncrement">10</property>
             <property name="StepIncrement">1</property>
             <property name="ClimbRate">1</property>
@@ -1001,7 +1003,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.SpinButton" id="spinbutton3">
+          <widget class="Gtk.SpinButton" id="entMinInicio">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Upper">59</property>
@@ -1026,10 +1028,10 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.SpinButton" id="spinbutton4">
+          <widget class="Gtk.SpinButton" id="entHoraFin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Upper">24</property>
+            <property name="Upper">23</property>
             <property name="PageIncrement">10</property>
             <property name="StepIncrement">1</property>
             <property name="ClimbRate">1</property>
@@ -1051,7 +1053,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.SpinButton" id="spinbutton5">
+          <widget class="Gtk.SpinButton" id="entMinFin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Upper">59</property>
@@ -1092,23 +1094,21 @@
         <child>
           <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
             <property name="MemberName" />
+            <property name="WidthRequest">575</property>
+            <property name="HeightRequest">227</property>
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.TextView" id="textview5">
+              <widget class="Gtk.TextView" id="entDesc">
                 <property name="MemberName" />
-                <property name="WidthRequest">563</property>
-                <property name="HeightRequest">219</property>
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
                 <property name="Text" translatable="yes" />
-                <property name="LeftMargin">10</property>
-                <property name="RightMargin">10</property>
               </widget>
             </child>
           </widget>
           <packing>
-            <property name="X">142</property>
-            <property name="Y">371</property>
+            <property name="X">144</property>
+            <property name="Y">375</property>
           </packing>
         </child>
       </widget>

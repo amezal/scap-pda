@@ -148,6 +148,8 @@
     <Compile Include="Datos\Dt_tbl_horario.cs" />
     <Compile Include="Entidades\Tbl_horario.cs" />
     <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Datos\Dt_tbl_justificaciones.cs" />
+    <Compile Include="Entidades\Tbl_Justificacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />

@@ -2,6 +2,7 @@
 using Gtk;
 using ScapProject0.Datos;
 using ScapProject0.Entidades;
+using System.Collections.Generic;
 
 namespace ScapProject0.RegistrosES
 {
@@ -22,8 +23,8 @@ namespace ScapProject0.RegistrosES
             this.idEmpActivo = 1;
             this.llenarCbxeEmpleado();
 
-            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof (string), typeof(string));
-            string[] titulos = { "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra" };
+            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof(string), typeof (string), typeof(string));
+            string[] titulos = {"ID", "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra" };
 
             for (int i = 0; i < titulos.Length; i++)
             {
@@ -61,7 +62,28 @@ namespace ScapProject0.RegistrosES
 
         protected void OnJustificarActionActivated(object sender, EventArgs e)
         {
+            ListStore model = dtreg.ListarRegistros(idEmpActivo);
+            List<int> ids = new List<int>();
+
+            model.GetIterFirst(out TreeIter iter);
+            do
+            {
+                ids.Add(Convert.ToInt32(model.GetValue(iter, 0)));
+            } while (model.IterNext(ref iter));
+
+            //for (int i = 0; i < model.NColumns; i++)
+            //{
+            //    TreePath path = new TreePath(new int[] { i });
+            //    model.GetIter(out TreeIter iter, path);
+            //    int id = Convert.ToInt32(model.GetValue(iter, 0));
+            //    ids[i] = id;
+            //    Console.WriteLine("ID" + id);
+            //}
+
+
             RegistrosES.FrmJustificaciones justificaciones = new FrmJustificaciones();
+            justificaciones.Ids = ids;
+            justificaciones.IdEmp = idEmpActivo;
             justificaciones.Show();
             justificaciones.Caller = this;
             this.Hide();
