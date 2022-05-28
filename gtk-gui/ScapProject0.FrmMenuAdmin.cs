@@ -49,7 +49,7 @@ namespace ScapProject0
 			this.button22.CanFocus = true;
 			this.button22.Name = "button22";
 			this.button22.UseUnderline = true;
-			this.button22.Label = global::Mono.Unix.Catalog.GetString("EMPLEADOS");
+			this.button22.Label = global::Mono.Unix.Catalog.GetString("Empleados");
 			this.fixed9.Add(this.button22);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed9[this.button22]));
 			w2.X = 90;
@@ -61,7 +61,7 @@ namespace ScapProject0
 			this.button25.CanFocus = true;
 			this.button25.Name = "button25";
 			this.button25.UseUnderline = true;
-			this.button25.Label = global::Mono.Unix.Catalog.GetString("REGRESAR");
+			this.button25.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed9.Add(this.button25);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed9[this.button25]));
 			w3.X = 15;
@@ -73,7 +73,7 @@ namespace ScapProject0
 			this.button24.CanFocus = true;
 			this.button24.Name = "button24";
 			this.button24.UseUnderline = true;
-			this.button24.Label = global::Mono.Unix.Catalog.GetString("GENERAR REPORTES");
+			this.button24.Label = global::Mono.Unix.Catalog.GetString("Generar reportes");
 			this.fixed9.Add(this.button24);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed9[this.button24]));
 			w4.X = 90;
@@ -85,7 +85,7 @@ namespace ScapProject0
 			this.button23.CanFocus = true;
 			this.button23.Name = "button23";
 			this.button23.UseUnderline = true;
-			this.button23.Label = global::Mono.Unix.Catalog.GetString("REGISTROS");
+			this.button23.Label = global::Mono.Unix.Catalog.GetString("Registros");
 			this.fixed9.Add(this.button23);
 			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed9[this.button23]));
 			w5.X = 90;
