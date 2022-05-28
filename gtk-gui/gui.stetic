@@ -3286,7 +3286,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">REGRESAR</property>
+            <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton9Clicked" />
           </widget>
@@ -3301,7 +3301,7 @@
             <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GENERAR REPORTE</property>
+            <property name="Label" translatable="yes">Generar Reporte</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
@@ -3533,16 +3533,6 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.Label" id="label10">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">*Mensaje de bienvenida*</property>
-          </widget>
-          <packing>
-            <property name="X">5</property>
-            <property name="Y">5</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Button" id="button15">
             <property name="MemberName" />
             <property name="WidthRequest">92</property>
@@ -3581,11 +3571,23 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnButton17Clicked" />
           </widget>
           <packing>
             <property name="X">28</property>
             <property name="Y">321</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="labelHora">
+            <property name="MemberName" />
+            <property name="WidthRequest">240</property>
+            <property name="HeightRequest">120</property>
+            <property name="LabelProp" translatable="yes">00:00:00</property>
+            <property name="Justify">Center</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">46</property>
           </packing>
         </child>
       </widget>
