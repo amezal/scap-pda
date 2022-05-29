@@ -16,7 +16,10 @@ namespace ScapProject0.Empleados
         {
             this.Build();
             this.llenarEmpleados();
-            
+            //this.toolbar2.Children[0].
+            this.entBuscar.Changed += OnBuscarActionActivated;
+            this.ModificarAction1.Sensitive = false;
+            this.EliminarAction1.Sensitive = false;
         }
 
         public void refresh()
@@ -59,20 +62,21 @@ namespace ScapProject0.Empleados
 
         protected void OnTrvwEmpleadoCursorChanged(object sender, EventArgs e)
         {
-
             trvwEmpleado.GetCursor(out TreePath path, out TreeViewColumn treeviewColumn);
             var model = trvwEmpleado.Model;
             model.GetIter(out TreeIter iter, path);
             int idEmpleado = Convert.ToInt32(model.GetValue(iter, 0).ToString());
-            empActual = idEmpleado;
+            empActual = idEmpleado; 
+            this.ModificarAction1.Sensitive = true;
+            this.EliminarAction1.Sensitive = true;
         }
 
         protected void OnTrvwEmpleadoRowActivated(object o, RowActivatedArgs args)
         {
-            var model = trvwEmpleado.Model;
-            model.GetIter(out TreeIter iter, args.Path);
-            String value = model.GetValue(iter, 0).ToString();
-            Console.WriteLine(value);
+            FrmModEmp frm = new FrmModEmp(empActual);
+            frm.Show();
+            frm.Caller = this;
+            this.Hide();
         }
 
         private Gtk.Window caller;
@@ -108,6 +112,10 @@ namespace ScapProject0.Empleados
             }
             md.Destroy();
             this.trvwEmpleado.Model = dtem.ListarEmpleados(query);
+        }
+
+        protected void OnEntBuscarChanged(object sender, EventArgs e)
+        {
         }
     }
 }

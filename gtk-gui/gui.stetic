@@ -1210,6 +1210,7 @@
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
+            <signal name="Changed" handler="OnEntBuscarChanged" />
           </widget>
           <packing>
             <property name="X">434</property>
@@ -1224,7 +1225,7 @@
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Regresar</property>
+            <property name="Label">Regresar</property>
             <property name="UseUnderline">True</property>
             <signal name="Clicked" handler="OnButton1Clicked" />
           </widget>
