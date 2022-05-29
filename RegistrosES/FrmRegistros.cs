@@ -23,13 +23,16 @@ namespace ScapProject0.RegistrosES
             this.idEmpActivo = 1;
             this.llenarCbxeEmpleado();
 
-            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof(string), typeof (string), typeof(string));
-            string[] titulos = {"ID", "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra" };
+            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof(string),
+            typeof(string), typeof(string), typeof(string), typeof(string));
+            string[] titulos = {"ID", "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra", "", ""};
 
             for (int i = 0; i < titulos.Length; i++)
             {
                 this.trvwRegistros.AppendColumn(titulos[i], new CellRendererText(), "text", i);
             }
+            trvwRegistros.Columns[6].Visible = false;
+            trvwRegistros.Columns[7].Visible = false;
         }
 
         protected void llenarRegistros()
@@ -37,7 +40,6 @@ namespace ScapProject0.RegistrosES
             //this.trvwRegistros.Model = dtreg.ListarRegistros(idEmpActivo);
             ListStore model = dtreg.ListarRegistros(idEmpActivo);
             this.trvwRegistros.Model = model;
-
         }
 
         protected void llenarDatosEmpleado()
@@ -81,11 +83,13 @@ namespace ScapProject0.RegistrosES
             //}
 
 
-            RegistrosES.FrmJustificaciones justificaciones = new FrmJustificaciones();
-            justificaciones.Ids = ids;
-            justificaciones.IdEmp = idEmpActivo;
+            RegistrosES.FrmJustificaciones justificaciones = new FrmJustificaciones(idEmpActivo)
+            {
+                Ids = ids,
+                Caller = this
+            };
+
             justificaciones.Show();
-            justificaciones.Caller = this;
             this.Hide();
         }
 
