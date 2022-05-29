@@ -107,6 +107,7 @@ namespace ScapProject0.Cargos
 			this.DefaultHeight = 515;
 			this.Show();
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);
+			this.EliminarAction.Activated += new global::System.EventHandler(this.OnEliminarActionActivated);
 			this.ModificarAction.Activated += new global::System.EventHandler(this.OnModificarActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 			this.tvwCar.CursorChanged += new global::System.EventHandler(this.OnTvwCarCursorChanged);
