@@ -17,7 +17,7 @@ namespace ScapProject0.Datos
         public ListStore ListarRegistros(int idEmpleado)
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
+            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
             );
             IDataReader idr = null;
             sb.Clear();
@@ -43,7 +43,7 @@ namespace ScapProject0.Datos
 
                     datos.AppendValues(id, fecha, horaEntrada.ToString(),
                     horaSalida.ToString(), horasTrabajadas.ToString(),
-                        horasExtra.ToString());
+                        horasExtra.ToString(), entradaH.ToString(), salidaH.ToString());
                 }
             }
             catch (Exception e)
