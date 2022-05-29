@@ -5,10 +5,10 @@ namespace ScapProject0.Entidades
     {
         private Int32 idEmpleadoRegistro;
         private Int32 idRegistro;
-        private Int32 numCedula;
+        private Int32 idEmpleado;
 
         public int IdEmpleadoRegistro { get => idEmpleadoRegistro; set => idEmpleadoRegistro = value; }
         public int IdRegistro { get => idRegistro; set => idRegistro = value; }
-        public int NumCedula { get => numCedula; set => numCedula = value; }
+        public int IdEmpleado { get => idEmpleado; set => idEmpleado = value; }
     }
 }

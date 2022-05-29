@@ -67,7 +67,8 @@ namespace ScapProject0.Datos
             int idReg;
             IDataReader idr = null;
             sb.Clear();
-            sb.Append($"SELECT Max(idJustificacion) FROM LMBA.registroES where idEmpleado='{idEmp}';");
+            sb.Append($"SELECT Max(idRegistro) FROM LMBA.VwRegistro WHERE idEmpleado='{idEmp}';");
+            Console.WriteLine(sb.ToString());
 
             try
             {
@@ -75,6 +76,7 @@ namespace ScapProject0.Datos
                 idr = con.Leer(CommandType.Text, sb.ToString());
                 idr.Read();
                 idReg = Convert.ToInt32(idr[0]);
+                Console.WriteLine(idReg);
             }
             catch (Exception e)
             {
@@ -139,27 +141,24 @@ namespace ScapProject0.Datos
             return guardado;
         }
 
-        public bool NuevoRegistro(Tbl_registroES reg)
+        public int NuevoRegistro(Tbl_registroES reg)
         {
-            bool guardado = false; //Bandera
-            int x = 0; //Variable de control
+            int idReg = -1;
+            IDataReader idr = null;
 
             sb.Clear();
-            //INSERT INTO `LMBA`.`registroES` (`estado`, `fecha`) VALUES('1', '');
-
             sb.Append("USE LMBA; ");
             sb.Append("INSERT INTO registroES ");
-            sb.Append("(estado, fecha, horaEntrada) ");
-            sb.Append("");
+            sb.Append("(estado, fecha, horaEntrada) VALUES");
+            sb.Append($"('1', '{reg.Fecha.ToString("yyyy-MM-dd")}', '{reg.HoraEntrada.ToString("hh:mm:ss")}'); ");
+            sb.Append($"SELECT Max(idRegistro) FROM LMBA.VwRegistro;");
+
             try
             {
                 con.AbrirConexion();
-                x = con.Ejecutar(CommandType.Text, sb.ToString());
-
-                if (x > 0)
-                {
-                    guardado = true;
-                }
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                idr.Read();
+                idReg = Convert.ToInt32(idr[0]);
             }
             catch (Exception e)
             {
@@ -169,14 +168,13 @@ namespace ScapProject0.Datos
                 ms.Destroy();
                 Console.WriteLine("DT: ERROR= " + e.Message);
                 Console.WriteLine("DT: ERROR= " + e.StackTrace);
-                return false;
                 throw;
             }
             finally
             {
                 con.CerrarConexion();
             }
-            return guardado;
+            return idReg;
         }
     }
 }
