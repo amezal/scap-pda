@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Linux (x86_64)
 --
 -- Host: localhost    Database: LMBA
 -- ------------------------------------------------------
--- Server version	8.0.29-0ubuntu0.20.04.3
+-- Server version	8.0.28-0ubuntu0.20.04.3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `Cargo`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Cargo` (
   `idCargo` int NOT NULL AUTO_INCREMENT,
-  `nombreCargo` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `descripcion` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `estado` bit(1) NOT NULL DEFAULT b'1',
+  `nombreCargo` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `descripcion` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `estado` int NOT NULL DEFAULT '1',
   `idDepartamento` int NOT NULL,
   PRIMARY KEY (`idCargo`),
   KEY `RefDepartamento1` (`idDepartamento`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `Cargo` (
 
 LOCK TABLES `Cargo` WRITE;
 /*!40000 ALTER TABLE `Cargo` DISABLE KEYS */;
-INSERT INTO `Cargo` VALUES (1,'Analista de sistemas','Analiza los sistemas',_binary '',1),(2,'Disenador','Hace disenos',_binary '',2),(3,'Consultor','Hace consultas',_binary '',1),(4,'Experto de soporte','Soporta',_binary '',1),(5,'Analista de Negocios','Analiza negocios',_binary '',3);
+INSERT INTO `Cargo` VALUES (1,'Analista de sistemas','Analiza los sistemas',1,1),(2,'Disenador','Hace disenos',3,2),(3,'Consultor','Hace consultas',1,1),(4,'Experto de soporte','Soporta',1,1),(5,'Analista de Negocios','Analiza negocios',1,3),(6,'Director de negocios','Dirige el dpto de negocios',3,3),(7,'Director de diseño','Dirige el dpto de diseño',3,2),(8,'twst','ddd',3,3),(9,'Test','hi',3,2),(10,'rffdd','dddd',3,1),(11,'rr','rrr',3,2);
 /*!40000 ALTER TABLE `Cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,9 +52,9 @@ DROP TABLE IF EXISTS `Departamento`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Departamento` (
   `idDepartamento` int NOT NULL AUTO_INCREMENT,
-  `nombreDepartamento` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `ext` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
+  `nombreDepartamento` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ext` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `estado` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`idDepartamento`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -79,21 +79,21 @@ DROP TABLE IF EXISTS `Empleado`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Empleado` (
   `idEmpleado` int NOT NULL AUTO_INCREMENT,
-  `numCedula` varchar(16) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `numCedula` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
-  `primerNombre` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `segundoNombre` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
-  `primerApellido` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `segundoApellido` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
+  `primerNombre` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `segundoNombre` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `primerApellido` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `segundoApellido` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `fechaNacimiento` datetime NOT NULL,
   `sexo` bit(1) NOT NULL DEFAULT b'1',
   `fechaIngreso` datetime DEFAULT NULL,
-  `direccion` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `observacion` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
+  `direccion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `observacion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `fotoEmpleado` longblob,
-  `telefono` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
-  `emailPersonal` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
-  `emailCorporativo` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
+  `telefono` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `emailPersonal` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `emailCorporativo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `idCargo` int NOT NULL,
   `id_user` int DEFAULT NULL,
   `PIN` varchar(4) NOT NULL,
@@ -152,7 +152,7 @@ DROP TABLE IF EXISTS `Justificacion`;
 CREATE TABLE `Justificacion` (
   `idJustificacion` int NOT NULL AUTO_INCREMENT,
   `estado` int DEFAULT '1',
-  `descripcion` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
+  `descripcion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `fechaEntrada` datetime NOT NULL,
   `fechaSalida` datetime NOT NULL,
   `horaEntrada` time NOT NULL,
@@ -182,6 +182,7 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `ID`,
  1 AS `Cargo`,
  1 AS `Departamento`,
+ 1 AS `Descripcion`,
  1 AS `idDepartamento`*/;
 SET character_set_client = @saved_cs_client;
 
@@ -473,7 +474,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwCargo` AS select `Cargo`.`idCargo` AS `ID`,`Cargo`.`nombreCargo` AS `Cargo`,`Departamento`.`nombreDepartamento` AS `Departamento`,`Departamento`.`idDepartamento` AS `idDepartamento` from (`Cargo` join `Departamento` on((`Cargo`.`idDepartamento` = `Departamento`.`idDepartamento`))) where (`Cargo`.`estado` <> 3) */;
+/*!50001 VIEW `VwCargo` AS select `Cargo`.`idCargo` AS `ID`,`Cargo`.`nombreCargo` AS `Cargo`,`Departamento`.`nombreDepartamento` AS `Departamento`,`Cargo`.`descripcion` AS `Descripcion`,`Departamento`.`idDepartamento` AS `idDepartamento` from (`Cargo` join `Departamento` on((`Cargo`.`idDepartamento` = `Departamento`.`idDepartamento`))) where (`Cargo`.`estado` <> 3) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -577,4 +578,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-27 18:57:15
+-- Dump completed on 2022-05-28 22:26:24
