@@ -152,6 +152,7 @@
     <Compile Include="Entidades\Tbl_Justificacion.cs" />
     <Compile Include="Negocios\Ng_tbl_empleado.cs" />
     <Compile Include="Negocios\Ng_tbl_registroES.cs" />
+    <Compile Include="Datos\Dt_tbl_empleadoRegistro.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />

@@ -11,9 +11,10 @@ namespace ScapProject0
     {
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
         Dt_tbl_registroES dtreg = new Dt_tbl_registroES();
+        Dt_tbl_empleadoRegistro dtEmpReg = new Dt_tbl_empleadoRegistro();
         Ng_tbl_registroES ngreg = new Ng_tbl_registroES();
         private Gtk.Window caller;
-        private int idEmp = 1;
+        private int idEmp = 2;
         bool registroExiste;
         public Window Caller { get => caller; set => caller = value; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
@@ -24,7 +25,7 @@ namespace ScapProject0
             this.Build();
 
             DateTime hoy = DateTime.Now;
-            registroExiste = ngreg.existe("fecha", hoy.ToString("yyyy-MM-dd"), idEmp);
+            registroExiste = ngreg.existe("fecha", hoy.ToString(string.Format("{0}d", "yyyy-MM-d")), idEmp);
             if (registroExiste)
             {
                 Console.WriteLine("existe");
@@ -84,12 +85,31 @@ namespace ScapProject0
         {
             btnSalida.Sensitive = true;
             btnEntrada.Sensitive = false;
+
+            bool guardado = false;
+            int idReg;
             Tbl_registroES reg = new Tbl_registroES()
             {
                 Fecha = DateTime.Now,
                 HoraEntrada = DateTime.Now,
             };
+            idReg = dtreg.NuevoRegistro(reg);
+            guardado = idReg != -1;
 
+            Tbl_empleadoRegistro empReg = new Tbl_empleadoRegistro()
+            {
+                IdRegistro = idReg,
+                IdEmpleado = idEmp
+            };
+            guardado = dtEmpReg.NuevoEmpReg(empReg);
+
+            if (guardado)
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Registro agregado correctamente");
+                ms.Run();
+                ms.Destroy();
+            }
         }
 
         protected void OnBtnSalidaClicked(object sender, EventArgs e)
