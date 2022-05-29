@@ -10,7 +10,6 @@ namespace ScapProject0.Negocios
     public class Ng_tbl_empleado
     {
         Conexion con = new Conexion();
-        MessageDialog ms = null;
         StringBuilder sb = new StringBuilder();
 
         public bool existe(string check, string column)

@@ -8,7 +8,7 @@ namespace ScapProject0.Empleados
 {
     public partial class FrmModEmp : Gtk.Window
     {
-        private Gtk.Window caller;
+        private FrmEmp caller;
         Dt_tbl_empleado dtem = new Dt_tbl_empleado();
         Dt_tbl_cargo dtcar = new Dt_tbl_cargo();
         Dt_tbl_departamento dtdp = new Dt_tbl_departamento();
@@ -17,7 +17,7 @@ namespace ScapProject0.Empleados
         private Tbl_Empleado emp;
 
 
-        public Window Caller { get => caller; set => caller = value; }
+        public FrmEmp Caller { get => caller; set => caller = value; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
 
         protected void llenarCampos()
@@ -190,6 +190,7 @@ namespace ScapProject0.Empleados
             {
                 MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
                 ButtonsType.Ok, "Usuario modificado correctamente");
+                this.caller.refresh();
                 ms.Run();
                 ms.Destroy();
             }
