@@ -12,12 +12,12 @@ namespace ScapProject0.Negocios
         Conexion con = new Conexion();
         StringBuilder sb = new StringBuilder();
 
-        public bool existe(string check, string column)
+        public bool existe(string check, string column, string not = "")
         {
             bool ex = false; //bandera
             IDataReader idr = null;
             sb.Clear();
-            sb.Append($"SELECT * FROM LMBA.Empleados WHERE {column}='{check}'");
+            sb.Append($"SELECT * FROM LMBA.Empleado WHERE {column}='{check}' AND {column}<>'{not}'");
 
             try
             {
