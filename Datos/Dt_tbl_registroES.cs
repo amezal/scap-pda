@@ -61,7 +61,39 @@ namespace ScapProject0.Datos
 
             return datos;
         }
-    
+
+        public int UltimoRegistro(int idEmp)
+        {
+            int idReg;
+            IDataReader idr = null;
+            sb.Clear();
+            sb.Append($"SELECT Max(idJustificacion) FROM LMBA.registroES where idEmpleado='{idEmp}';");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                idr.Read();
+                idReg = Convert.ToInt32(idr[0]);
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                throw;
+            }
+
+            finally
+            {
+                con.CerrarConexion();
+            }
+            return idReg;
+        }
+
         public bool Justificar(List<int> ids, int idJustificacion)
         {
             bool guardado = false; //Bandera
@@ -107,5 +139,44 @@ namespace ScapProject0.Datos
             return guardado;
         }
 
+        public bool NuevoRegistro(Tbl_registroES reg)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+
+            sb.Clear();
+            //INSERT INTO `LMBA`.`registroES` (`estado`, `fecha`) VALUES('1', '');
+
+            sb.Append("USE LMBA; ");
+            sb.Append("INSERT INTO registroES ");
+            sb.Append("(estado, fecha, horaEntrada) ");
+            sb.Append("");
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                return false;
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+            return guardado;
+        }
     }
 }

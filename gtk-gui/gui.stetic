@@ -3525,7 +3525,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.FrmMarcarES" design-size="499 369">
+  <widget class="Gtk.Window" id="ScapProject0.FrmMarcarES" design-size="499 389">
     <property name="MemberName" />
     <property name="Title" translatable="yes">FrmMarcarES</property>
     <property name="WindowPosition">Center</property>
@@ -3534,40 +3534,41 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.Button" id="button15">
+          <widget class="Gtk.Button" id="btnEntrada">
             <property name="MemberName" />
-            <property name="WidthRequest">92</property>
-            <property name="HeightRequest">48</property>
+            <property name="WidthRequest">125</property>
+            <property name="HeightRequest">68</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Entrada</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnEntradaClicked" />
           </widget>
           <packing>
-            <property name="X">105</property>
-            <property name="Y">177</property>
+            <property name="X">77</property>
+            <property name="Y">200</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button16">
+          <widget class="Gtk.Button" id="btnSalida">
             <property name="MemberName" />
-            <property name="WidthRequest">92</property>
-            <property name="HeightRequest">48</property>
+            <property name="WidthRequest">125</property>
+            <property name="HeightRequest">68</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Salida</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnSalidaClicked" />
           </widget>
           <packing>
             <property name="X">291</property>
-            <property name="Y">177</property>
+            <property name="Y">200</property>
           </packing>
         </child>
         <child>
           <widget class="Gtk.Button" id="button17">
             <property name="MemberName" />
             <property name="WidthRequest">119</property>
-            <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
@@ -3575,7 +3576,7 @@
           </widget>
           <packing>
             <property name="X">28</property>
-            <property name="Y">321</property>
+            <property name="Y">330</property>
           </packing>
         </child>
         <child>
@@ -3588,7 +3589,17 @@
           </widget>
           <packing>
             <property name="X">131</property>
-            <property name="Y">46</property>
+            <property name="Y">65</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="labelBienvenida">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Buen dia, Alejandra!</property>
+          </widget>
+          <packing>
+            <property name="X">23</property>
+            <property name="Y">11</property>
           </packing>
         </child>
       </widget>
