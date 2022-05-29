@@ -150,6 +150,7 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Datos\Dt_tbl_justificaciones.cs" />
     <Compile Include="Entidades\Tbl_Justificacion.cs" />
+    <Compile Include="Negocios\Ng_tbl_empleado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
@@ -161,6 +162,7 @@
     <Folder Include="Empleados\" />
     <Folder Include="Cargos\" />
     <Folder Include="AdminPswd\" />
+    <Folder Include="Negocios\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
