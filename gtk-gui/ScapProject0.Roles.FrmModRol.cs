@@ -8,17 +8,15 @@ namespace ScapProject0.Roles
 
 		private global::Gtk.Action btnGuardar;
 
-		private global::Gtk.Action CancelarAction;
+		private global::Gtk.Action btnCancelar;
 
 		private global::Gtk.Fixed fixed1;
 
-		private global::Gtk.Toolbar toolbar1;
-
 		private global::Gtk.Button btnRegresar;
 
-		private global::Gtk.Entry entry1;
+		private global::Gtk.Entry txtID;
 
-		private global::Gtk.Entry entry2;
+		private global::Gtk.Entry txtRol;
 
 		private global::Gtk.Label label2;
 
@@ -26,15 +24,17 @@ namespace ScapProject0.Roles
 
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
-		private global::Gtk.TreeView treeview2;
+		private global::Gtk.TreeView trvwRolOpcion;
 
 		private global::Gtk.Label label4;
 
-		private global::Gtk.ComboBox combobox1;
+		private global::Gtk.ComboBox cbxOpcion;
 
 		private global::Gtk.Button btnAgregar;
 
-		private global::Gtk.Button button3;
+		private global::Gtk.Button btnEliminar;
+
+		private global::Gtk.Toolbar toolbar2;
 
 		protected virtual void Build()
 		{
@@ -46,10 +46,10 @@ namespace ScapProject0.Roles
 			this.btnGuardar.IsImportant = true;
 			this.btnGuardar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
 			w1.Add(this.btnGuardar, null);
-			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
-			this.CancelarAction.IsImportant = true;
-			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
-			w1.Add(this.CancelarAction, null);
+			this.btnCancelar = new global::Gtk.Action("btnCancelar", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
+			this.btnCancelar.IsImportant = true;
+			this.btnCancelar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
+			w1.Add(this.btnCancelar, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Roles.FrmModRol";
@@ -60,57 +60,50 @@ namespace ScapProject0.Roles
 			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar1\'><toolitem name=\'btnGuardar\' action=\'btnGuardar\'/><to" +
-					"olitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolbar></ui>");
-			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
-			this.toolbar1.Name = "toolbar1";
-			this.toolbar1.ShowArrow = false;
-			this.fixed1.Add(this.toolbar1);
-			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.btnRegresar = new global::Gtk.Button();
 			this.btnRegresar.CanFocus = true;
 			this.btnRegresar.Name = "btnRegresar";
 			this.btnRegresar.UseUnderline = true;
 			this.btnRegresar.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed1.Add(this.btnRegresar);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnRegresar]));
-			w3.X = 26;
-			w3.Y = 365;
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnRegresar]));
+			w2.X = 26;
+			w2.Y = 365;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.entry1 = new global::Gtk.Entry();
-			this.entry1.Name = "entry1";
-			this.entry1.IsEditable = false;
-			this.entry1.InvisibleChar = '•';
-			this.fixed1.Add(this.entry1);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry1]));
+			this.txtID = new global::Gtk.Entry();
+			this.txtID.Name = "txtID";
+			this.txtID.IsEditable = false;
+			this.txtID.InvisibleChar = '•';
+			this.fixed1.Add(this.txtID);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtID]));
+			w3.X = 120;
+			w3.Y = 81;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.txtRol = new global::Gtk.Entry();
+			this.txtRol.CanFocus = true;
+			this.txtRol.Name = "txtRol";
+			this.txtRol.IsEditable = true;
+			this.txtRol.InvisibleChar = '•';
+			this.fixed1.Add(this.txtRol);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtRol]));
 			w4.X = 120;
-			w4.Y = 81;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.entry2 = new global::Gtk.Entry();
-			this.entry2.CanFocus = true;
-			this.entry2.Name = "entry2";
-			this.entry2.IsEditable = true;
-			this.entry2.InvisibleChar = '•';
-			this.fixed1.Add(this.entry2);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry2]));
-			w5.X = 120;
-			w5.Y = 141;
+			w4.Y = 141;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label2 = new global::Gtk.Label();
 			this.label2.Name = "label2";
 			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("ID: ");
 			this.fixed1.Add(this.label2);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
-			w6.X = 79;
-			w6.Y = 88;
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
+			w5.X = 79;
+			w5.Y = 88;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label3 = new global::Gtk.Label();
 			this.label3.Name = "label3";
 			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Rol:");
 			this.fixed1.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label3]));
-			w7.X = 73;
-			w7.Y = 150;
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label3]));
+			w6.X = 73;
+			w6.Y = 150;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow.WidthRequest = 180;
@@ -118,30 +111,30 @@ namespace ScapProject0.Roles
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.treeview2 = new global::Gtk.TreeView();
-			this.treeview2.CanFocus = true;
-			this.treeview2.Name = "treeview2";
-			this.GtkScrolledWindow.Add(this.treeview2);
+			this.trvwRolOpcion = new global::Gtk.TreeView();
+			this.trvwRolOpcion.CanFocus = true;
+			this.trvwRolOpcion.Name = "trvwRolOpcion";
+			this.GtkScrolledWindow.Add(this.trvwRolOpcion);
 			this.fixed1.Add(this.GtkScrolledWindow);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
-			w9.X = 350;
-			w9.Y = 81;
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
+			w8.X = 350;
+			w8.Y = 81;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label4 = new global::Gtk.Label();
 			this.label4.Name = "label4";
 			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Opcion:");
 			this.fixed1.Add(this.label4);
-			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label4]));
-			w10.X = 47;
-			w10.Y = 207;
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label4]));
+			w9.X = 47;
+			w9.Y = 207;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.combobox1 = global::Gtk.ComboBox.NewText();
-			this.combobox1.WidthRequest = 172;
-			this.combobox1.Name = "combobox1";
-			this.fixed1.Add(this.combobox1);
-			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.combobox1]));
-			w11.X = 120;
-			w11.Y = 199;
+			this.cbxOpcion = global::Gtk.ComboBox.NewText();
+			this.cbxOpcion.WidthRequest = 172;
+			this.cbxOpcion.Name = "cbxOpcion";
+			this.fixed1.Add(this.cbxOpcion);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cbxOpcion]));
+			w10.X = 120;
+			w10.Y = 199;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.btnAgregar = new global::Gtk.Button();
 			this.btnAgregar.CanFocus = true;
@@ -149,19 +142,26 @@ namespace ScapProject0.Roles
 			this.btnAgregar.UseUnderline = true;
 			this.btnAgregar.Label = global::Mono.Unix.Catalog.GetString("Agregar");
 			this.fixed1.Add(this.btnAgregar);
-			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnAgregar]));
-			w12.X = 120;
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnAgregar]));
+			w11.X = 120;
+			w11.Y = 240;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.btnEliminar = new global::Gtk.Button();
+			this.btnEliminar.CanFocus = true;
+			this.btnEliminar.Name = "btnEliminar";
+			this.btnEliminar.UseUnderline = true;
+			this.btnEliminar.Label = global::Mono.Unix.Catalog.GetString("Eliminar");
+			this.fixed1.Add(this.btnEliminar);
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnEliminar]));
+			w12.X = 218;
 			w12.Y = 240;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.button3 = new global::Gtk.Button();
-			this.button3.CanFocus = true;
-			this.button3.Name = "button3";
-			this.button3.UseUnderline = true;
-			this.button3.Label = global::Mono.Unix.Catalog.GetString("Eliminar");
-			this.fixed1.Add(this.button3);
-			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button3]));
-			w13.X = 218;
-			w13.Y = 240;
+			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar2\'><toolitem name=\'btnGuardar\' action=\'btnGuardar\'/><to" +
+					"olitem name=\'btnCancelar\' action=\'btnCancelar\'/></toolbar></ui>");
+			this.toolbar2 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar2")));
+			this.toolbar2.Name = "toolbar2";
+			this.toolbar2.ShowArrow = false;
+			this.fixed1.Add(this.toolbar2);
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
@@ -170,8 +170,10 @@ namespace ScapProject0.Roles
 			this.DefaultWidth = 595;
 			this.DefaultHeight = 453;
 			this.Show();
-			this.CancelarAction.Activated += new global::System.EventHandler(this.OnCancelarActionActivated);
+			this.btnGuardar.Activated += new global::System.EventHandler(this.OnBtnGuardarActivated);
+			this.btnCancelar.Activated += new global::System.EventHandler(this.OnBtnCancelarActivated);
 			this.btnRegresar.Clicked += new global::System.EventHandler(this.OnBtnRegresarClicked);
+			this.btnAgregar.Clicked += new global::System.EventHandler(this.OnBtnAgregarClicked);
 		}
 	}
 }

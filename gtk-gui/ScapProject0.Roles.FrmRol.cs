@@ -65,6 +65,8 @@ namespace ScapProject0.Roles
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
 			this.fixed1.Add(this.toolbar1);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.toolbar1]));
+			w2.X = 2;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entBuscar = new global::Gtk.Entry();
 			this.entBuscar.WidthRequest = 247;

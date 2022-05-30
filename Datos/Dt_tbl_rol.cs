@@ -84,6 +84,46 @@ namespace ScapProject0.Datos
                 con.CerrarConexion();
             }
         }
+
+        public bool ModificarRol(Tbl_rol rol)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+
+            sb.Clear();
+            //INSERT INTO `LMBA`.`registroES` (`estado`, `fecha`) VALUES('1', '');
+
+            sb.Append("USE LMBA; ");
+            sb.Append($"UPDATE rol SET estado='1', rol='{rol.Rol}' ");
+            sb.Append($"WHERE id_rol = {rol.Id_rol}");
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                return false;
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+            return guardado;
+        }
+
     }
 }
 

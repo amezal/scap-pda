@@ -19,6 +19,12 @@ namespace ScapProject0.Roles
             this.btnModificar.Sensitive = false;
             this.btnEliminar.Sensitive = false;
         }
+
+        public void refresh()
+        {
+            this.trvwRol.Model = dtrol.ListarRoles(query);
+        }
+
         protected void ListarRoles()
         {
             this.trvwRol.Model = dtrol.ListarRoles(query);
