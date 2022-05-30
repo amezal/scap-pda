@@ -18,7 +18,7 @@ namespace ScapProject0.Departamentos
             this.Build();
             this.tvwDpto.Model = dtDpto.ListarDpto();
 
-            string[] titulos = { "ID", "Departamento" };
+            string[] titulos = { "ID", "Departamento", "Extensión", "Email" };
 
             for (int i = 0; i < titulos.Length; i++)
             {
