@@ -17,12 +17,16 @@ namespace ScapProject0.Datos
         public ListStore ListarRegistros(int idEmpleado)
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string)
-            );
+            typeof(string), typeof(string), typeof(string), typeof(string),
+            typeof(string), typeof(string), typeof(string), typeof(string),
+            typeof(string));
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT * From LMBA.VwRegistro ");
-            sb.Append("WHERE idEmpleado = " + idEmpleado + ";");
+            sb.Append("SELECT VwRegistro.*, ");
+            sb.Append("CONCAt(j.descripcion, ' ', j.horaEntrada, ' - ', j.horaSalida) AS Justificacion ");
+            sb.Append("FROM VwRegistro LEFT JOIN Justificacion j ");
+            sb.Append("ON j.idJustificacion = VwRegistro.idJustificacion ");
+            sb.Append($"WHERE idEmpleado = '{idEmpleado}';");
 
             try
             {
@@ -40,10 +44,11 @@ namespace ScapProject0.Datos
                     TimeSpan horasNecesitadas = salidaH.Subtract(entradaH).Subtract(almuerzo);
                     TimeSpan horasTrabajadas = horaSalida.Subtract(horaEntrada).Subtract(almuerzo);
                     TimeSpan horasExtra = horasTrabajadas.Subtract(horasNecesitadas);
+                    string justificacion = idr["Justificacion"].ToString();
 
                     datos.AppendValues(id, fecha, horaEntrada.ToString(),
                     horaSalida.ToString(), horasTrabajadas.ToString(),
-                        horasExtra.ToString(), entradaH.ToString(), salidaH.ToString());
+                        horasExtra.ToString(), entradaH.ToString(), salidaH.ToString(), justificacion);
                 }
             }
             catch (Exception e)
