@@ -14,7 +14,7 @@ namespace ScapProject0.Roles
 
 		private global::Gtk.Toolbar toolbar1;
 
-		private global::Gtk.Button button1;
+		private global::Gtk.Button btnRegresar;
 
 		private global::Gtk.Entry entry1;
 
@@ -67,20 +67,19 @@ namespace ScapProject0.Roles
 			this.toolbar1.ShowArrow = false;
 			this.fixed1.Add(this.toolbar1);
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.button1 = new global::Gtk.Button();
-			this.button1.CanFocus = true;
-			this.button1.Name = "button1";
-			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
-			this.fixed1.Add(this.button1);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button1]));
+			this.btnRegresar = new global::Gtk.Button();
+			this.btnRegresar.CanFocus = true;
+			this.btnRegresar.Name = "btnRegresar";
+			this.btnRegresar.UseUnderline = true;
+			this.btnRegresar.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed1.Add(this.btnRegresar);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnRegresar]));
 			w3.X = 26;
 			w3.Y = 365;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry1 = new global::Gtk.Entry();
-			this.entry1.CanFocus = true;
 			this.entry1.Name = "entry1";
-			this.entry1.IsEditable = true;
+			this.entry1.IsEditable = false;
 			this.entry1.InvisibleChar = '•';
 			this.fixed1.Add(this.entry1);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry1]));
@@ -171,6 +170,8 @@ namespace ScapProject0.Roles
 			this.DefaultWidth = 595;
 			this.DefaultHeight = 453;
 			this.Show();
+			this.CancelarAction.Activated += new global::System.EventHandler(this.OnCancelarActionActivated);
+			this.btnRegresar.Clicked += new global::System.EventHandler(this.OnBtnRegresarClicked);
 		}
 	}
 }

@@ -4279,6 +4279,7 @@
         <property name="Label" translatable="yes">  Modificar</property>
         <property name="ShortLabel" translatable="yes">  Modificar</property>
         <property name="StockId">modify</property>
+        <signal name="Activated" handler="OnBtnModificarActivated" />
       </action>
       <action id="btnBuscar">
         <property name="Type">Action</property>
@@ -4382,6 +4383,7 @@
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelarActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -4402,12 +4404,13 @@
           </widget>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="btnRegresar">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnRegresarClicked" />
           </widget>
           <packing>
             <property name="X">26</property>
@@ -4417,8 +4420,7 @@
         <child>
           <widget class="Gtk.Entry" id="entry1">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
+            <property name="IsEditable">False</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
