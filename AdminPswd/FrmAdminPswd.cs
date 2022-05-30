@@ -18,7 +18,7 @@ namespace ScapProject0.AdminPswd
             this.Build();
             this.trvwAdminPswd.Model = dtus.ListarUser();
 
-            string[] titulos = { "ID", "Nombre", "Apellido", "Email", "Password" };
+            string[] titulos = { "ID", "Nombre", "Apellido", "Email", "Usuario","Password" };
 
             for (int i = 0; i < titulos.Length; i++)
             {
