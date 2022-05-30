@@ -49,5 +49,12 @@ namespace ScapProject0.Roles
             //frm.Caller = this;
             //this.Hide();
         }
+
+        protected void OnBtnModificarActivated(object sender, EventArgs e)
+        {
+            FrmModRol frm = new FrmModRol(rolActual) { Caller = this };
+            frm.Show();
+            this.Hide();
+        }
     }
 }
