@@ -23,7 +23,8 @@ namespace ScapProject0.Datos
             typeof(string), typeof(string), typeof(string), typeof(string), typeof(string));
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT * FROM LMBA.VwHorario;");
+            sb.Append("SELECT * FROM LMBA.VwHorario ");
+            sb.Append("WHERE nombre LIKE '" + query + "%';");
 
             try
             {
@@ -101,13 +102,13 @@ namespace ScapProject0.Datos
             sb.Clear();
             sb.Append("INSERT INTO LMBA.Horario ");
             sb.Append("(nombre, horaInicio, horaSalida, almuerzo, estado) ");
-            sb.Append("VALUES ('" 
+            sb.Append("VALUES ('"
                         + thor.Nombre + "','" +
                         thor.HoraInicio.ToString("H:mm:ss") + "','" +
                         thor.HoraSalida.ToString("H:mm:ss") + "','" +
                         thor.Almuerzo.ToString("H:mm:ss") + "','" +
-                        1 + "','"+
-                         "')" );
+                        1 +
+                         "');");
 
             try
             {
@@ -149,7 +150,7 @@ namespace ScapProject0.Datos
                     "horaSalida = '" + temp.HoraSalida.ToString("H:mm:ss") + "'," +
                     "almuerzo = '" + temp.Almuerzo.ToString("H:mm:ss") + "'," +
                     "estado = '" + 2 +
-                     "'WHERE Horario.idHorario = " + temp.Id_Horario + ";");
+                     "' WHERE Horario.idHorario = " + temp.Id_Horario + ";");
 
             try
             {

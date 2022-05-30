@@ -9,8 +9,10 @@ namespace ScapProject0.UserRol
     {
         private Gtk.Window caller;
         Dt_tbl_UserRol dtUR = new Dt_tbl_UserRol();
+        private int idUserRolActual;
 
         public Window Caller { get => caller; set => caller = value; }
+        public int IdUserRolActual { get => idUserRolActual; set => idUserRolActual = value; }
 
         protected void llenarUser()
         {
@@ -26,6 +28,7 @@ namespace ScapProject0.UserRol
                 base(Gtk.WindowType.Toplevel)
         {
             this.Build();
+            this.llenarUser();
         }
 
         protected void OnAddActionActivated(object sender, EventArgs e)
@@ -34,6 +37,21 @@ namespace ScapProject0.UserRol
             frm.Show();
             frm.Caller = this;
             this.Hide();
+        }
+
+        protected void OnModifyActionActivated(object sender, EventArgs e)
+        {
+            UserRol.frmModUserRol frm = new frmModUserRol(IdUserRolActual);
+            frm.Show();
+            frm.Caller = this;
+            this.Hide();
+
+        }
+
+
+
+        protected void OnModifyActionChanged(object o, ChangedArgs args)
+        {
         }
     }
 }

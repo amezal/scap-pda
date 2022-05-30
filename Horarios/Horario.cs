@@ -10,10 +10,12 @@ namespace ScapProject0.Horarios
         Dt_tbl_horario dth = new Dt_tbl_horario();
         private int horActual;
         private string query = "";
+        MessageDialog ms = null;
 
         public Horario() :
                 base(WindowType.Toplevel)
         {
+
             this.Build();
             this.llenarHorario();
             this.entBuscar.Changed += OnBuscarActionActivated;
@@ -55,11 +57,20 @@ namespace ScapProject0.Horarios
 
         protected void OnModifyActionActivated(object sender, EventArgs e)
         {
-            //ScapProject0.Horarios.FrmModHor frm = new FrmModHor();
-            FrmModHor frm = new FrmModHor(horActual);
-            frm.Show();
-            frm.Caller = this;
-            this.Hide();
+            if (horActual == 0)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Seleccione un cargo");
+                ms.Run();
+                ms.Destroy();
+            }
+            else
+            {
+                Horarios.FrmModHor frm = new FrmModHor(horActual);
+                frm.Show();
+                frm.Caller = this;
+                this.Hide();
+                Console.WriteLine(horActual);
+            }
         }
 
         protected void OnBtnBackHorClicked(object sender, EventArgs e)
@@ -110,6 +121,24 @@ namespace ScapProject0.Horarios
             }
             md.Destroy();
             this.trvwHorario.Model = dth.ListarHorario(query);
+        }
+
+        protected void OnSaveActionActivated(object sender, EventArgs e)
+        {
+            if (horActual == 0)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Seleccione un cargo");
+                ms.Run();
+                ms.Destroy();
+            }
+            else
+            {
+                Horarios.FrmModHor frm = new Horarios.FrmModHor(horActual);
+                frm.Show();
+                //frm.Caller = this;
+                this.Hide();
+                Console.WriteLine(horActual);
+            }
         }
     }
 }

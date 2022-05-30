@@ -89,7 +89,7 @@ namespace ScapProject0.Horarios
                 entName.GrabFocus();
                 return valido;
             }
-            if (nghor.existe(entName.Text, "emailCorporativo"))
+            if (nghor.existe(entName.Text, "nombre", this.idHor))
             {
                 modal("Ya existe un Horario con este nombre");
                 entName.GrabFocus();

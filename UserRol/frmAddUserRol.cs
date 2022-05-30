@@ -18,25 +18,25 @@ namespace ScapProject0.UserRol
         protected void llenarCbxSelectUser()
         {
             List<Tbl_user> listUser = dtus.cbxUser();
-            this.llenarCbxSelectUser.InsertText(0, "Seleccione...");
+          // this.llenarCbxSelectUser.InsertText(0, "Seleccione...");
 
             foreach (Tbl_user tus in listUser)
             {
-                this.llenarCbxSelectUser.InsertText(tus.Id_user, tus.User);
+          //      this.llenarCbxSelectUser.InsertText(tus.Id_user, tus.User);
             }
-            this.cbxSelectDpto.Active = 0;
+           // this.cbxSelectDpto.Active = 0;
         }
 
         protected void llenarCbxSelectRol()
         {
             List<Tbl_rol> listRol = dtur.cbxRol();
-            this.llenarCbxSelectRol.InsertText(0, "Seleccione...");
+        //    this.llenarCbxSelectRol.InsertText(0, "Seleccione...");
 
             foreach (Tbl_rol tro in listRol)
             {
-                this.llenarCbxSelectRol.InsertText(tro.Id_rol, tro.Id_rol);
+         //       this.llenarCbxSelectRol.InsertText(tro.Id_rol, tro.Id_rol);
             }
-            this.llenarCbxSelectRol.Active = 0;
+         //   this.llenarCbxSelectRol.Active = 0;
         }
 
 
@@ -50,8 +50,9 @@ namespace ScapProject0.UserRol
 
         protected void OnBtnRegresarActivated(object sender, EventArgs e)
         {
-            this.Hide();
             this.caller.Show();
+            this.Hide();
+
         }
 
         protected void OnGuardarActionActivated(object sender, EventArgs e)

@@ -11,12 +11,13 @@ namespace ScapProject0.AdminPswd
         //Objetos Globales
         Dt_tbl_user dtus = new Dt_tbl_user();
         private int userActual = 1;
+        string query = "";
 
         public FrmAdminPswd() :
                 base(Gtk.WindowType.Toplevel)
         {
             this.Build();
-            this.trvwAdminPswd.Model = dtus.ListarUser();
+            this.trvwAdminPswd.Model = dtus.ListarUser(query);
 
             string[] titulos = { "ID", "Nombre", "Apellido", "Email", "Usuario","Password" };
 
@@ -27,7 +28,7 @@ namespace ScapProject0.AdminPswd
         }
         public void refresh()
         {
-            this.trvwAdminPswd.Model = dtus.ListarUser();
+            this.trvwAdminPswd.Model = dtus.ListarUser(query);
         }
 
         protected void OnAddActionActivated(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace ScapProject0.AdminPswd
                 }
             }
             md.Destroy();
-            this.trvwAdminPswd.Model = dtus.ListarUser();
+            this.trvwAdminPswd.Model = dtus.ListarUser(query);
         }
 
         protected void OnModificarAction2Activated(object sender, EventArgs e)

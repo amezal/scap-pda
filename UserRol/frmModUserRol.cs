@@ -23,9 +23,9 @@ namespace ScapProject0.UserRol
 
             foreach (Tbl_rol tro in listRol)
             {
-                this.cbxRol.InsertText(tro.Id_rol, tro.Rol);
+           //     this.cbxRol.InsertText(tro.Id_rol, tro.Rol);
             }
-            this.cbxRol.Active = 0;
+       //    this.cbxRol.Active = 0;
         }
 
         protected void llenarCbxUser()
@@ -35,9 +35,9 @@ namespace ScapProject0.UserRol
 
             foreach (Tbl_user tus in listUser)
             {
-                this.cbxUser.InsertText(tus.Id_user, tus.User);
+          //      this.cbxUser.InsertText(tus.Id_user, tus.User);
             }
-            this.cbxUser.Active = 0;
+          //  this.cbxUser.Active = 0;
         }
 
         public frmModUserRol(int idUserRolActual) :
@@ -52,5 +52,11 @@ namespace ScapProject0.UserRol
 
         public int IdUserRol { get => idUserRol; set => idUserRol = value; }
         public Window Caller { get => caller; set => caller = value; }
+
+        protected void OnBtnRegresarActivated(object sender, EventArgs e)
+        {
+            this.caller.Show();
+            this.Hide();
+        }
     }
 }

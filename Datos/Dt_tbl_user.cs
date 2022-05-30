@@ -23,8 +23,9 @@ namespace ScapProject0.Datos
                 typeof(string), typeof(string));
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT * FROM LMBA.VwUser;");
-            sb.Append("WHERE concat(Nombre, Apellido) LIKE '" + query + "%';");
+            sb.Append("SELECT * FROM LMBA.VwUser ");
+            sb.Append("WHERE Username LIKE '" + query + "%';");
+
 
             try
             {
@@ -144,14 +145,14 @@ namespace ScapProject0.Datos
             int x = 0; //Variable de control
             sb.Clear();
             sb.Append("INSERT INTO LMBA.user ");
-            sb.Append("(nombres, apellidos, email, user, pwd)");
+            sb.Append("(nombres, apellidos, email, user, pwd, estado)");
             sb.Append("VALUES ('" +
             tus.Nombres + "','" +
             tus.Apellidos + "','" +
             tus.Email + "','" +
             tus.User + "','" +
-            tus.Pwd+ "','" +
-            "');");
+            tus.Pwd + "','" +
+            1+ "');");
 
             try
             {

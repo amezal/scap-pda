@@ -14,8 +14,10 @@ namespace ScapProject0.Horarios
 
         Dt_tbl_horario dthor = new Dt_tbl_horario();
         Ng_tbl_horario nghor = new Ng_tbl_horario();
+        private int idHor;
 
         public Horario Caller { get => caller; set => caller = value; }
+        public int IdHor { get => idHor; set => idHor = value; }
 
         public FrmAddHor() :
                 base(Gtk.WindowType.Toplevel)
@@ -47,7 +49,7 @@ namespace ScapProject0.Horarios
                 entNombreHor.GrabFocus();
                 return valido;
             }
-            if (nghor.existe(entNombreHor.Text, "emailCorporativo"))
+            if (nghor.existe(entNombreHor.Text, "nombre", this.idHor))
             {
                 modal("Ya existe un Horario con este nombre");
                 entNombreHor.GrabFocus();
