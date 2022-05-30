@@ -160,6 +160,13 @@
     <Compile Include="Datos\Dt_tbl_rol.cs" />
     <Compile Include="Datos\Dt_tbl_opcion.cs" />
     <Compile Include="gtk-gui\ScapProject0.Opcion.FrmOpcion.cs" />
+    <Compile Include="UserRol\frmUserRol.cs" />
+    <Compile Include="gtk-gui\ScapProject0.UserRol.frmUserRol.cs" />
+    <Compile Include="UserRol\frmAddUserRol.cs" />
+    <Compile Include="gtk-gui\ScapProject0.UserRol.frmAddUserRol.cs" />
+    <Compile Include="gtk-gui\ScapProject0.UserRol.frmModUserRol.cs" />
+    <Compile Include="UserRol\frmModUserRol.cs" />
+    <Compile Include="Datos\Dt_tbl_UserRol.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
@@ -173,6 +180,7 @@
     <Folder Include="AdminPswd\" />
     <Folder Include="Negocios\" />
     <Folder Include="Roles\" />
+    <Folder Include="UserRol\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
