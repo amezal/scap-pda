@@ -4397,7 +4397,7 @@
           <widget class="Gtk.Toolbar" id="toolbar1">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="__gtksharp_74_Stetic_Editor_ActionToolbar" type="Toolbar">
+            <node name="toolbar1" type="Toolbar">
               <node type="Toolitem" action="btnGuardar" />
               <node type="Toolitem" action="CancelarAction" />
             </node>
@@ -4418,7 +4418,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry1">
+          <widget class="Gtk.Entry" id="txtID">
             <property name="MemberName" />
             <property name="IsEditable">False</property>
             <property name="InvisibleChar">•</property>
@@ -4429,7 +4429,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry2">
+          <widget class="Gtk.Entry" id="txtRol">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
@@ -4467,7 +4467,7 @@
             <property name="HeightRequest">240</property>
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.TreeView" id="treeview2">
+              <widget class="Gtk.TreeView" id="trvwRolOpcion">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
@@ -4490,7 +4490,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.ComboBox" id="combobox1">
+          <widget class="Gtk.ComboBox" id="cbxOpcion">
             <property name="MemberName" />
             <property name="WidthRequest">172</property>
             <property name="IsTextCombo">True</property>
@@ -4515,7 +4515,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button3">
+          <widget class="Gtk.Button" id="btnEliminar">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
