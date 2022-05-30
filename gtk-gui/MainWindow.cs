@@ -28,6 +28,7 @@ public partial class MainWindow
 		this.DefaultHeight = 336;
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.fixed1 = new global::Gtk.Fixed();
+		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.button2 = new global::Gtk.Button();

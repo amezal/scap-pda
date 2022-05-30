@@ -8,25 +8,25 @@ namespace ScapProject0.Cargos
 
 		private global::Gtk.Action GuardarAction;
 
-		private global::Gtk.Action CancelarAction;
+		private global::Gtk.Action btnCancelar;
 
 		private global::Gtk.Fixed fixed1;
 
-		private global::Gtk.Label label1;
-
-		private global::Gtk.Label label2;
-
-		private global::Gtk.Entry TxtCargo;
-
 		private global::Gtk.Toolbar toolbar3;
+
+		private global::Gtk.Label label1;
 
 		private global::Gtk.ComboBox cbxSelectDpto;
 
-		private global::Gtk.Label label3;
+		private global::Gtk.Entry TxtDescTuani;
+
+		private global::Gtk.Entry TxtCargo;
 
 		private global::Gtk.Button btnBack;
 
-		private global::Gtk.Entry TxtDescTuani;
+		private global::Gtk.Label label3;
+
+		private global::Gtk.Label label2;
 
 		protected virtual void Build()
 		{
@@ -38,10 +38,10 @@ namespace ScapProject0.Cargos
 			this.GuardarAction.IsImportant = true;
 			this.GuardarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
 			w1.Add(this.GuardarAction, null);
-			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
-			this.CancelarAction.IsImportant = true;
-			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
-			w1.Add(this.CancelarAction, null);
+			this.btnCancelar = new global::Gtk.Action("btnCancelar", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
+			this.btnCancelar.IsImportant = true;
+			this.btnCancelar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
+			w1.Add(this.btnCancelar, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Cargos.FrmAddCargos";
@@ -52,67 +52,31 @@ namespace ScapProject0.Cargos
 			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.label1 = new global::Gtk.Label();
-			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Departamento:");
-			this.fixed1.Add(this.label1);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-			w2.X = 80;
-			w2.Y = 155;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.label2 = new global::Gtk.Label();
-			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Cargo:");
-			this.fixed1.Add(this.label2);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
-			w3.X = 137;
-			w3.Y = 207;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.TxtCargo = new global::Gtk.Entry();
-			this.TxtCargo.CanFocus = true;
-			this.TxtCargo.Name = "TxtCargo";
-			this.TxtCargo.IsEditable = true;
-			this.TxtCargo.InvisibleChar = '•';
-			this.fixed1.Add(this.TxtCargo);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.TxtCargo]));
-			w4.X = 207;
-			w4.Y = 201;
-			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar3\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
-					"\'/><toolitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolbar></ui>");
+					"\'/><toolitem name=\'btnCancelar\' action=\'btnCancelar\'/></toolbar></ui>");
 			this.toolbar3 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar3")));
 			this.toolbar3.Name = "toolbar3";
 			this.toolbar3.ShowArrow = false;
 			this.fixed1.Add(this.toolbar3);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.toolbar3]));
-			w5.X = 30;
-			w5.Y = 34;
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.toolbar3]));
+			w2.X = 30;
+			w2.Y = 34;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.label1 = new global::Gtk.Label();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Departamento:");
+			this.fixed1.Add(this.label1);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
+			w3.X = 83;
+			w3.Y = 117;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.cbxSelectDpto = global::Gtk.ComboBox.NewText();
 			this.cbxSelectDpto.WidthRequest = 172;
 			this.cbxSelectDpto.Name = "cbxSelectDpto";
 			this.fixed1.Add(this.cbxSelectDpto);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cbxSelectDpto]));
-			w6.X = 207;
-			w6.Y = 147;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Descripcion:");
-			this.fixed1.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label3]));
-			w7.X = 100;
-			w7.Y = 259;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.btnBack = new global::Gtk.Button();
-			this.btnBack.CanFocus = true;
-			this.btnBack.Name = "btnBack";
-			this.btnBack.UseUnderline = true;
-			this.btnBack.Label = global::Mono.Unix.Catalog.GetString("Regresar");
-			this.fixed1.Add(this.btnBack);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnBack]));
-			w8.X = 44;
-			w8.Y = 341;
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cbxSelectDpto]));
+			w4.X = 205;
+			w4.Y = 110;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.TxtDescTuani = new global::Gtk.Entry();
 			this.TxtDescTuani.CanFocus = true;
@@ -120,9 +84,45 @@ namespace ScapProject0.Cargos
 			this.TxtDescTuani.IsEditable = true;
 			this.TxtDescTuani.InvisibleChar = '•';
 			this.fixed1.Add(this.TxtDescTuani);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.TxtDescTuani]));
-			w9.X = 207;
-			w9.Y = 252;
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.TxtDescTuani]));
+			w5.X = 205;
+			w5.Y = 247;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.TxtCargo = new global::Gtk.Entry();
+			this.TxtCargo.CanFocus = true;
+			this.TxtCargo.Name = "TxtCargo";
+			this.TxtCargo.IsEditable = true;
+			this.TxtCargo.InvisibleChar = '•';
+			this.fixed1.Add(this.TxtCargo);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.TxtCargo]));
+			w6.X = 205;
+			w6.Y = 177;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.btnBack = new global::Gtk.Button();
+			this.btnBack.CanFocus = true;
+			this.btnBack.Name = "btnBack";
+			this.btnBack.UseUnderline = true;
+			this.btnBack.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed1.Add(this.btnBack);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnBack]));
+			w7.X = 41;
+			w7.Y = 342;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.label3 = new global::Gtk.Label();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Descripcion:");
+			this.fixed1.Add(this.label3);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label3]));
+			w8.X = 97;
+			w8.Y = 252;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.label2 = new global::Gtk.Label();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Cargo: ");
+			this.fixed1.Add(this.label2);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
+			w9.X = 133;
+			w9.Y = 181;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
@@ -131,6 +131,8 @@ namespace ScapProject0.Cargos
 			this.DefaultWidth = 496;
 			this.DefaultHeight = 425;
 			this.Show();
+			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
+			this.btnCancelar.Activated += new global::System.EventHandler(this.OnBtnCancelarActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}

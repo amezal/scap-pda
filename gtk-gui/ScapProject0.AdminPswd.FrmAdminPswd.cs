@@ -6,8 +6,6 @@ namespace ScapProject0.AdminPswd
 	{
 		private global::Gtk.UIManager UIManager;
 
-		private global::Gtk.Action AgregarAction;
-
 		private global::Gtk.Action r;
 
 		private global::Gtk.Action EliminarAction;
@@ -22,7 +20,7 @@ namespace ScapProject0.AdminPswd
 
 		private global::Gtk.Action BuscarAction1;
 
-		private global::Gtk.Action AgregarAction1;
+		private global::Gtk.Action btnAgregar;
 
 		private global::Gtk.Action EliminarAction1;
 
@@ -48,10 +46,6 @@ namespace ScapProject0.AdminPswd
 			// Widget ScapProject0.AdminPswd.FrmAdminPswd
 			this.UIManager = new global::Gtk.UIManager();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
-			this.AgregarAction = new global::Gtk.Action("AgregarAction", global::Mono.Unix.Catalog.GetString("  Agregar "), null, "add");
-			this.AgregarAction.IsImportant = true;
-			this.AgregarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Agregar");
-			w1.Add(this.AgregarAction, null);
 			this.r = new global::Gtk.Action("r", global::Mono.Unix.Catalog.GetString("Eliminar"), null, "gtk-redo");
 			this.r.IsImportant = true;
 			this.r.ShortLabel = global::Mono.Unix.Catalog.GetString("Eliminar");
@@ -84,10 +78,10 @@ namespace ScapProject0.AdminPswd
 			this.BuscarAction1.IsImportant = true;
 			this.BuscarAction1.ShortLabel = global::Mono.Unix.Catalog.GetString("  Buscar");
 			w1.Add(this.BuscarAction1, null);
-			this.AgregarAction1 = new global::Gtk.Action("AgregarAction1", global::Mono.Unix.Catalog.GetString("  Agregar"), null, "add");
-			this.AgregarAction1.IsImportant = true;
-			this.AgregarAction1.ShortLabel = global::Mono.Unix.Catalog.GetString("  Agregar");
-			w1.Add(this.AgregarAction1, null);
+			this.btnAgregar = new global::Gtk.Action("btnAgregar", global::Mono.Unix.Catalog.GetString("  Agregar"), null, "add");
+			this.btnAgregar.IsImportant = true;
+			this.btnAgregar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Agregar");
+			w1.Add(this.btnAgregar, null);
 			this.EliminarAction1 = new global::Gtk.Action("EliminarAction1", global::Mono.Unix.Catalog.GetString("  Eliminar"), null, "delete");
 			this.EliminarAction1.IsImportant = true;
 			this.EliminarAction1.ShortLabel = global::Mono.Unix.Catalog.GetString("  Eliminar");
@@ -120,7 +114,7 @@ namespace ScapProject0.AdminPswd
 			w2.X = 43;
 			w2.Y = 380;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='AgregarAction1' action='AgregarAction1'/><toolitem name='EliminarAction1' action='EliminarAction1'/><toolitem name='ModificarAction2' action='ModificarAction2'/><toolitem name='BuscarAction2' action='BuscarAction2'/></toolbar></ui>");
+			this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='btnAgregar' action='btnAgregar'/><toolitem name='EliminarAction1' action='EliminarAction1'/><toolitem name='ModificarAction2' action='ModificarAction2'/><toolitem name='BuscarAction2' action='BuscarAction2'/></toolbar></ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -163,8 +157,7 @@ namespace ScapProject0.AdminPswd
 			this.DefaultWidth = 659;
 			this.DefaultHeight = 438;
 			this.Show();
-			//this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);
-			this.AgregarAction1.Activated += new global::System.EventHandler(this.OnAddActionActivated);
+			this.btnAgregar.Activated += new global::System.EventHandler(this.OnAddActionActivated);
 			this.ModificarAction2.Activated += new global::System.EventHandler(this.OnModifyActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}

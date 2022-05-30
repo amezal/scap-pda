@@ -78,5 +78,12 @@ namespace ScapProject0.Cargos
                 Console.WriteLine(ex.Message);
             }
         }
+
+        protected void OnBtnCancelarActivated(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.caller.Show();
+        }
+
     }
 }

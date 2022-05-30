@@ -38,7 +38,7 @@ namespace ScapProject0.Opcion
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Opcion.FrmModOpc";
 			this.Title = global::Mono.Unix.Catalog.GetString("FrmModOpc");
-			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			// Container child ScapProject0.Opcion.FrmModOpc.Gtk.Container+ContainerChild
 			this.fixed2 = new global::Gtk.Fixed();
 			this.fixed2.Name = "fixed2";

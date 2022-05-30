@@ -105,6 +105,7 @@ namespace ScapProject0.Empleados
 			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.button1 = new global::Gtk.Button();
 			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
 			this.button1.UseUnderline = true;
 			this.button1.Label = "Regresar";
 			this.fixed2.Add(this.button1);

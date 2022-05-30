@@ -39,17 +39,14 @@ namespace ScapProject0.Opcion
 			this.UIManager = new global::Gtk.UIManager();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
 			this.Action = new global::Gtk.Action("Action", null, null, null);
-			this.Action.ShortLabel = "";
 			w1.Add(this.Action, null);
 			this.btnAdd = new global::Gtk.Action("btnAdd", global::Mono.Unix.Catalog.GetString("Agregar"), null, "add");
 			this.btnAdd.IsImportant = true;
 			this.btnAdd.ShortLabel = global::Mono.Unix.Catalog.GetString("Agregar");
 			w1.Add(this.btnAdd, null);
 			this.deleteAction = new global::Gtk.Action("deleteAction", null, null, "delete");
-			this.deleteAction.ShortLabel = "";
 			w1.Add(this.deleteAction, null);
 			this.deleteAction1 = new global::Gtk.Action("deleteAction1", null, null, "delete");
-			this.deleteAction1.ShortLabel = "";
 			w1.Add(this.deleteAction1, null);
 			this.btnDelete = new global::Gtk.Action("btnDelete", global::Mono.Unix.Catalog.GetString("Eliminar"), null, "delete");
 			this.btnDelete.IsImportant = true;

@@ -10,11 +10,9 @@ namespace ScapProject0.Departamentos
 
 		private global::Gtk.Action EliminarAction;
 
-		private global::Gtk.Action modifyAction;
+		private global::Gtk.Action btnBuscar;
 
-		private global::Gtk.Action BuscarAction;
-
-		private global::Gtk.Action ModificarAction;
+		private global::Gtk.Action btnModificar;
 
 		private global::Gtk.Fixed fixed1;
 
@@ -42,16 +40,14 @@ namespace ScapProject0.Departamentos
 			this.EliminarAction.IsImportant = true;
 			this.EliminarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Eliminar");
 			w1.Add(this.EliminarAction, null);
-			this.modifyAction = new global::Gtk.Action("modifyAction", null, null, "modify");
-			w1.Add(this.modifyAction, null);
-			this.BuscarAction = new global::Gtk.Action("BuscarAction", global::Mono.Unix.Catalog.GetString("  Buscar"), null, "search");
-			this.BuscarAction.IsImportant = true;
-			this.BuscarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Buscar");
-			w1.Add(this.BuscarAction, null);
-			this.ModificarAction = new global::Gtk.Action("ModificarAction", global::Mono.Unix.Catalog.GetString("  Modificar"), null, "modify");
-			this.ModificarAction.IsImportant = true;
-			this.ModificarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Modificar");
-			w1.Add(this.ModificarAction, null);
+			this.btnBuscar = new global::Gtk.Action("btnBuscar", global::Mono.Unix.Catalog.GetString("  Buscar"), null, "search");
+			this.btnBuscar.IsImportant = true;
+			this.btnBuscar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Buscar");
+			w1.Add(this.btnBuscar, null);
+			this.btnModificar = new global::Gtk.Action("btnModificar", global::Mono.Unix.Catalog.GetString("  Modificar"), null, "modify");
+			this.btnModificar.IsImportant = true;
+			this.btnModificar.ShortLabel = global::Mono.Unix.Catalog.GetString("  Modificar");
+			w1.Add(this.btnModificar, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Departamentos.FrmDpto";
@@ -62,7 +58,7 @@ namespace ScapProject0.Departamentos
 			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='AgregarAction' action='AgregarAction'/><separator/><toolitem name='EliminarAction' action='EliminarAction'/><separator/><toolitem name='ModificarAction' action='ModificarAction'/><separator/><toolitem name='BuscarAction' action='BuscarAction'/></toolbar></ui>");
+			this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='AgregarAction' action='AgregarAction'/><separator/><toolitem name='EliminarAction' action='EliminarAction'/><separator/><toolitem name='btnModificar' action='btnModificar'/><separator/><toolitem name='btnBuscar' action='btnBuscar'/></toolbar></ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -112,9 +108,8 @@ namespace ScapProject0.Departamentos
 			this.DefaultHeight = 523;
 			this.Show();
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAddActionActivated);
-		
-			this.ModificarAction.Activated += new global::System.EventHandler(this.OnModificarActionActivated);
-			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
+			this.btnBuscar.Activated += new global::System.EventHandler(this.OnBtnBuscarActivated);
+			this.btnModificar.Activated += new global::System.EventHandler(this.OnBtnModificarActivated);
 		}
 	}
 }
