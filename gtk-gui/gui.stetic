@@ -4306,6 +4306,9 @@
               <node type="Toolitem" action="btnBuscar" />
             </node>
           </widget>
+          <packing>
+            <property name="X">2</property>
+          </packing>
         </child>
         <child>
           <widget class="Gtk.Entry" id="entBuscar">
@@ -4376,14 +4379,15 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnBtnGuardarActivated" />
       </action>
-      <action id="CancelarAction">
+      <action id="btnCancelar">
         <property name="Type">Action</property>
         <property name="IsImportant">True</property>
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
-        <signal name="Activated" handler="OnCancelarActionActivated" />
+        <signal name="Activated" handler="OnBtnCancelarActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -4393,16 +4397,6 @@
       <widget class="Gtk.Fixed" id="fixed1">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
-        <child>
-          <widget class="Gtk.Toolbar" id="toolbar1">
-            <property name="MemberName" />
-            <property name="ShowArrow">False</property>
-            <node name="toolbar1" type="Toolbar">
-              <node type="Toolitem" action="btnGuardar" />
-              <node type="Toolitem" action="CancelarAction" />
-            </node>
-          </widget>
-        </child>
         <child>
           <widget class="Gtk.Button" id="btnRegresar">
             <property name="MemberName" />
@@ -4508,6 +4502,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Agregar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnAgregarClicked" />
           </widget>
           <packing>
             <property name="X">120</property>
@@ -4526,6 +4521,16 @@
             <property name="X">218</property>
             <property name="Y">240</property>
           </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar2">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="toolbar2" type="Toolbar">
+              <node type="Toolitem" action="btnGuardar" />
+              <node type="Toolitem" action="btnCancelar" />
+            </node>
+          </widget>
         </child>
       </widget>
     </child>

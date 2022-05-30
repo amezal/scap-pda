@@ -14,6 +14,8 @@ namespace ScapProject0.Roles
         private Dt_tbl_rol dtrol = new Dt_tbl_rol();
         private Dt_tbl_Opcion dtop = new Dt_tbl_Opcion();
         private Dt_tbl_rolOpcion dtrolop = new Dt_tbl_rolOpcion();
+        private Ng_tbl_rolOpcion ngrolop = new Ng_tbl_rolOpcion();
+        private ListStore trvwModel;
 
         public FrmRol Caller { get => caller; set => caller = value; }
         public int IdRol { get => idRol; set => idRol = value; }
@@ -33,18 +35,13 @@ namespace ScapProject0.Roles
             this.Hide();
         }
 
-        protected void OnCancelarActionActivated(object sender, EventArgs e)
-        {
-            this.caller.Show();
-            this.Hide();
-        }
 
         protected void LlenarCampos()
         {
             this.txtID.Text = rol.Id_rol.ToString();
             this.txtRol.Text = rol.Rol;
 
-            TreeModel model = dtop.listarOpcion();
+            ListStore model = dtop.listarOpcion();
             model.GetIterFirst(out TreeIter ti);
             do
             {
@@ -56,8 +53,9 @@ namespace ScapProject0.Roles
 
             cbxOpcion.Model = model;
 
-            this.trvwRolOpcion.Model = dtrolop.ListarRolOpcion(idRol);
-            string[] titulos = { "Opcion", "", "", ""};
+            this.trvwModel = dtrolop.ListarRolOpcion(idRol);
+            this.trvwRolOpcion.Model = this.trvwModel;
+            string[] titulos = { "Opcion", "1", "2", "3"};
 
             for (int i = 0; i < titulos.Length; i++)
             {
@@ -66,6 +64,76 @@ namespace ScapProject0.Roles
             this.trvwRolOpcion.Columns[1].Visible = false;
             this.trvwRolOpcion.Columns[2].Visible = false;
             this.trvwRolOpcion.Columns[3].Visible = false;
+        }
+
+        protected void OnBtnAgregarClicked(object sender, EventArgs e)
+        {
+            bool existe = false;
+            cbxOpcion.GetActiveIter(out TreeIter iter);
+            int id = Convert.ToInt32(cbxOpcion.Model.GetValue(iter, 1));
+            string nombre = cbxOpcion.Model.GetValue(iter, 0).ToString();
+
+            trvwRolOpcion.Model.GetIterFirst(out TreeIter ti);
+            do
+            {
+                int idOp = Convert.ToInt32(trvwRolOpcion.Model.GetValue(ti, 2));
+                if (idOp == id)
+                {
+                    existe = true;
+                }
+            } while (trvwRolOpcion.Model.IterNext(ref ti));
+
+            if (!existe)
+            {
+                trvwModel.AppendValues(nombre, "", id.ToString(), "");
+                trvwRolOpcion.Model = trvwModel;
+            }
+            else
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "La opcion ya existe");
+                ms.Run();
+                ms.Destroy();
+            }
+        }
+
+        protected void OnBtnGuardarActivated(object sender, EventArgs e)
+        {
+            bool guardado = false;
+
+            //rol
+            Tbl_rol rol = new Tbl_rol()
+            {
+                Id_rol = Convert.ToInt32(txtID.Text),
+                Rol = this.txtRol.Text
+            };
+            guardado = dtrol.ModificarRol(rol);
+
+            //rolopcion
+            trvwRolOpcion.Model.GetIterFirst(out TreeIter ti);
+            do
+            {
+                int idOp = Convert.ToInt32(trvwRolOpcion.Model.GetValue(ti, 2));
+                if(!ngrolop.existe(idRol, idOp))
+                {
+                    dtrolop.NuevoRolOpcion(new Tbl_rolOpcion() { Id_rol = idRol, Id_opcion = idOp });
+                }
+            } while (trvwRolOpcion.Model.IterNext(ref ti));
+
+            //modal
+            if (guardado)
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Usuario modificado correctamente");
+                this.caller.refresh();
+                ms.Run();
+                ms.Destroy();
+            }
+        }
+
+        protected void OnBtnCancelarActivated(object sender, EventArgs e)
+        {
+            this.caller.Show();
+            this.Hide();
         }
     }
 }
