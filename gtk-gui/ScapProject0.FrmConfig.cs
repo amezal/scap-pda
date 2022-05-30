@@ -20,6 +20,8 @@ namespace ScapProject0
 
 		private global::Gtk.Button button8;
 
+		private global::Gtk.Button btnUserRol;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -113,8 +115,18 @@ namespace ScapProject0
 			this.button8.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed2.Add(this.button8);
 			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button8]));
-			w7.X = 13;
-			w7.Y = 404;
+			w7.X = 16;
+			w7.Y = 422;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.btnUserRol = new global::Gtk.Button();
+			this.btnUserRol.CanFocus = true;
+			this.btnUserRol.Name = "btnUserRol";
+			this.btnUserRol.UseUnderline = true;
+			this.btnUserRol.Label = global::Mono.Unix.Catalog.GetString("UserRol");
+			this.fixed2.Add(this.btnUserRol);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnUserRol]));
+			w8.X = 157;
+			w8.Y = 367;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
@@ -128,6 +140,7 @@ namespace ScapProject0
 			this.button6.Clicked += new global::System.EventHandler(this.OnButton6Clicked);
 			this.button7.Clicked += new global::System.EventHandler(this.OnButton7Clicked);
 			this.button8.Clicked += new global::System.EventHandler(this.OnButton8Clicked);
+			this.btnUserRol.Activated += new global::System.EventHandler(this.OnBtnUserRolActivated);
 		}
 	}
 }

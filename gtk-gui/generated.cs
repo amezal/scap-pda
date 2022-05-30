@@ -52,7 +52,7 @@ namespace Stetic
 			{
 				if ((global::Stetic.ActionGroups.group1 == null))
 				{
-					global::Stetic.ActionGroups.group1 = new ScapProject0.UserRol.frmModUserRol();
+				//	global::Stetic.ActionGroups.group1 = new ScapProject0.UserRol.frmModUserRol();
 				}
 				return global::Stetic.ActionGroups.group1;
 			}

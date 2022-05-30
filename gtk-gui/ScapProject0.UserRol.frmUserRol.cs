@@ -4,19 +4,105 @@ namespace ScapProject0.UserRol
 {
 	public partial class frmUserRol
 	{
+		private global::Gtk.UIManager UIManager;
+
+		private global::Gtk.Action addAction;
+
+		private global::Gtk.Action deleteAction;
+
+		private global::Gtk.Action modifyAction;
+
+		private global::Gtk.Action searchAction;
+
+		private global::Gtk.Fixed fixed1;
+
+		private global::Gtk.ScrolledWindow GtkScrolledWindow;
+
+		private global::Gtk.TreeView tvwUserRol;
+
+		private global::Gtk.Toolbar toolbar1;
+
+		private global::Gtk.Entry entry8;
+
+		private global::Gtk.Button btnRegresar;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
 			// Widget ScapProject0.UserRol.frmUserRol
+			this.UIManager = new global::Gtk.UIManager();
+			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
+			this.addAction = new global::Gtk.Action("addAction", null, null, "add");
+			w1.Add(this.addAction, null);
+			this.deleteAction = new global::Gtk.Action("deleteAction", null, null, "delete");
+			w1.Add(this.deleteAction, null);
+			this.modifyAction = new global::Gtk.Action("modifyAction", null, null, "modify");
+			w1.Add(this.modifyAction, null);
+			this.searchAction = new global::Gtk.Action("searchAction", null, null, "search");
+			w1.Add(this.searchAction, null);
+			this.UIManager.InsertActionGroup(w1, 0);
+			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.UserRol.frmUserRol";
 			this.Title = global::Mono.Unix.Catalog.GetString("frmUserRol");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			// Container child ScapProject0.UserRol.frmUserRol.Gtk.Container+ContainerChild
+			this.fixed1 = new global::Gtk.Fixed();
+			this.fixed1.Name = "fixed1";
+			this.fixed1.HasWindow = false;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow.WidthRequest = 400;
+			this.GtkScrolledWindow.HeightRequest = 200;
+			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+			this.tvwUserRol = new global::Gtk.TreeView();
+			this.tvwUserRol.CanFocus = true;
+			this.tvwUserRol.Name = "tvwUserRol";
+			this.GtkScrolledWindow.Add(this.tvwUserRol);
+			this.fixed1.Add(this.GtkScrolledWindow);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
+			w3.X = 50;
+			w3.Y = 125;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar1\'><toolitem name=\'addAction\' action=\'addAction\'/><tool" +
+					"item name=\'deleteAction\' action=\'deleteAction\'/><toolitem name=\'modifyAction\' ac" +
+					"tion=\'modifyAction\'/><toolitem name=\'searchAction\' action=\'searchAction\'/></tool" +
+					"bar></ui>");
+			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
+			this.toolbar1.Name = "toolbar1";
+			this.toolbar1.ShowArrow = false;
+			this.fixed1.Add(this.toolbar1);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.toolbar1]));
+			w4.X = 51;
+			w4.Y = 27;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.entry8 = new global::Gtk.Entry();
+			this.entry8.CanFocus = true;
+			this.entry8.Name = "entry8";
+			this.entry8.IsEditable = true;
+			this.entry8.InvisibleChar = '•';
+			this.fixed1.Add(this.entry8);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry8]));
+			w5.X = 252;
+			w5.Y = 32;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.btnRegresar = new global::Gtk.Button();
+			this.btnRegresar.CanFocus = true;
+			this.btnRegresar.Name = "btnRegresar";
+			this.btnRegresar.UseUnderline = true;
+			this.btnRegresar.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed1.Add(this.btnRegresar);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnRegresar]));
+			w6.X = 52;
+			w6.Y = 368;
+			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 531;
+			this.DefaultHeight = 438;
 			this.Show();
 		}
 	}

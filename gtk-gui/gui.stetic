@@ -3652,8 +3652,22 @@
             <signal name="Clicked" handler="OnButton8Clicked" />
           </widget>
           <packing>
-            <property name="X">13</property>
-            <property name="Y">404</property>
+            <property name="X">16</property>
+            <property name="Y">422</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnUserRol">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">UserRol</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Activated" handler="OnBtnUserRolActivated" />
+          </widget>
+          <packing>
+            <property name="X">157</property>
+            <property name="Y">367</property>
           </packing>
         </child>
       </widget>
@@ -4301,25 +4315,22 @@
       <action id="addAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">add</property>
+        <signal name="Activated" handler="OnAddActionActivated" />
       </action>
       <action id="deleteAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">delete</property>
       </action>
       <action id="modifyAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">modify</property>
       </action>
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
     </action-group>
@@ -4337,7 +4348,7 @@
             <property name="HeightRequest">200</property>
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.TreeView" id="treeview1">
+              <widget class="Gtk.TreeView" id="tvwUserRol">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
@@ -4378,7 +4389,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button3">
+          <widget class="Gtk.Button" id="btnRegresar">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
@@ -4400,6 +4411,7 @@
         <property name="Label" translatable="yes">Guardar</property>
         <property name="ShortLabel" translatable="yes">Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarActionActivated" />
       </action>
       <action id="CancelarAction">
         <property name="Type">Action</property>
@@ -4429,7 +4441,7 @@
           <widget class="Gtk.Toolbar" id="toolbar2">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="__gtksharp_88_Stetic_Editor_ActionToolbar" type="Toolbar">
+            <node name="toolbar2" type="Toolbar">
               <node type="Toolitem" action="GuardarAction" />
               <node type="Toolitem" action="CancelarAction" />
             </node>
@@ -4446,6 +4458,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Activated" handler="OnBtnRegresarActivated" />
           </widget>
           <packing>
             <property name="X">37</property>
@@ -4506,7 +4519,6 @@
       <action id="Action">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -4520,7 +4532,7 @@
           <widget class="Gtk.Toolbar" id="toolbar3">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="__gtksharp_88_Stetic_Editor_ActionToolbar" type="Toolbar">
+            <node name="toolbar3" type="Toolbar">
               <node type="Toolitem" action="GuardarAction" />
               <node type="Toolitem" action="CancelarAction" />
               <node type="Toolitem" />

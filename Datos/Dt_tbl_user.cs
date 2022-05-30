@@ -16,7 +16,7 @@ namespace ScapProject0.Datos
         StringBuilder sb = new StringBuilder();
 
         #region metodos
-        public ListStore ListarUser()
+        public ListStore ListarUser(string query)
         {
             ListStore datos = new ListStore(
             typeof(string), typeof(string), typeof(string), typeof(string),
@@ -24,6 +24,7 @@ namespace ScapProject0.Datos
             IDataReader idr = null;
             sb.Clear();
             sb.Append("SELECT * FROM LMBA.VwUser;");
+            sb.Append("WHERE concat(Nombre, Apellido) LIKE '" + query + "%';");
 
             try
             {
@@ -90,6 +91,49 @@ namespace ScapProject0.Datos
             }
             finally
             {
+                con.CerrarConexion();
+            }
+        }
+        public List<Tbl_user> cbxUser()
+        {
+            //List<Tbl_Departamento> listaDpto = new List<Tbl_Departamento>()
+            List<Tbl_user> listUser = new List<Tbl_user>();
+
+            //ListStore datos = new ListStore(typeof(string), typeof(string), typeof(string));
+            IDataReader idr = null;
+            sb.Clear();
+            sb.Append("SELECT id_user, Username FROM LMBA.VwUser;");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                while (idr.Read())
+                {
+                    Tbl_user tus = new Tbl_user()
+                    {
+                        Id_user = (Int32)idr["id_user"],
+                        Nombres = idr["Username"].ToString()
+
+                    };
+                    listUser.Add(tus);
+
+
+                    //datos.AppendValues(idr[0].ToString(), String.Concat(idr[1].ToString(), " ", idr[2].ToString()));
+                }
+                idr.Close();
+                return listUser;
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                throw;
+            }
+            finally
+            {
+                idr.Close();
                 con.CerrarConexion();
             }
         }
