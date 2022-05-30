@@ -55,6 +55,45 @@ namespace ScapProject0.Datos
         #endregion
 
 
+        public ListStore buscarCargos(String query)
+        {
+            ListStore datos = new ListStore(
+            typeof(string), typeof(string), typeof(string), typeof(string)
+            );
+            IDataReader idr = null;
+            sb.Clear();
+            sb.Append("SELECT ID, Cargo, Departamento, Descripcion From LMBA.VwCargo ");
+            sb.Append("WHERE Cargo LIKE '" + query + "%';");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                while (idr.Read())
+                {
+                    datos.AppendValues(idr[0].ToString(), idr[1].ToString(),
+                        idr[2].ToString(), idr[3].ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                throw;
+            }
+            finally
+            {
+                idr.Close();
+            }
+
+            return datos;
+        }
+
+
+
+
         public Int32 getIdDep(string departamento)
         {
             int existe = 0;
@@ -124,7 +163,7 @@ namespace ScapProject0.Datos
 
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT ID, Cargo, idDepartamento FROM LMBA.VwCargo ");
+            sb.Append("SELECT ID, Cargo, Descripcion, idDepartamento FROM LMBA.VwCargo ");
             sb.Append("WHERE ID = " + idCargo + ";");
 
             try
@@ -137,6 +176,7 @@ namespace ScapProject0.Datos
                 {
                     IdCargo = (Int32)idr["ID"],
                     NombreCargo = idr["Cargo"].ToString(),
+                    Descripcion = idr["Descripcion"].ToString(),
                     IdDepartamento = (Int32)idr["idDepartamento"]
                 };
 
@@ -191,7 +231,7 @@ namespace ScapProject0.Datos
             }
         }
 
-        public bool EliminarEmpleado(int idCargo)
+        public bool EliminarCargo(int idCargo)
         {
             bool guardado = false; //Bandera
             int x = 0; //Variable de control
@@ -200,6 +240,48 @@ namespace ScapProject0.Datos
             sb.Append(
             "estado='" + 3 + "' " +
             "WHERE idCargo=" + idCargo + ";");
+
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+                return guardado;
+
+            }
+            catch (Exception e)
+            {
+                ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error,
+                    ButtonsType.Ok, e.Message);
+                ms.Run();
+                ms.Destroy();
+                Console.WriteLine("DT: ERROR= " + e.Message);
+                Console.WriteLine("DT: ERROR= " + e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
+
+        public bool ModificarCargo(Tbl_Cargo tcar)
+        {
+            bool guardado = false; //Bandera
+            int x = 0; //Variable de control
+
+            sb.Clear();
+            sb.Append("UPDATE LMBA.Cargo SET ");
+            sb.Append(
+            "nombreCargo='" + tcar.NombreCargo + "'," +
+            "descripcion='" + tcar.Descripcion + "'," +
+            "estado='" + tcar.Estado + "'," +
+            "idDepartamento='" + tcar.IdDepartamento + 
+            "' WHERE Cargo.idCargo= " + tcar.IdCargo + ";");
 
             try
             {

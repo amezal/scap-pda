@@ -43,10 +43,8 @@ namespace ScapProject0.Cargos
 
         protected void OnBtnBackClicked(object sender, EventArgs e)
         {
-            FrmCargos fc = new FrmCargos();
-            fc.Show();
-            //this.caller.Show();
             this.Hide();
+            this.caller.Show();
         }
 
         protected void OnGuardarActionActivated(object sender, EventArgs e)
@@ -80,7 +78,5 @@ namespace ScapProject0.Cargos
                 Console.WriteLine(ex.Message);
             }
         }
-
-
     }
 }

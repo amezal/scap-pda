@@ -24,6 +24,10 @@ namespace ScapProject0.Cargos
 
 		private global::Gtk.ComboBox cbxDpto;
 
+		private global::Gtk.Label label5;
+
+		private global::Gtk.Entry txtDesc;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -101,6 +105,24 @@ namespace ScapProject0.Cargos
 			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.cbxDpto]));
 			w7.X = 185;
 			w7.Y = 142;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label5 = new global::Gtk.Label();
+			this.label5.Name = "label5";
+			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Descripcion: ");
+			this.fixed3.Add(this.label5);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label5]));
+			w8.X = 78;
+			w8.Y = 283;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.txtDesc = new global::Gtk.Entry();
+			this.txtDesc.CanFocus = true;
+			this.txtDesc.Name = "txtDesc";
+			this.txtDesc.IsEditable = true;
+			this.txtDesc.InvisibleChar = '•';
+			this.fixed3.Add(this.txtDesc);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtDesc]));
+			w9.X = 187;
+			w9.Y = 276;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
