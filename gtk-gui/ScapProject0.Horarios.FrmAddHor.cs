@@ -16,21 +16,25 @@ namespace ScapProject0.Horarios
 
 		private global::Gtk.Fixed fixed2;
 
-		private global::Gtk.Label label3;
-
-		private global::Gtk.Entry entHoraIn;
-
-		private global::Gtk.Label label4;
-
-		private global::Gtk.Label label5;
-
-		private global::Gtk.Entry entHoraFin;
-
 		private global::Gtk.Entry entNombreHor;
+
+		private global::Gtk.Toolbar toolbar3;
 
 		private global::Gtk.Button btnRegresarAddHor;
 
-		private global::Gtk.Toolbar toolbar3;
+		private global::Gtk.Entry entHoraFin;
+
+		private global::Gtk.Entry entAlmuerzo;
+
+		private global::Gtk.Entry entHoraIn;
+
+		private global::Gtk.Label label5;
+
+		private global::Gtk.Label label1;
+
+		private global::Gtk.Label label4;
+
+		private global::Gtk.Label label3;
 
 		protected virtual void Build()
 		{
@@ -60,69 +64,15 @@ namespace ScapProject0.Horarios
 			this.fixed2.Name = "fixed2";
 			this.fixed2.HasWindow = false;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
-			this.fixed2.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label3]));
-			w2.X = 56;
-			w2.Y = 92;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.entHoraIn = new global::Gtk.Entry();
-			this.entHoraIn.CanFocus = true;
-			this.entHoraIn.Name = "entHoraIn";
-			this.entHoraIn.IsEditable = true;
-			this.entHoraIn.InvisibleChar = '•';
-			this.fixed2.Add(this.entHoraIn);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entHoraIn]));
-			w3.X = 148;
-			w3.Y = 130;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label4 = new global::Gtk.Label();
-			this.label4.Name = "label4";
-			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de inicio:");
-			this.fixed2.Add(this.label4);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label4]));
-			w4.X = 23;
-			w4.Y = 136;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label5 = new global::Gtk.Label();
-			this.label5.Name = "label5";
-			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de fin:");
-			this.fixed2.Add(this.label5);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label5]));
-			w5.X = 39;
-			w5.Y = 184;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.entHoraFin = new global::Gtk.Entry();
-			this.entHoraFin.CanFocus = true;
-			this.entHoraFin.Name = "entHoraFin";
-			this.entHoraFin.IsEditable = true;
-			this.entHoraFin.InvisibleChar = '•';
-			this.fixed2.Add(this.entHoraFin);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entHoraFin]));
-			w6.X = 148;
-			w6.Y = 177;
-			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.entNombreHor = new global::Gtk.Entry();
 			this.entNombreHor.CanFocus = true;
 			this.entNombreHor.Name = "entNombreHor";
 			this.entNombreHor.IsEditable = true;
 			this.entNombreHor.InvisibleChar = '•';
 			this.fixed2.Add(this.entNombreHor);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entNombreHor]));
-			w7.X = 149;
-			w7.Y = 84;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.btnRegresarAddHor = new global::Gtk.Button();
-			this.btnRegresarAddHor.CanFocus = true;
-			this.btnRegresarAddHor.Name = "btnRegresarAddHor";
-			this.btnRegresarAddHor.UseUnderline = true;
-			this.btnRegresarAddHor.Label = global::Mono.Unix.Catalog.GetString("Regresar");
-			this.fixed2.Add(this.btnRegresarAddHor);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnRegresarAddHor]));
-			w8.X = 28;
-			w8.Y = 239;
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entNombreHor]));
+			w2.X = 192;
+			w2.Y = 84;
 			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar3\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
 					"\'/><toolitem name=\'cancelAction1\' action=\'cancelAction1\'/></toolbar></ui>");
@@ -130,16 +80,88 @@ namespace ScapProject0.Horarios
 			this.toolbar3.Name = "toolbar3";
 			this.toolbar3.ShowArrow = false;
 			this.fixed2.Add(this.toolbar3);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.toolbar3]));
-			w9.X = -2;
-			w9.Y = 11;
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.toolbar3]));
+			w3.X = -2;
+			w3.Y = 11;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.btnRegresarAddHor = new global::Gtk.Button();
+			this.btnRegresarAddHor.CanFocus = true;
+			this.btnRegresarAddHor.Name = "btnRegresarAddHor";
+			this.btnRegresarAddHor.UseUnderline = true;
+			this.btnRegresarAddHor.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed2.Add(this.btnRegresarAddHor);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnRegresarAddHor]));
+			w4.X = 29;
+			w4.Y = 297;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.entHoraFin = new global::Gtk.Entry();
+			this.entHoraFin.CanFocus = true;
+			this.entHoraFin.Name = "entHoraFin";
+			this.entHoraFin.IsEditable = true;
+			this.entHoraFin.InvisibleChar = '•';
+			this.fixed2.Add(this.entHoraFin);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entHoraFin]));
+			w5.X = 192;
+			w5.Y = 177;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.entAlmuerzo = new global::Gtk.Entry();
+			this.entAlmuerzo.CanFocus = true;
+			this.entAlmuerzo.Name = "entAlmuerzo";
+			this.entAlmuerzo.IsEditable = true;
+			this.entAlmuerzo.InvisibleChar = '•';
+			this.fixed2.Add(this.entAlmuerzo);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entAlmuerzo]));
+			w6.X = 192;
+			w6.Y = 223;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.entHoraIn = new global::Gtk.Entry();
+			this.entHoraIn.CanFocus = true;
+			this.entHoraIn.Name = "entHoraIn";
+			this.entHoraIn.IsEditable = true;
+			this.entHoraIn.InvisibleChar = '•';
+			this.fixed2.Add(this.entHoraIn);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entHoraIn]));
+			w7.X = 192;
+			w7.Y = 129;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.label5 = new global::Gtk.Label();
+			this.label5.Name = "label5";
+			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de fin:");
+			this.fixed2.Add(this.label5);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label5]));
+			w8.X = 75;
+			w8.Y = 190;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.label1 = new global::Gtk.Label();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Tiempo de almuerzo:");
+			this.fixed2.Add(this.label1);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label1]));
+			w9.X = 14;
+			w9.Y = 230;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.label4 = new global::Gtk.Label();
+			this.label4.Name = "label4";
+			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de inicio:");
+			this.fixed2.Add(this.label4);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label4]));
+			w10.X = 56;
+			w10.Y = 138;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.label3 = new global::Gtk.Label();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
+			this.fixed2.Add(this.label3);
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label3]));
+			w11.X = 92;
+			w11.Y = 91;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 407;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 452;
+			this.DefaultHeight = 355;
 			this.Show();
 			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
 			this.btnRegresarAddHor.Clicked += new global::System.EventHandler(this.OnBtnRegresarAddHorClicked);

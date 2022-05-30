@@ -105,9 +105,8 @@ namespace ScapProject0.Empleados
 			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.button1 = new global::Gtk.Button();
 			this.button1.CanFocus = true;
-			this.button1.Name = "button1";
 			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.button1.Label = "Regresar";
 			this.fixed2.Add(this.button1);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button1]));
 			w4.X = 29;
@@ -139,6 +138,7 @@ namespace ScapProject0.Empleados
 			this.EliminarAction1.Activated += new global::System.EventHandler(this.OnEliminarAction1Activated);
 			this.ModificarAction1.Activated += new global::System.EventHandler(this.OnModificarAction1Activated);
 			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
+			this.entBuscar.Changed += new global::System.EventHandler(this.OnEntBuscarChanged);
 			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
 			this.trvwEmpleado.CursorChanged += new global::System.EventHandler(this.OnTrvwEmpleadoCursorChanged);
 			this.trvwEmpleado.RowActivated += new global::Gtk.RowActivatedHandler(this.OnTrvwEmpleadoRowActivated);
