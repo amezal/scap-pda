@@ -59,7 +59,7 @@ CREATE TABLE `Departamento` (
   `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
   `estado` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`idDepartamento`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `Departamento` (
 
 LOCK TABLES `Departamento` WRITE;
 /*!40000 ALTER TABLE `Departamento` DISABLE KEYS */;
-INSERT INTO `Departamento` VALUES (1,'Desarrollo','15',NULL,1),(2,'Diseno','16',NULL,1),(3,'Negocios','17',NULL,1);
+INSERT INTO `Departamento` VALUES (1,'Desarrollo','15',NULL,1),(2,'Diseno','16',NULL,1),(3,'Negocios','17',NULL,1),(4,'Git','55','git@lmba.com',1);
 /*!40000 ALTER TABLE `Departamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +199,9 @@ SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
 /*!50001 CREATE VIEW `VwDepartamento` AS SELECT 
  1 AS `ID`,
- 1 AS `Departamento`*/;
+ 1 AS `Departamento`,
+ 1 AS `Extension`,
+ 1 AS `Email`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -285,9 +287,10 @@ SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
 /*!50001 CREATE VIEW `VwUser` AS SELECT 
  1 AS `id_user`,
- 1 AS `firstNombre`,
- 1 AS `firstApellido`,
+ 1 AS `Nombre`,
+ 1 AS `Apellido`,
  1 AS `email`,
+ 1 AS `Username`,
  1 AS `pwd`*/;
 SET character_set_client = @saved_cs_client;
 
@@ -330,7 +333,7 @@ CREATE TABLE `opcion` (
   `opcion` varchar(50) NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_opcion`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +342,7 @@ CREATE TABLE `opcion` (
 
 LOCK TABLES `opcion` WRITE;
 /*!40000 ALTER TABLE `opcion` DISABLE KEYS */;
-INSERT INTO `opcion` VALUES (1,'empleados',1),(2,'registros',1),(3,'cargos',1),(4,'departamentos',1),(5,'rol',1),(6,'opcion',1),(7,'usuarios',1);
+INSERT INTO `opcion` VALUES (1,'empleados',1),(2,'registros',1),(3,'cargos',1),(4,'departamentos',1),(5,'rol',1),(6,'opcion',1),(7,'usuarios',1),(8,'',1);
 /*!40000 ALTER TABLE `opcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -433,12 +436,11 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id_user` int NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) NOT NULL,
-  `pwd` varchar(50) NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
-  `pwd_temp` varchar(50) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -450,7 +452,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','123','Armando','Meza','321','armando.meza8921@est.uca.edu.ni',1);
+INSERT INTO `user` VALUES (1,'Armando','Meza','armando.meza8921@est.uca.edu.ni','admin','123',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -511,7 +513,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwDepartamento` AS select `Departamento`.`idDepartamento` AS `ID`,`Departamento`.`nombreDepartamento` AS `Departamento` from `Departamento` where (`Departamento`.`estado` <> 3) */;
+/*!50001 VIEW `VwDepartamento` AS select `Departamento`.`idDepartamento` AS `ID`,`Departamento`.`nombreDepartamento` AS `Departamento`,`Departamento`.`ext` AS `Extension`,`Departamento`.`email` AS `Email` from `Departamento` where (`Departamento`.`estado` <> 3) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -601,7 +603,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwUser` AS select `user`.`id_user` AS `id_user`,`user`.`nombres` AS `firstNombre`,`user`.`apellidos` AS `firstApellido`,`user`.`email` AS `email`,`user`.`pwd` AS `pwd` from `user` */;
+/*!50001 VIEW `VwUser` AS select `user`.`id_user` AS `id_user`,`user`.`nombres` AS `Nombre`,`user`.`apellidos` AS `Apellido`,`user`.`email` AS `email`,`user`.`user` AS `Username`,`user`.`pwd` AS `pwd` from `user` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -615,4 +617,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-29 21:03:43
+-- Dump completed on 2022-05-29 22:56:05
