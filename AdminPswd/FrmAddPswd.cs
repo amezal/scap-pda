@@ -13,24 +13,14 @@ namespace ScapProject0.AdminPswd
        //private Tbl_user tus;
 
 
-        protected void llenarCbxUser()
-        {
-            List<Tbl_user> listUser = dtus.cbxUser();
-            this.cbxUser.InsertText(0, "Seleccione...");
-
-            foreach(Tbl_user dtus in listUser)
-            {
-                this.cbxUser.InsertText(dtus.Id_user, dtus.Nombres);
-            }
-            this.cbxUser.Active = 0;
-        }
+       
        
         public FrmAddPswd() :
                 base(Gtk.WindowType.Toplevel)
         {
 
             this.Build();
-            this.llenarCbxUser();
+
 
         }
         private Gtk.Window caller;

@@ -19,7 +19,8 @@ namespace ScapProject0.Datos
         public ListStore ListarUser()
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string), typeof(string), typeof(string), typeof(string));
+            typeof(string), typeof(string), typeof(string), typeof(string),
+                typeof(string), typeof(string));
             IDataReader idr = null;
             sb.Clear();
             sb.Append("SELECT * FROM LMBA.VwUser;");
@@ -31,7 +32,7 @@ namespace ScapProject0.Datos
                 while (idr.Read())
                 {
                     datos.AppendValues(idr[0].ToString(), idr[1].ToString(),
-                        idr[2].ToString(), idr[3].ToString(), idr[4].ToString());
+                        idr[2].ToString(), idr[3].ToString(), idr[4].ToString(), idr[5].ToString());
                 }
             }
             catch (Exception e)

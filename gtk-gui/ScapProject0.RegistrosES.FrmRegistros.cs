@@ -67,6 +67,7 @@ namespace ScapProject0.RegistrosES
 			w3.Y = 59;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.cbxeEmp = global::Gtk.ComboBoxEntry.NewText();
+			this.cbxeEmp.WidthRequest = 285;
 			this.cbxeEmp.Name = "cbxeEmp";
 			this.fixed1.Add(this.cbxeEmp);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cbxeEmp]));
@@ -78,15 +79,15 @@ namespace ScapProject0.RegistrosES
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 			this.trvwRegistros = new global::Gtk.TreeView();
-			this.trvwRegistros.WidthRequest = 715;
-			this.trvwRegistros.HeightRequest = 265;
+			this.trvwRegistros.WidthRequest = 900;
+			this.trvwRegistros.HeightRequest = 325;
 			this.trvwRegistros.CanFocus = true;
 			this.trvwRegistros.Name = "trvwRegistros";
 			this.GtkScrolledWindow.Add(this.trvwRegistros);
 			this.fixed1.Add(this.GtkScrolledWindow);
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
 			w6.X = 17;
-			w6.Y = 103;
+			w6.Y = 91;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.button1 = new global::Gtk.Button();
 			this.button1.CanFocus = true;
@@ -95,15 +96,15 @@ namespace ScapProject0.RegistrosES
 			this.button1.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed1.Add(this.button1);
 			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button1]));
-			w7.X = 22;
-			w7.Y = 406;
+			w7.X = 24;
+			w7.Y = 455;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 752;
-			this.DefaultHeight = 467;
+			this.DefaultWidth = 969;
+			this.DefaultHeight = 512;
 			this.Show();
 			this.JustificarAction.Activated += new global::System.EventHandler(this.OnJustificarActionActivated);
 			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);

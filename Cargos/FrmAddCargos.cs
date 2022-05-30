@@ -43,10 +43,8 @@ namespace ScapProject0.Cargos
 
         protected void OnBtnBackClicked(object sender, EventArgs e)
         {
-            FrmCargos fc = new FrmCargos();
-            fc.Show();
-            this.caller.Show();
             this.Hide();
+            this.caller.Show();
         }
 
         protected void OnGuardarActionActivated(object sender, EventArgs e)
@@ -64,7 +62,7 @@ namespace ScapProject0.Cargos
             {
                 if (dtc.guardarCargo(tbc))
                 {
-                    ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Se guardo correctamente");
+                    ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Se guardó correctamente");
                     ms.Run();
                     ms.Destroy();
 
@@ -80,13 +78,5 @@ namespace ScapProject0.Cargos
                 Console.WriteLine(ex.Message);
             }
         }
-
-        protected void OnCancelarActionActivated(object sender, EventArgs e)
-        {
-            FrmCargos fcar = new FrmCargos();
-            fcar.Show();
-            this.Hide();
-        }
-       
     }
 }

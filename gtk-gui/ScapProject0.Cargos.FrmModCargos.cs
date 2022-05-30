@@ -6,7 +6,7 @@ namespace ScapProject0.Cargos
 	{
 		private global::Gtk.UIManager UIManager;
 
-		private global::Gtk.Action ActualizarAction;
+		private global::Gtk.Action GuardarAction;
 
 		private global::Gtk.Action CancelarAction;
 
@@ -24,9 +24,9 @@ namespace ScapProject0.Cargos
 
 		private global::Gtk.ComboBox cbxDpto;
 
-		private global::Gtk.Entry txtDesc;
+		private global::Gtk.Label label5;
 
-		private global::Gtk.Label lblDesc;
+		private global::Gtk.Entry txtDesc;
 
 		protected virtual void Build()
 		{
@@ -34,10 +34,10 @@ namespace ScapProject0.Cargos
 			// Widget ScapProject0.Cargos.FrmModCargos
 			this.UIManager = new global::Gtk.UIManager();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
-			this.ActualizarAction = new global::Gtk.Action("ActualizarAction", global::Mono.Unix.Catalog.GetString("  Actualizar"), null, "save");
-			this.ActualizarAction.IsImportant = true;
-			this.ActualizarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Actualizar");
-			w1.Add(this.ActualizarAction, null);
+			this.GuardarAction = new global::Gtk.Action("GuardarAction", global::Mono.Unix.Catalog.GetString("  Guardar"), null, "save");
+			this.GuardarAction.IsImportant = true;
+			this.GuardarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Guardar");
+			w1.Add(this.GuardarAction, null);
 			this.CancelarAction = new global::Gtk.Action("CancelarAction", global::Mono.Unix.Catalog.GetString("  Cancelar"), null, "cancel");
 			this.CancelarAction.IsImportant = true;
 			this.CancelarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("  Cancelar");
@@ -88,9 +88,8 @@ namespace ScapProject0.Cargos
 			w5.X = 57;
 			w5.Y = 348;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar2\'><toolitem name=\'ActualizarAction\' action=\'Actualizar" +
-					"Action\'/><toolitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolbar></ui" +
-					">");
+			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar2\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
+					"\'/><toolitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolbar></ui>");
 			this.toolbar2 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar2")));
 			this.toolbar2.Name = "toolbar2";
 			this.toolbar2.ShowArrow = false;
@@ -107,23 +106,23 @@ namespace ScapProject0.Cargos
 			w7.X = 185;
 			w7.Y = 142;
 			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label5 = new global::Gtk.Label();
+			this.label5.Name = "label5";
+			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Descripcion: ");
+			this.fixed3.Add(this.label5);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label5]));
+			w8.X = 78;
+			w8.Y = 283;
+			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.txtDesc = new global::Gtk.Entry();
 			this.txtDesc.CanFocus = true;
 			this.txtDesc.Name = "txtDesc";
 			this.txtDesc.IsEditable = true;
 			this.txtDesc.InvisibleChar = '•';
 			this.fixed3.Add(this.txtDesc);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtDesc]));
-			w8.X = 188;
-			w8.Y = 261;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.lblDesc = new global::Gtk.Label();
-			this.lblDesc.Name = "lblDesc";
-			this.lblDesc.LabelProp = global::Mono.Unix.Catalog.GetString("Descripcion:");
-			this.fixed3.Add(this.lblDesc);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.lblDesc]));
-			w9.X = 87;
-			w9.Y = 266;
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtDesc]));
+			w9.X = 187;
+			w9.Y = 276;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
@@ -132,8 +131,6 @@ namespace ScapProject0.Cargos
 			this.DefaultWidth = 568;
 			this.DefaultHeight = 421;
 			this.Show();
-			this.ActualizarAction.Activated += new global::System.EventHandler(this.OnActualizarActionActivated);
-			this.CancelarAction.Activated += new global::System.EventHandler(this.OnCancelarActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}

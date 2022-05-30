@@ -118,7 +118,7 @@ namespace ScapProject0.AdminPswd
 			this.fixed4.Add(this.btnBack);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnBack]));
 			w2.X = 43;
-			w2.Y = 344;
+			w2.Y = 380;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='AgregarAction1' action='AgregarAction1'/><toolitem name='EliminarAction1' action='EliminarAction1'/><toolitem name='ModificarAction2' action='ModificarAction2'/><toolitem name='BuscarAction2' action='BuscarAction2'/></toolbar></ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
@@ -140,6 +140,8 @@ namespace ScapProject0.AdminPswd
 			w4.Y = 13;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow.WidthRequest = 620;
+			this.GtkScrolledWindow.HeightRequest = 280;
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
@@ -151,15 +153,15 @@ namespace ScapProject0.AdminPswd
 			this.GtkScrolledWindow.Add(this.trvwAdminPswd);
 			this.fixed4.Add(this.GtkScrolledWindow);
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.GtkScrolledWindow]));
-			w6.X = 47;
-			w6.Y = 95;
+			w6.X = 16;
+			w6.Y = 81;
 			this.Add(this.fixed4);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 628;
-			this.DefaultHeight = 415;
+			this.DefaultWidth = 659;
+			this.DefaultHeight = 438;
 			this.Show();
 			//this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);
 			this.AgregarAction1.Activated += new global::System.EventHandler(this.OnAddActionActivated);

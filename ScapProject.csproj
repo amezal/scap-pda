@@ -157,6 +157,15 @@
     <Compile Include="gtk-gui\ScapProject0.Opcion.FrmAddOpc.cs" />
     <Compile Include="Opcion\FrmModOpc.cs" />
     <Compile Include="gtk-gui\ScapProject0.Opcion.FrmModOpc.cs" />
+    <Compile Include="Negocios\Ng_tbl_empleado.cs" />
+    <Compile Include="Negocios\Ng_tbl_horario.cs" />
+    <Compile Include="Negocios\Ng_tbl_registroES.cs" />
+    <Compile Include="Negocios\Ng_tbl_user.cs" />
+    <Compile Include="Datos\Dt_tbl_empleadoRegistro.cs" />
+    <Compile Include="Roles\FrmRol.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Roles.FrmRol.cs" />
+    <Compile Include="Datos\Dt_tbl_rol.cs" />
+    <Compile Include="Datos\Dt_tbl_opcion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
@@ -169,6 +178,8 @@
     <Folder Include="Cargos\" />
     <Folder Include="AdminPswd\" />
     <Folder Include="Opcion\" />
+    <Folder Include="Negocios\" />
+    <Folder Include="Roles\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

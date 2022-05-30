@@ -89,7 +89,7 @@ namespace ScapProject0.Cargos
         protected void OnEliminarActionActivated(object sender, EventArgs e)
         {
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Warning,
-            ButtonsType.YesNo, "Desea eliminar este cargo?");
+            ButtonsType.YesNo, "¿Desea eliminar este cargo?");
 
             int result = md.Run();
             if (result == -8)
@@ -109,7 +109,6 @@ namespace ScapProject0.Cargos
         protected void OnBuscarActionActivated(object sender, EventArgs e)
         {
             this.tvwCar.Model = dtcar.buscarCargos(txtCargoNombre.Text.Trim());
-
         }
 
     }
