@@ -132,6 +132,7 @@
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="CancelarAction">
@@ -259,6 +260,7 @@
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="CancelarAction">
@@ -462,6 +464,7 @@
       <action id="modifyAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">modify</property>
         <signal name="Activated" handler="OnModifyActionActivated" />
       </action>
@@ -561,11 +564,13 @@
       <action id="saveAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">save</property>
       </action>
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="GuardarAction">
@@ -1178,6 +1183,7 @@
       <action id="modifyAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">modify</property>
       </action>
       <action id="ModificarAction">
@@ -1190,6 +1196,7 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="AgregarAction1">
@@ -1321,6 +1328,7 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="GuardarAction1">
@@ -1852,6 +1860,7 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="GuardarAction1">
@@ -3242,7 +3251,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <widget class="Gtk.Button" id="btnOpcion">
             <property name="MemberName" />
             <property name="WidthRequest">221</property>
             <property name="HeightRequest">29</property>
@@ -3250,6 +3259,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Opcion</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnOpcionClicked" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -3699,6 +3709,7 @@
       <action id="Action">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -3789,12 +3800,276 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Opcion.FrmOpcion" design-size="400 300">
+  <widget class="Gtk.Window" id="ScapProject0.Opcion.FrmOpcion" design-size="776 408">
+    <action-group name="Default">
+      <action id="Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
+      </action>
+      <action id="btnAdd">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Agregar</property>
+        <property name="ShortLabel" translatable="yes">Agregar</property>
+        <property name="StockId">add</property>
+        <signal name="Activated" handler="OnBtnAddActivated" />
+      </action>
+      <action id="deleteAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
+        <property name="StockId">delete</property>
+      </action>
+      <action id="deleteAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="ShortLabel" translatable="yes" />
+        <property name="StockId">delete</property>
+      </action>
+      <action id="btnDelete">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Eliminar</property>
+        <property name="ShortLabel" translatable="yes">Eliminar</property>
+        <property name="StockId">delete</property>
+      </action>
+      <action id="btnModify">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Modificar</property>
+        <property name="ShortLabel" translatable="yes">Modificar</property>
+        <property name="StockId">modify</property>
+      </action>
+      <action id="btnSearch">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Buscar</property>
+        <property name="ShortLabel" translatable="yes">Buscar</property>
+        <property name="StockId">search</property>
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">FrmOpcion</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
-      <placeholder />
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar1">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="toolbar1" type="Toolbar">
+              <node type="Toolitem" />
+            </node>
+          </widget>
+          <packing>
+            <property name="X">52</property>
+            <property name="Y">31</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar2">
+            <property name="MemberName">Agregar</property>
+            <property name="ShowArrow">False</property>
+            <node name="toolbar2" type="Toolbar">
+              <node type="Toolitem" action="btnAdd" />
+              <node type="Toolitem" action="btnDelete" />
+              <node type="Toolitem" action="btnModify" />
+              <node type="Toolitem" action="btnSearch" />
+            </node>
+          </widget>
+          <packing>
+            <property name="X">21</property>
+            <property name="Y">23</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">397</property>
+            <property name="Y">31</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TreeView" id="twOpcion">
+                <property name="MemberName" />
+                <property name="WidthRequest">415</property>
+                <property name="HeightRequest">252</property>
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">136</property>
+            <property name="Y">102</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="ScapProject0.Opcion.FrmAddOpc" design-size="434 300">
+    <action-group name="Default">
+      <action id="btnSave">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Guardar</property>
+        <property name="ShortLabel" translatable="yes">Guardar</property>
+        <property name="StockId">save</property>
+        <signal name="Activated" handler="OnBtnSaveActivated" />
+      </action>
+      <action id="btnCancel">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">Cancelar</property>
+        <property name="ShortLabel" translatable="yes">Cancelar</property>
+        <property name="StockId">cancel</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">FrmAddOpc</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar4">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="toolbar4" type="Toolbar">
+              <node type="Toolitem" action="btnSave" />
+              <node type="Toolitem" action="btnCancel" />
+            </node>
+          </widget>
+          <packing>
+            <property name="X">26</property>
+            <property name="Y">19</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label4">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nombre de opción:</property>
+          </widget>
+          <packing>
+            <property name="X">48</property>
+            <property name="Y">124</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="txtOpc">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">187</property>
+            <property name="Y">117</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnBack">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">43</property>
+            <property name="Y">245</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="ScapProject0.Opcion.FrmModOpc" design-size="464 300">
+    <action-group name="Default">
+      <action id="GuardarAction">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Guardar</property>
+        <property name="ShortLabel" translatable="yes">  Guardar</property>
+        <property name="StockId">save</property>
+      </action>
+      <action id="CancelarAction">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Cancelar</property>
+        <property name="ShortLabel" translatable="yes">  Cancelar</property>
+        <property name="StockId">cancel</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">FrmModOpc</property>
+    <property name="WindowPosition">Center</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar3">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="__gtksharp_91_Stetic_Editor_ActionToolbar" type="Toolbar">
+              <node type="Toolitem" action="GuardarAction" />
+              <node type="Toolitem" action="CancelarAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="X">25</property>
+            <property name="Y">20</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nombre opción:</property>
+          </widget>
+          <packing>
+            <property name="X">50</property>
+            <property name="Y">133</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry2">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">178</property>
+            <property name="Y">122</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnBack">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">43</property>
+            <property name="Y">245</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
