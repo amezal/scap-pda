@@ -62,5 +62,25 @@ namespace ScapProject0.Roles
             frm.Show();
             this.Hide();
         }
+
+        protected void OnBtnEliminarActivated(object sender, EventArgs e)
+        {
+            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Warning,
+            ButtonsType.YesNo, "Desea eliminar a este usuario?");
+
+            int result = md.Run();
+            if (result == -8)
+            {
+                if (dtrol.Eliminar(rolActual))
+                {
+                    MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                    ButtonsType.Ok, "Usuario eliminado");
+                    ms.Run();
+                    ms.Destroy();
+                }
+            }
+            md.Destroy();
+            this.refresh();
+        }
     }
 }
