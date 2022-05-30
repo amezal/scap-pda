@@ -285,7 +285,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Horarios.Horario" design-size="660 300">
+  <widget class="Gtk.Window" id="ScapProject0.Horarios.Horario" design-size="702 449">
     <action-group name="Default">
       <action id="AgregarAction">
         <property name="Type">Action</property>
@@ -303,6 +303,7 @@
         <property name="StockId">delete</property>
         <property name="DrawAsRadio">False</property>
         <property name="Active">False</property>
+        <signal name="Activated" handler="OnEliminarActionActivated" />
       </action>
       <action id="ModificarAction">
         <property name="Type">Action</property>
@@ -317,6 +318,13 @@
         <property name="IsImportant">True</property>
         <property name="Label" translatable="yes">Buscar</property>
         <property name="ShortLabel" translatable="yes">Buscar</property>
+        <property name="StockId">search</property>
+        <signal name="Activated" handler="OnBuscarActionActivated" />
+      </action>
+      <action id="buscarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Buscar </property>
+        <property name="ShortLabel" translatable="yes">Buscar </property>
         <property name="StockId">search</property>
       </action>
     </action-group>
@@ -347,16 +355,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry3">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">448</property>
-            <property name="Y">13</property>
-          </packing>
+          <placeholder />
         </child>
         <child>
           <widget class="Gtk.Button" id="btnBackHor">
@@ -368,12 +367,9 @@
             <signal name="Clicked" handler="OnBtnBackHorClicked" />
           </widget>
           <packing>
-            <property name="X">41</property>
-            <property name="Y">247</property>
+            <property name="X">43</property>
+            <property name="Y">369</property>
           </packing>
-        </child>
-        <child>
-          <placeholder />
         </child>
         <child>
           <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
@@ -383,15 +379,29 @@
               <widget class="Gtk.TreeView" id="trvwHorario">
                 <property name="MemberName" />
                 <property name="WidthRequest">600</property>
-                <property name="HeightRequest">150</property>
+                <property name="HeightRequest">240</property>
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
+                <signal name="CursorChanged" handler="OnTrvwHorarioCursorChanged" />
+                <signal name="RowActivated" handler="OnTrvwHorarioRowActivated" />
               </widget>
             </child>
           </widget>
           <packing>
-            <property name="X">13</property>
-            <property name="Y">68</property>
+            <property name="X">35</property>
+            <property name="Y">75</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entBuscar">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">460</property>
+            <property name="Y">12</property>
           </packing>
         </child>
       </widget>
@@ -511,7 +521,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Horarios.FrmAddHor" design-size="407 300">
+  <widget class="Gtk.Window" id="ScapProject0.Horarios.FrmAddHor" design-size="452 355">
     <action-group name="Default">
       <action id="saveAction">
         <property name="Type">Action</property>
@@ -547,60 +557,6 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.Label" id="label3">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Nombre:</property>
-          </widget>
-          <packing>
-            <property name="X">56</property>
-            <property name="Y">92</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entHoraIn">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">148</property>
-            <property name="Y">130</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label4">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Hora de inicio:</property>
-          </widget>
-          <packing>
-            <property name="X">23</property>
-            <property name="Y">136</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label5">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Hora de fin:</property>
-          </widget>
-          <packing>
-            <property name="X">39</property>
-            <property name="Y">184</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entHoraFin">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">148</property>
-            <property name="Y">177</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Entry" id="entNombreHor">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
@@ -608,22 +564,8 @@
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">149</property>
+            <property name="X">192</property>
             <property name="Y">84</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="btnRegresarAddHor">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Regresar</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnBtnRegresarAddHorClicked" />
-          </widget>
-          <packing>
-            <property name="X">28</property>
-            <property name="Y">239</property>
           </packing>
         </child>
         <child>
@@ -640,10 +582,100 @@
             <property name="Y">11</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Button" id="btnRegresarAddHor">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnRegresarAddHorClicked" />
+          </widget>
+          <packing>
+            <property name="X">29</property>
+            <property name="Y">297</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entHoraFin">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">192</property>
+            <property name="Y">177</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entAlmuerzo">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">192</property>
+            <property name="Y">223</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entHoraIn">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">192</property>
+            <property name="Y">129</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label5">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Hora de fin:</property>
+          </widget>
+          <packing>
+            <property name="X">75</property>
+            <property name="Y">190</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Tiempo de almuerzo:</property>
+          </widget>
+          <packing>
+            <property name="X">14</property>
+            <property name="Y">230</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label4">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Hora de inicio:</property>
+          </widget>
+          <packing>
+            <property name="X">56</property>
+            <property name="Y">138</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nombre:</property>
+          </widget>
+          <packing>
+            <property name="X">92</property>
+            <property name="Y">91</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Horarios.FrmModHor" design-size="408 306">
+  <widget class="Gtk.Window" id="ScapProject0.Horarios.FrmModHor" design-size="494 368">
     <action-group name="Default">
       <action id="GuardarAction">
         <property name="Type">Action</property>
@@ -665,6 +697,7 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarAction1Activated" />
       </action>
       <action id="CancelarAction1">
         <property name="Type">Action</property>
@@ -672,6 +705,7 @@
         <property name="Label" translatable="yes">  Cancelar</property>
         <property name="ShortLabel" translatable="yes">  Cancelar</property>
         <property name="StockId">cancel</property>
+        <signal name="Activated" handler="OnCancelarAction1Activated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -682,83 +716,39 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.Label" id="label8">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Nombre:</property>
-          </widget>
-          <packing>
-            <property name="X">67</property>
-            <property name="Y">86</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label9">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Hora de inicio:</property>
-          </widget>
-          <packing>
-            <property name="X">31</property>
-            <property name="Y">134</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label10">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Hora de fin:</property>
-          </widget>
-          <packing>
-            <property name="X">49</property>
-            <property name="Y">188</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entry5">
+          <widget class="Gtk.Entry" id="entName">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">149</property>
+            <property name="X">220</property>
             <property name="Y">77</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry6">
+          <widget class="Gtk.Entry" id="entHorIn">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">150</property>
+            <property name="X">220</property>
             <property name="Y">127</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry7">
+          <widget class="Gtk.Entry" id="entHorFin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">149</property>
+            <property name="X">220</property>
             <property name="Y">179</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="btnBackModHor">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Regresar</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnBtnBackModHorClicked" />
-          </widget>
-          <packing>
-            <property name="X">42</property>
-            <property name="Y">237</property>
           </packing>
         </child>
         <child>
@@ -773,6 +763,72 @@
           <packing>
             <property name="X">2</property>
             <property name="Y">4</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnBackModHor">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnBackModHorClicked" />
+          </widget>
+          <packing>
+            <property name="X">35</property>
+            <property name="Y">304</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entAlmuerzo">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">220</property>
+            <property name="Y">224</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Duracion de almuerzo:</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">233</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label10">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Hora de fin:</property>
+          </widget>
+          <packing>
+            <property name="X">101</property>
+            <property name="Y">189</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label9">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Hora de inicio:</property>
+          </widget>
+          <packing>
+            <property name="X">79</property>
+            <property name="Y">137</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label8">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nombre:</property>
+          </widget>
+          <packing>
+            <property name="X">115</property>
+            <property name="Y">83</property>
           </packing>
         </child>
       </widget>

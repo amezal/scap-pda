@@ -16,21 +16,25 @@ namespace ScapProject0.Horarios
 
 		private global::Gtk.Fixed fixed3;
 
-		private global::Gtk.Label label8;
+		private global::Gtk.Entry entName;
 
-		private global::Gtk.Label label9;
+		private global::Gtk.Entry entHorIn;
 
-		private global::Gtk.Label label10;
+		private global::Gtk.Entry entHorFin;
 
-		private global::Gtk.Entry entry5;
-
-		private global::Gtk.Entry entry6;
-
-		private global::Gtk.Entry entry7;
+		private global::Gtk.Toolbar toolbar2;
 
 		private global::Gtk.Button btnBackModHor;
 
-		private global::Gtk.Toolbar toolbar2;
+		private global::Gtk.Entry entAlmuerzo;
+
+		private global::Gtk.Label label2;
+
+		private global::Gtk.Label label10;
+
+		private global::Gtk.Label label9;
+
+		private global::Gtk.Label label8;
 
 		protected virtual void Build()
 		{
@@ -64,69 +68,35 @@ namespace ScapProject0.Horarios
 			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label8 = new global::Gtk.Label();
-			this.label8.Name = "label8";
-			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
-			this.fixed3.Add(this.label8);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label8]));
-			w2.X = 67;
-			w2.Y = 86;
+			this.entName = new global::Gtk.Entry();
+			this.entName.CanFocus = true;
+			this.entName.Name = "entName";
+			this.entName.IsEditable = true;
+			this.entName.InvisibleChar = '•';
+			this.fixed3.Add(this.entName);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entName]));
+			w2.X = 220;
+			w2.Y = 77;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label9 = new global::Gtk.Label();
-			this.label9.Name = "label9";
-			this.label9.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de inicio:");
-			this.fixed3.Add(this.label9);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label9]));
-			w3.X = 31;
-			w3.Y = 134;
+			this.entHorIn = new global::Gtk.Entry();
+			this.entHorIn.CanFocus = true;
+			this.entHorIn.Name = "entHorIn";
+			this.entHorIn.IsEditable = true;
+			this.entHorIn.InvisibleChar = '•';
+			this.fixed3.Add(this.entHorIn);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entHorIn]));
+			w3.X = 220;
+			w3.Y = 127;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label10 = new global::Gtk.Label();
-			this.label10.Name = "label10";
-			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de fin:");
-			this.fixed3.Add(this.label10);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label10]));
-			w4.X = 49;
-			w4.Y = 188;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry5 = new global::Gtk.Entry();
-			this.entry5.CanFocus = true;
-			this.entry5.Name = "entry5";
-			this.entry5.IsEditable = true;
-			this.entry5.InvisibleChar = '•';
-			this.fixed3.Add(this.entry5);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry5]));
-			w5.X = 149;
-			w5.Y = 77;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry6 = new global::Gtk.Entry();
-			this.entry6.CanFocus = true;
-			this.entry6.Name = "entry6";
-			this.entry6.IsEditable = true;
-			this.entry6.InvisibleChar = '•';
-			this.fixed3.Add(this.entry6);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry6]));
-			w6.X = 150;
-			w6.Y = 127;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry7 = new global::Gtk.Entry();
-			this.entry7.CanFocus = true;
-			this.entry7.Name = "entry7";
-			this.entry7.IsEditable = true;
-			this.entry7.InvisibleChar = '•';
-			this.fixed3.Add(this.entry7);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry7]));
-			w7.X = 149;
-			w7.Y = 179;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.btnBackModHor = new global::Gtk.Button();
-			this.btnBackModHor.CanFocus = true;
-			this.btnBackModHor.Name = "btnBackModHor";
-			this.btnBackModHor.UseUnderline = true;
-			this.btnBackModHor.Label = global::Mono.Unix.Catalog.GetString("Regresar");
-			this.fixed3.Add(this.btnBackModHor);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.btnBackModHor]));
-			w8.X = 42;
-			w8.Y = 237;
+			this.entHorFin = new global::Gtk.Entry();
+			this.entHorFin.CanFocus = true;
+			this.entHorFin.Name = "entHorFin";
+			this.entHorFin.IsEditable = true;
+			this.entHorFin.InvisibleChar = '•';
+			this.fixed3.Add(this.entHorFin);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entHorFin]));
+			w4.X = 220;
+			w4.Y = 179;
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar2\'><toolitem name=\'GuardarAction1\' action=\'GuardarActio" +
 					"n1\'/><toolitem name=\'CancelarAction1\' action=\'CancelarAction1\'/></toolbar></ui>");
@@ -134,17 +104,71 @@ namespace ScapProject0.Horarios
 			this.toolbar2.Name = "toolbar2";
 			this.toolbar2.ShowArrow = false;
 			this.fixed3.Add(this.toolbar2);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.toolbar2]));
-			w9.X = 2;
-			w9.Y = 4;
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.toolbar2]));
+			w5.X = 2;
+			w5.Y = 4;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.btnBackModHor = new global::Gtk.Button();
+			this.btnBackModHor.CanFocus = true;
+			this.btnBackModHor.Name = "btnBackModHor";
+			this.btnBackModHor.UseUnderline = true;
+			this.btnBackModHor.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed3.Add(this.btnBackModHor);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.btnBackModHor]));
+			w6.X = 35;
+			w6.Y = 304;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.entAlmuerzo = new global::Gtk.Entry();
+			this.entAlmuerzo.CanFocus = true;
+			this.entAlmuerzo.Name = "entAlmuerzo";
+			this.entAlmuerzo.IsEditable = true;
+			this.entAlmuerzo.InvisibleChar = '•';
+			this.fixed3.Add(this.entAlmuerzo);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entAlmuerzo]));
+			w7.X = 220;
+			w7.Y = 224;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label2 = new global::Gtk.Label();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Duracion de almuerzo:");
+			this.fixed3.Add(this.label2);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label2]));
+			w8.X = 31;
+			w8.Y = 233;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label10 = new global::Gtk.Label();
+			this.label10.Name = "label10";
+			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de fin:");
+			this.fixed3.Add(this.label10);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label10]));
+			w9.X = 101;
+			w9.Y = 189;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label9 = new global::Gtk.Label();
+			this.label9.Name = "label9";
+			this.label9.LabelProp = global::Mono.Unix.Catalog.GetString("Hora de inicio:");
+			this.fixed3.Add(this.label9);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label9]));
+			w10.X = 79;
+			w10.Y = 137;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label8 = new global::Gtk.Label();
+			this.label8.Name = "label8";
+			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
+			this.fixed3.Add(this.label8);
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label8]));
+			w11.X = 115;
+			w11.Y = 83;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 408;
-			this.DefaultHeight = 306;
+			this.DefaultWidth = 494;
+			this.DefaultHeight = 368;
 			this.Show();
+			this.GuardarAction1.Activated += new global::System.EventHandler(this.OnGuardarAction1Activated);
+			this.CancelarAction1.Activated += new global::System.EventHandler(this.OnCancelarAction1Activated);
 			this.btnBackModHor.Clicked += new global::System.EventHandler(this.OnBtnBackModHorClicked);
 		}
 	}
