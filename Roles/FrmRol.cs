@@ -82,5 +82,13 @@ namespace ScapProject0.Roles
             md.Destroy();
             this.refresh();
         }
+
+        protected void OnBtnAgregarActivated(object sender, EventArgs e)
+        {
+            FrmAddRol frm = new FrmAddRol();
+            frm.Caller = this;
+            frm.Show();
+            this.Hide();
+        }
     }
 }

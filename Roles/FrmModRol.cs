@@ -123,7 +123,7 @@ namespace ScapProject0.Roles
             if (guardado)
             {
                 MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
-                ButtonsType.Ok, "Usuario modificado correctamente");
+                ButtonsType.Ok, "Rol modificado correctamente");
                 this.caller.refresh();
                 ms.Run();
                 ms.Destroy();

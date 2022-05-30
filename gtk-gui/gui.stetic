@@ -4265,6 +4265,7 @@
         <property name="Label" translatable="yes">  Agregar</property>
         <property name="ShortLabel" translatable="yes">  Agregar</property>
         <property name="StockId">add</property>
+        <signal name="Activated" handler="OnBtnAgregarActivated" />
       </action>
       <action id="btnEliminar">
         <property name="Type">Action</property>
@@ -4364,12 +4365,78 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.Roles.FrmAddRol" design-size="400 300">
+  <widget class="Gtk.Window" id="ScapProject0.Roles.FrmAddRol" design-size="396 292">
+    <action-group name="Default">
+      <action id="btnGuardar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Guardar</property>
+        <property name="ShortLabel" translatable="yes">  Guardar</property>
+        <property name="StockId">save</property>
+        <signal name="Activated" handler="OnBtnGuardarActivated" />
+      </action>
+      <action id="btnCancelar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Cancelar</property>
+        <property name="ShortLabel" translatable="yes">  Cancelar</property>
+        <property name="StockId">cancel</property>
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">FrmAddRol</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
-      <placeholder />
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar1">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="__gtksharp_69_Stetic_Editor_ActionToolbar" type="Toolbar">
+              <node type="Toolitem" action="btnGuardar" />
+              <node type="Toolitem" action="btnCancelar" />
+            </node>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnRegresar">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnRegresarClicked" />
+          </widget>
+          <packing>
+            <property name="X">29</property>
+            <property name="Y">203</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Rol: </property>
+          </widget>
+          <packing>
+            <property name="X">55</property>
+            <property name="Y">105</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="txtRol">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">99</property>
+            <property name="Y">97</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
   <widget class="Gtk.Window" id="ScapProject0.Roles.FrmModRol" design-size="595 453">

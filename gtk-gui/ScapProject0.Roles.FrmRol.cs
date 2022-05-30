@@ -111,6 +111,7 @@ namespace ScapProject0.Roles
 			this.DefaultWidth = 726;
 			this.DefaultHeight = 489;
 			this.Show();
+			this.btnAgregar.Activated += new global::System.EventHandler(this.OnBtnAgregarActivated);
 			this.btnEliminar.Activated += new global::System.EventHandler(this.OnBtnEliminarActivated);
 			this.btnModificar.Activated += new global::System.EventHandler(this.OnBtnModificarActivated);
 			this.trvwRol.CursorChanged += new global::System.EventHandler(this.OnTrvwRolCursorChanged);
