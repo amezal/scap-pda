@@ -51,6 +51,39 @@ namespace ScapProject0.Datos
 
             return datos;
         }
+
+        public Tbl_rol DatosRol(int idRol)
+        {
+            IDataReader idr = null;
+            sb.Clear();
+            sb.Append("SELECT * FROM LMBA.VwRol ");
+            sb.Append($"WHERE ID='{idRol}';");
+
+            try
+            {
+                con.AbrirConexion();
+                idr = con.Leer(CommandType.Text, sb.ToString());
+                idr.Read();
+                Tbl_rol rol = new Tbl_rol()
+                {
+                    Estado = 1,
+                    Id_rol = Convert.ToInt32(idr["ID"]),
+                    Rol = idr["Rol"].ToString()
+                };
+                idr.Close();
+                return rol;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
     }
 }
 
