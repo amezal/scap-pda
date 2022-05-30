@@ -53,5 +53,12 @@ namespace ScapProject0
             Console.WriteLine("Hola");
             this.Hide();
         }
+
+        protected void OnBtnOpcionClicked(object sender, EventArgs e)
+        {
+            Opcion.FrmOpcion op = new Opcion.FrmOpcion();
+            op.Show();
+            op.Caller = this;
+        }
     }
 }

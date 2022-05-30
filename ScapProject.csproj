@@ -150,6 +150,13 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Datos\Dt_tbl_justificaciones.cs" />
     <Compile Include="Entidades\Tbl_Justificacion.cs" />
+    <Compile Include="Opcion\FrmOpcion.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Opcion.FrmOpcion.cs" />
+    <Compile Include="Datos\Dt_tbl_Opcion.cs" />
+    <Compile Include="Opcion\FrmAddOpc.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Opcion.FrmAddOpc.cs" />
+    <Compile Include="Opcion\FrmModOpc.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Opcion.FrmModOpc.cs" />
     <Compile Include="Negocios\Ng_tbl_empleado.cs" />
     <Compile Include="Negocios\Ng_tbl_horario.cs" />
     <Compile Include="Negocios\Ng_tbl_registroES.cs" />
@@ -159,7 +166,6 @@
     <Compile Include="gtk-gui\ScapProject0.Roles.FrmRol.cs" />
     <Compile Include="Datos\Dt_tbl_rol.cs" />
     <Compile Include="Datos\Dt_tbl_opcion.cs" />
-    <Compile Include="gtk-gui\ScapProject0.Opcion.FrmOpcion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
@@ -171,6 +177,7 @@
     <Folder Include="Empleados\" />
     <Folder Include="Cargos\" />
     <Folder Include="AdminPswd\" />
+    <Folder Include="Opcion\" />
     <Folder Include="Negocios\" />
     <Folder Include="Roles\" />
   </ItemGroup>
