@@ -158,6 +158,7 @@
     <Compile Include="gtk-gui\ScapProject0.Roles.FrmRol.cs" />
     <Compile Include="Datos\Dt_tbl_rol.cs" />
     <Compile Include="Datos\Dt_tbl_opcion.cs" />
+    <Compile Include="gtk-gui\ScapProject0.Opcion.FrmOpcion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
