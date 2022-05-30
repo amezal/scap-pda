@@ -43,8 +43,8 @@ namespace ScapProject0.Cargos
 
         protected void OnBtnBackClicked(object sender, EventArgs e)
         {
-            this.caller.Show();
             this.Hide();
+            this.caller.Show();
         }
 
         protected void OnGuardarActionActivated(object sender, EventArgs e)

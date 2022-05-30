@@ -99,14 +99,14 @@ namespace ScapProject0.Cargos
 			this.txtCargoNombre.InvisibleChar = '•';
 			this.fixed1.Add(this.txtCargoNombre);
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtCargoNombre]));
-			w6.X = 422;
-			w6.Y = 43;
+			w6.X = 455;
+			w6.Y = 41;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 856;
+			this.DefaultWidth = 694;
 			this.DefaultHeight = 515;
 			this.Show();
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);

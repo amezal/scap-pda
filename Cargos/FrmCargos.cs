@@ -109,7 +109,6 @@ namespace ScapProject0.Cargos
         protected void OnBuscarActionActivated(object sender, EventArgs e)
         {
             this.tvwCar.Model = dtcar.buscarCargos(txtCargoNombre.Text.Trim());
-
         }
 
     }
