@@ -170,6 +170,7 @@
     <Compile Include="Roles\FrmModRol.cs" />
     <Compile Include="gtk-gui\ScapProject0.Roles.FrmModRol.cs" />
     <Compile Include="Datos\Dt_tbl_rolOpcion.cs" />
+    <Compile Include="Negocios\Ng_tbl_rolOpcion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
