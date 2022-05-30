@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `LMBA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `LMBA`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Linux (x86_64)
 --
 -- Host: localhost    Database: LMBA
@@ -26,11 +28,11 @@ CREATE TABLE `Cargo` (
   `idCargo` int NOT NULL AUTO_INCREMENT,
   `nombreCargo` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `descripcion` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `estado` bit(1) NOT NULL DEFAULT b'1',
+  `estado` int NOT NULL DEFAULT '1',
   `idDepartamento` int NOT NULL,
   PRIMARY KEY (`idCargo`),
   KEY `RefDepartamento1` (`idDepartamento`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `Cargo` (
 
 LOCK TABLES `Cargo` WRITE;
 /*!40000 ALTER TABLE `Cargo` DISABLE KEYS */;
-INSERT INTO `Cargo` VALUES (1,'Analista de sistemas','Analiza los sistemas',_binary '',1),(2,'Disenador','Hace disenos',_binary '',2),(3,'Consultor','Hace consultas',_binary '',1),(4,'Experto de soporte','Soporta',_binary '',1),(5,'Analista de Negocios','Analiza negocios',_binary '',3);
+INSERT INTO `Cargo` VALUES (1,'Analista de sistemas','Analiza los sistemas',1,1),(2,'Disenador','Hace disenos',1,2),(3,'Consultor','Hace consultas',1,1),(4,'Experto de soporte','Soporta',1,1),(5,'Analista de Negocios','Analiza negocios',3,3),(6,'Conserje','Limpia cosas',3,2);
 /*!40000 ALTER TABLE `Cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,7 +160,7 @@ CREATE TABLE `Justificacion` (
   `horaEntrada` time NOT NULL,
   `horaSalida` time DEFAULT NULL,
   PRIMARY KEY (`idJustificacion`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +169,7 @@ CREATE TABLE `Justificacion` (
 
 LOCK TABLES `Justificacion` WRITE;
 /*!40000 ALTER TABLE `Justificacion` DISABLE KEYS */;
-INSERT INTO `Justificacion` VALUES (15,1,'TEST','2022-05-03 00:00:00','2022-05-04 00:00:00','00:00:00','00:00:00');
+INSERT INTO `Justificacion` VALUES (15,1,'TEST','2022-05-03 00:00:00','2022-05-04 00:00:00','00:00:00','05:00:00'),(16,1,'Prueba Hola','2022-05-29 00:00:00','2022-05-29 00:00:00','08:30:00','17:00:00');
 /*!40000 ALTER TABLE `Justificacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,6 +185,7 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `ID`,
  1 AS `Cargo`,
  1 AS `Departamento`,
+ 1 AS `Descripcion`,
  1 AS `idDepartamento`*/;
 SET character_set_client = @saved_cs_client;
 
@@ -365,7 +368,7 @@ CREATE TABLE `registroES` (
 
 LOCK TABLES `registroES` WRITE;
 /*!40000 ALTER TABLE `registroES` DISABLE KEYS */;
-INSERT INTO `registroES` VALUES (1,1,'2022-05-03 00:00:00','08:00:00','17:00:00',15),(2,1,'2022-05-04 00:00:00','08:00:00','15:00:00',15),(3,1,'2022-05-05 00:00:00','07:59:00','16:58:00',NULL),(10,1,'2022-05-29 00:00:00','14:21:13','17:00:00',NULL),(18,1,'2022-05-28 00:00:00','14:47:20','15:22:20',NULL);
+INSERT INTO `registroES` VALUES (1,1,'2022-05-03 00:00:00','08:00:00','17:00:00',15),(2,1,'2022-05-04 00:00:00','08:00:00','15:00:00',15),(3,1,'2022-05-05 00:00:00','07:59:00','16:58:00',NULL),(10,1,'2022-05-29 00:00:00','14:21:13','17:00:00',16),(18,1,'2022-05-28 00:00:00','14:47:20','15:22:20',NULL);
 /*!40000 ALTER TABLE `registroES` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -490,7 +493,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwCargo` AS select `Cargo`.`idCargo` AS `ID`,`Cargo`.`nombreCargo` AS `Cargo`,`Departamento`.`nombreDepartamento` AS `Departamento`,`Departamento`.`idDepartamento` AS `idDepartamento` from (`Cargo` join `Departamento` on((`Cargo`.`idDepartamento` = `Departamento`.`idDepartamento`))) where (`Cargo`.`estado` <> 3) */;
+/*!50001 VIEW `VwCargo` AS select `Cargo`.`idCargo` AS `ID`,`Cargo`.`nombreCargo` AS `Cargo`,`Departamento`.`nombreDepartamento` AS `Departamento`,`Cargo`.`descripcion` AS `Descripcion`,`Departamento`.`idDepartamento` AS `idDepartamento` from (`Cargo` join `Departamento` on((`Cargo`.`idDepartamento` = `Departamento`.`idDepartamento`))) where (`Cargo`.`estado` <> 3) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -580,7 +583,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `VwRol` AS select `rol`.`id_rol` AS `ID`,`rol`.`rol` AS `Rol`,group_concat(`opcion`.`opcion` order by `opcion`.`id_opcion` ASC separator ', ') AS `Opciones` from ((`rol` left join `rolOpcion` on((`rol`.`id_rol` = `rolOpcion`.`id_rol`))) left join `opcion` on((`rolOpcion`.`id_opcion` = `opcion`.`id_opcion`))) group by `rol`.`id_rol`,`rol`.`rol` */;
+/*!50001 VIEW `VwRol` AS select `rol`.`id_rol` AS `ID`,`rol`.`rol` AS `Rol`,group_concat(`opcion`.`opcion` order by `opcion`.`id_opcion` ASC separator ', ') AS `Opciones` from ((`rol` left join `rolOpcion` on((`rol`.`id_rol` = `rolOpcion`.`id_rol`))) left join `opcion` on((`rolOpcion`.`id_opcion` = `opcion`.`id_opcion`))) where (`rol`.`estado` <> 3) group by `rol`.`id_rol`,`rol`.`rol` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -612,4 +615,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-29 17:36:57
+-- Dump completed on 2022-05-29 21:03:43
