@@ -1,24 +1,137 @@
 ﻿using System;
 using Gtk;
+using System.Collections.Generic;
+using ScapProject0.Datos;
+using ScapProject0.Entidades;
+using ScapProject0.Negocios;
+using System.Text.RegularExpressions;
 
 namespace ScapProject0.Horarios
 {
     public partial class FrmModHor : Gtk.Window
     {
+        private Horario caller;
+        Dt_tbl_horario dthor = new Dt_tbl_horario();
+        Ng_tbl_horario nghor = new Ng_tbl_horario();
+        private Tbl_horario thor;
+        private int idHor;
 
-        public FrmModHor() :
+        public Horario Caller { get => caller; set => caller = value; }
+
+        public FrmModHor(int idHorActual) :
                 base(Gtk.WindowType.Toplevel)
         {
+            this.idHor = idHorActual;
+            thor = dthor.DatosHorario(idHor);
+            this.llenarCampos();
             this.Build();
         }
 
-        private Window caller;
+        public void llenarCampos()
+        {
+            entName.Text = thor.Nombre;
+            entHorIn.Text = thor.HoraInicio.ToString();
+            entHorFin.Text = thor.HoraSalida.ToShortTimeString();
+            entAlmuerzo.Text = thor.Almuerzo.ToShortTimeString();
 
-        public Window Caller { get => caller; set => caller = value; }
+        }
 
         protected void OnBtnBackModHorClicked(object sender, EventArgs e)
         {
-            caller.Show();
+            Caller.Show();
+            this.Hide();
+        }
+
+        protected void OnGuardarAction1Activated(object sender, EventArgs e)
+        {
+
+            bool valido = Validar();
+            if (!valido)
+            {
+                return;
+            }
+
+            Tbl_horario tho = new Tbl_horario()
+            {
+                Nombre = entName.Text,
+                HoraInicio = DateTime.Parse(entHorIn.Text),
+                HoraSalida = DateTime.Parse(entHorFin.Text),
+                Almuerzo = DateTime.Parse(entAlmuerzo.Text)
+
+            };
+
+
+            if (dthor.ModHorario(tho))
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                ButtonsType.Ok, "Horario modificado correctamente");
+                this.Caller.refresh();
+                ms.Run();
+                ms.Destroy();
+
+            }
+        }
+
+        public bool Validar()
+        {
+            Regex hora = new Regex("\\d{2}\\:\\d{2}\\:\\d{2}");
+            bool valido = true;
+            void modal(string msg)
+            {
+                MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, msg);
+                ms.Run(); ms.Destroy();
+                valido = false;
+            }
+
+            if (String.IsNullOrEmpty(entName.Text.Trim()))
+            {
+                modal("Debe ingresar el nombre del Horario");
+                entName.GrabFocus();
+                return valido;
+            }
+            if (nghor.existe(entName.Text, "emailCorporativo"))
+            {
+                modal("Ya existe un Horario con este nombre");
+                entName.GrabFocus();
+                return valido;
+            }
+            if (String.IsNullOrEmpty(entHorIn.Text.Trim()))
+            {
+                modal("Debe ingresar la hora de entrada");
+                entHorIn.GrabFocus();
+                return valido;
+            }
+            if (!hora.IsMatch(entHorIn.Text.Trim()))
+            {
+                modal("La hora de entrada debe tener el formato H:mm:ss");
+                entHorIn.GrabFocus();
+                return valido;
+            }
+            if (String.IsNullOrEmpty(entHorFin.Text.Trim()))
+            {
+                modal("Debe ingresar la hora de salida");
+                entHorFin.GrabFocus();
+                return valido;
+            }
+            if (!hora.IsMatch(entHorFin.Text.Trim()))
+            {
+                modal("La hora salida debe tener el formato H:mm:ss");
+                entHorFin.GrabFocus();
+                return valido;
+            }
+
+            if (!hora.IsMatch(entAlmuerzo.Text.Trim()))
+            {
+                modal("La duracion del almuerzo debe tener el formato H:mm:ss");
+                entAlmuerzo.GrabFocus();
+                return valido;
+            }
+            return valido;
+        }
+
+        protected void OnCancelarAction1Activated(object sender, EventArgs e)
+        {
+            this.Caller.Show();
             this.Hide();
         }
     }

@@ -14,17 +14,19 @@ namespace ScapProject0.Horarios
 
 		private global::Gtk.Action BuscarAction;
 
+		private global::Gtk.Action buscarAction;
+
 		private global::Gtk.Fixed fixed2;
 
 		private global::Gtk.Toolbar toolbar3;
-
-		private global::Gtk.Entry entry3;
 
 		private global::Gtk.Button btnBackHor;
 
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
 		private global::Gtk.TreeView trvwHorario;
+
+		private global::Gtk.Entry entBuscar;
 
 		protected virtual void Build()
 		{
@@ -48,6 +50,9 @@ namespace ScapProject0.Horarios
 			this.BuscarAction.IsImportant = true;
 			this.BuscarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Buscar");
 			w1.Add(this.BuscarAction, null);
+			this.buscarAction = new global::Gtk.Action("buscarAction", global::Mono.Unix.Catalog.GetString("Buscar "), null, "search");
+			this.buscarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Buscar ");
+			w1.Add(this.buscarAction, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Horarios.Horario";
@@ -67,25 +72,15 @@ namespace ScapProject0.Horarios
 			w2.X = 16;
 			w2.Y = 9;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.entry3 = new global::Gtk.Entry();
-			this.entry3.CanFocus = true;
-			this.entry3.Name = "entry3";
-			this.entry3.IsEditable = true;
-			this.entry3.InvisibleChar = '•';
-			this.fixed2.Add(this.entry3);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entry3]));
-			w3.X = 448;
-			w3.Y = 13;
-			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.btnBackHor = new global::Gtk.Button();
 			this.btnBackHor.CanFocus = true;
 			this.btnBackHor.Name = "btnBackHor";
 			this.btnBackHor.UseUnderline = true;
 			this.btnBackHor.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed2.Add(this.btnBackHor);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnBackHor]));
-			w4.X = 41;
-			w4.Y = 247;
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnBackHor]));
+			w3.X = 43;
+			w3.Y = 369;
 			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -93,25 +88,39 @@ namespace ScapProject0.Horarios
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 			this.trvwHorario = new global::Gtk.TreeView();
 			this.trvwHorario.WidthRequest = 600;
-			this.trvwHorario.HeightRequest = 150;
+			this.trvwHorario.HeightRequest = 240;
 			this.trvwHorario.CanFocus = true;
 			this.trvwHorario.Name = "trvwHorario";
 			this.GtkScrolledWindow.Add(this.trvwHorario);
 			this.fixed2.Add(this.GtkScrolledWindow);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.GtkScrolledWindow]));
-			w6.X = 13;
-			w6.Y = 68;
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.GtkScrolledWindow]));
+			w5.X = 35;
+			w5.Y = 75;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.entBuscar = new global::Gtk.Entry();
+			this.entBuscar.CanFocus = true;
+			this.entBuscar.Name = "entBuscar";
+			this.entBuscar.IsEditable = true;
+			this.entBuscar.InvisibleChar = '•';
+			this.fixed2.Add(this.entBuscar);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entBuscar]));
+			w6.X = 460;
+			w6.Y = 12;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 660;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 702;
+			this.DefaultHeight = 449;
 			this.Show();
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAddActionActivated);
+			this.EliminarAction.Activated += new global::System.EventHandler(this.OnEliminarActionActivated);
 			this.ModificarAction.Activated += new global::System.EventHandler(this.OnModifyActionActivated);
+			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
 			this.btnBackHor.Clicked += new global::System.EventHandler(this.OnBtnBackHorClicked);
+			this.trvwHorario.CursorChanged += new global::System.EventHandler(this.OnTrvwHorarioCursorChanged);
+			this.trvwHorario.RowActivated += new global::Gtk.RowActivatedHandler(this.OnTrvwHorarioRowActivated);
 		}
 	}
 }
