@@ -834,7 +834,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.RegistrosES.FrmRegistros" design-size="752 467">
+  <widget class="Gtk.Window" id="ScapProject0.RegistrosES.FrmRegistros" design-size="969 512">
     <action-group name="Default">
       <action id="JustificarAction">
         <property name="Type">Action</property>
@@ -890,6 +890,7 @@
         <child>
           <widget class="Gtk.ComboBoxEntry" id="cbxeEmp">
             <property name="MemberName" />
+            <property name="WidthRequest">285</property>
             <property name="IsTextCombo">True</property>
             <property name="Items" translatable="yes" />
             <signal name="Changed" handler="OnCbxeEmpChanged" />
@@ -909,8 +910,8 @@
             <child>
               <widget class="Gtk.TreeView" id="trvwRegistros">
                 <property name="MemberName" />
-                <property name="WidthRequest">715</property>
-                <property name="HeightRequest">265</property>
+                <property name="WidthRequest">900</property>
+                <property name="HeightRequest">325</property>
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
               </widget>
@@ -918,7 +919,7 @@
           </widget>
           <packing>
             <property name="X">17</property>
-            <property name="Y">103</property>
+            <property name="Y">91</property>
           </packing>
         </child>
         <child>
@@ -931,8 +932,8 @@
             <signal name="Clicked" handler="OnButton1Clicked" />
           </widget>
           <packing>
-            <property name="X">22</property>
-            <property name="Y">406</property>
+            <property name="X">24</property>
+            <property name="Y">455</property>
           </packing>
         </child>
       </widget>
@@ -3581,7 +3582,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ScapProject0.FrmMarcarES" design-size="499 369">
+  <widget class="Gtk.Window" id="ScapProject0.FrmMarcarES" design-size="499 389">
     <property name="MemberName" />
     <property name="Title" translatable="yes">FrmMarcarES</property>
     <property name="WindowPosition">Center</property>
@@ -3590,40 +3591,41 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.Button" id="button15">
+          <widget class="Gtk.Button" id="btnEntrada">
             <property name="MemberName" />
-            <property name="WidthRequest">92</property>
-            <property name="HeightRequest">48</property>
+            <property name="WidthRequest">125</property>
+            <property name="HeightRequest">68</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Entrada</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnEntradaClicked" />
           </widget>
           <packing>
-            <property name="X">105</property>
-            <property name="Y">177</property>
+            <property name="X">77</property>
+            <property name="Y">200</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button16">
+          <widget class="Gtk.Button" id="btnSalida">
             <property name="MemberName" />
-            <property name="WidthRequest">92</property>
-            <property name="HeightRequest">48</property>
+            <property name="WidthRequest">125</property>
+            <property name="HeightRequest">68</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Salida</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnSalidaClicked" />
           </widget>
           <packing>
             <property name="X">291</property>
-            <property name="Y">177</property>
+            <property name="Y">200</property>
           </packing>
         </child>
         <child>
           <widget class="Gtk.Button" id="button17">
             <property name="MemberName" />
             <property name="WidthRequest">119</property>
-            <property name="HeightRequest">25</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
@@ -3631,7 +3633,7 @@
           </widget>
           <packing>
             <property name="X">28</property>
-            <property name="Y">321</property>
+            <property name="Y">330</property>
           </packing>
         </child>
         <child>
@@ -3644,7 +3646,17 @@
           </widget>
           <packing>
             <property name="X">131</property>
-            <property name="Y">46</property>
+            <property name="Y">65</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="labelBienvenida">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Buen dia, Alejandra!</property>
+          </widget>
+          <packing>
+            <property name="X">23</property>
+            <property name="Y">11</property>
           </packing>
         </child>
       </widget>
@@ -3747,6 +3759,108 @@
           <packing>
             <property name="X">2</property>
             <property name="Y">4</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="ScapProject0.Roles.FrmRol" design-size="726 489">
+    <action-group name="Default">
+      <action id="btnAgregar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Agregar</property>
+        <property name="ShortLabel" translatable="yes">  Agregar</property>
+        <property name="StockId">add</property>
+      </action>
+      <action id="btnEliminar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Eliminar</property>
+        <property name="ShortLabel" translatable="yes">  Eliminar</property>
+        <property name="StockId">delete</property>
+      </action>
+      <action id="btnModificar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">  Modificar</property>
+        <property name="ShortLabel" translatable="yes">  Modificar</property>
+        <property name="StockId">modify</property>
+      </action>
+      <action id="btnBuscar">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">search</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">FrmRol</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar1">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <node name="toolbar1" type="Toolbar">
+              <node type="Toolitem" action="btnAgregar" />
+              <node type="Toolitem" action="btnEliminar" />
+              <node type="Toolitem" action="btnModificar" />
+              <node type="Toolitem" action="btnBuscar" />
+            </node>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entBuscar">
+            <property name="MemberName" />
+            <property name="WidthRequest">247</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">353</property>
+            <property name="Y">6</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="WidthRequest">660</property>
+            <property name="HeightRequest">334</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TreeView" id="trvwRol">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <signal name="CursorChanged" handler="OnTrvwRolCursorChanged" />
+                <signal name="RowActivated" handler="OnTrvwRolRowActivated" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">24</property>
+            <property name="Y">66</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnRegresar">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">21</property>
+            <property name="Y">430</property>
           </packing>
         </child>
       </widget>

@@ -23,9 +23,12 @@ namespace ScapProject0.RegistrosES
             this.idEmpActivo = 1;
             this.llenarCbxeEmpleado();
 
-            this.trvwRegistros.Model = new ListStore(typeof(string), typeof(string), typeof(string), typeof(string),
-            typeof(string), typeof(string), typeof(string), typeof(string));
-            string[] titulos = {"ID", "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra", "", ""};
+            this.trvwRegistros.Model = new ListStore(
+            typeof(string), typeof(string), typeof(string), typeof(string),
+            typeof(string), typeof(string), typeof(string), typeof(string),
+            typeof(string));
+            
+            string[] titulos = {"ID", "Fecha", "Hora Entrada", "Hora Salida", "Horas Trabajadas", "Horas Extra", "", "", "Justificacion"};
 
             for (int i = 0; i < titulos.Length; i++)
             {
