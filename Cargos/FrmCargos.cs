@@ -94,18 +94,22 @@ namespace ScapProject0.Cargos
             int result = md.Run();
             if (result == -8)
             {
-                if (dtcar.EliminarEmpleado(CargoActual))
+                if (dtcar.EliminarCargo(CargoActual))
                 {
                     MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
                     ButtonsType.Ok, "Cargo eliminado");
                     ms.Run();
                     ms.Destroy();
-                   // this.llenarCargos();
+                    this.llenarCargos();
                 }
             }
             md.Destroy();
         }
 
+        protected void OnBuscarActionActivated(object sender, EventArgs e)
+        {
+            this.tvwCar.Model = dtcar.buscarCargos(txtCargoNombre.Text.Trim());
+        }
 
     }
 }

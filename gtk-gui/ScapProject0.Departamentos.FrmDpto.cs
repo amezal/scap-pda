@@ -112,8 +112,7 @@ namespace ScapProject0.Departamentos
 			this.DefaultHeight = 523;
 			this.Show();
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAddActionActivated);
-			//this.modifyAction.Activated += new global::System.EventHandler(this.OnModifyActionActivated);
-			//this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
+		
 			this.ModificarAction.Activated += new global::System.EventHandler(this.OnModificarActionActivated);
 			this.button1.Clicked += new global::System.EventHandler(this.OnButton1Clicked);
 		}

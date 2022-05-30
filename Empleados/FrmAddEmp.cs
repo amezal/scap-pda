@@ -34,7 +34,7 @@ namespace ScapProject0.Empleados
 
         protected void llenarCbxHorario()
         {
-            TreeModel model = dthor.ListarHorario();
+            TreeModel model = dthor.ListarHorario("");
             model.GetIterFirst(out TreeIter ti);
 
             do
