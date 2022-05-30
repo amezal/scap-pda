@@ -155,6 +155,7 @@
     <Compile Include="Datos\Dt_tbl_empleadoRegistro.cs" />
     <Compile Include="Roles\FrmRol.cs" />
     <Compile Include="gtk-gui\ScapProject0.Roles.FrmRol.cs" />
+    <Compile Include="Datos\Dt_tbl_rol.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departamentos\" />
