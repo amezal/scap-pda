@@ -131,6 +131,7 @@ namespace ScapProject0.Cargos
 			this.DefaultHeight = 363;
 			this.Show();
 			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
+			this.CancelarAction.Activated += new global::System.EventHandler(this.OnCancelarActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}

@@ -24,7 +24,7 @@ namespace ScapProject0.Cargos
 
 		private global::Gtk.TreeView tvwCar;
 
-		private global::Gtk.ComboBoxEntry cbxCargos;
+		private global::Gtk.Entry txtCargoNombre;
 
 		protected virtual void Build()
 		{
@@ -92,12 +92,15 @@ namespace ScapProject0.Cargos
 			w5.X = 67;
 			w5.Y = 94;
 			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.cbxCargos = global::Gtk.ComboBoxEntry.NewText();
-			this.cbxCargos.Name = "cbxCargos";
-			this.fixed1.Add(this.cbxCargos);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cbxCargos]));
-			w6.X = 445;
-			w6.Y = 41;
+			this.txtCargoNombre = new global::Gtk.Entry();
+			this.txtCargoNombre.CanFocus = true;
+			this.txtCargoNombre.Name = "txtCargoNombre";
+			this.txtCargoNombre.IsEditable = true;
+			this.txtCargoNombre.InvisibleChar = '•';
+			this.fixed1.Add(this.txtCargoNombre);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtCargoNombre]));
+			w6.X = 422;
+			w6.Y = 43;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
@@ -109,6 +112,7 @@ namespace ScapProject0.Cargos
 			this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);
 			this.EliminarAction.Activated += new global::System.EventHandler(this.OnEliminarActionActivated);
 			this.ModificarAction.Activated += new global::System.EventHandler(this.OnModificarActionActivated);
+			this.BuscarAction.Activated += new global::System.EventHandler(this.OnBuscarActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 			this.tvwCar.CursorChanged += new global::System.EventHandler(this.OnTvwCarCursorChanged);
 		}
