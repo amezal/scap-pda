@@ -60,5 +60,12 @@ namespace ScapProject0
             op.Show();
             op.Caller = this;
         }
+
+        protected void OnButton2Clicked(object sender, EventArgs e)
+        {
+            Opcion.FrmOpcion op = new Opcion.FrmOpcion();
+            op.Show();
+            op.Caller = this;
+        }
     }
 }

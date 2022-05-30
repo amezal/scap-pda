@@ -16,9 +16,9 @@ namespace ScapProject0
 
 		private global::Gtk.Button button1;
 
-		private global::Gtk.Button button2;
-
 		private global::Gtk.Button button8;
+
+		private global::Gtk.Button button2;
 
 		protected virtual void Build()
 		{
@@ -92,18 +92,6 @@ namespace ScapProject0
 			w5.X = 90;
 			w5.Y = 260;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.button2 = new global::Gtk.Button();
-			this.button2.WidthRequest = 221;
-			this.button2.HeightRequest = 29;
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString("Opcion");
-			this.fixed2.Add(this.button2);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button2]));
-			w6.X = 90;
-			w6.Y = 321;
-			// Container child fixed2.Gtk.Fixed+FixedChild
 			this.button8 = new global::Gtk.Button();
 			this.button8.WidthRequest = 119;
 			this.button8.HeightRequest = 25;
@@ -112,9 +100,21 @@ namespace ScapProject0
 			this.button8.UseUnderline = true;
 			this.button8.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed2.Add(this.button8);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button8]));
-			w7.X = 13;
-			w7.Y = 404;
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button8]));
+			w6.X = 13;
+			w6.Y = 404;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.button2 = new global::Gtk.Button();
+			this.button2.WidthRequest = 221;
+			this.button2.HeightRequest = 29;
+			this.button2.CanFocus = true;
+			this.button2.Name = "button2";
+			this.button2.UseUnderline = true;
+			this.button2.Label = global::Mono.Unix.Catalog.GetString("Opcion");
+			this.fixed2.Add(this.button2);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button2]));
+			w7.X = 90;
+			w7.Y = 319;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
@@ -128,6 +128,7 @@ namespace ScapProject0
 			this.button6.Clicked += new global::System.EventHandler(this.OnButton6Clicked);
 			this.button7.Clicked += new global::System.EventHandler(this.OnButton7Clicked);
 			this.button8.Clicked += new global::System.EventHandler(this.OnButton8Clicked);
+			this.button2.Clicked += new global::System.EventHandler(this.OnButton2Clicked);
 		}
 	}
 }

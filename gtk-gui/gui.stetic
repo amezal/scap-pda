@@ -132,7 +132,6 @@
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="CancelarAction">
@@ -260,7 +259,6 @@
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="CancelarAction">
@@ -474,7 +472,6 @@
       <action id="modifyAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">modify</property>
         <signal name="Activated" handler="OnModifyActionActivated" />
       </action>
@@ -574,13 +571,11 @@
       <action id="saveAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">save</property>
       </action>
       <action id="cancelAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">cancel</property>
       </action>
       <action id="GuardarAction">
@@ -1240,7 +1235,6 @@
       <action id="modifyAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">modify</property>
       </action>
       <action id="ModificarAction">
@@ -1253,7 +1247,6 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="AgregarAction1">
@@ -1398,7 +1391,6 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="GuardarAction1">
@@ -1930,7 +1922,6 @@
       <action id="searchAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">search</property>
       </action>
       <action id="GuardarAction1">
@@ -2628,7 +2619,8 @@
         <child>
           <widget class="Gtk.Entry" id="TxtCargo">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Nombre de cargo:</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
           </widget>
           <packing>
             <property name="X">70</property>
@@ -2673,8 +2665,7 @@
           <widget class="Gtk.Button" id="btnBack">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
+            <property name="Type">Custom</property>
           </widget>
           <packing>
             <property name="X">44</property>
@@ -3509,22 +3500,6 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="btnOpcion">
-            <property name="MemberName" />
-            <property name="WidthRequest">221</property>
-            <property name="HeightRequest">29</property>
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Opcion</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnBtnOpcionClicked" />
-          </widget>
-          <packing>
-            <property name="X">90</property>
-            <property name="Y">321</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Button" id="button8">
             <property name="MemberName" />
             <property name="WidthRequest">119</property>
@@ -3538,6 +3513,22 @@
           <packing>
             <property name="X">13</property>
             <property name="Y">404</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button2">
+            <property name="MemberName" />
+            <property name="WidthRequest">221</property>
+            <property name="HeightRequest">29</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Opcion</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButton2Clicked" />
+          </widget>
+          <packing>
+            <property name="X">90</property>
+            <property name="Y">319</property>
           </packing>
         </child>
       </widget>
@@ -3980,7 +3971,6 @@
       <action id="Action">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -4076,7 +4066,6 @@
       <action id="Action">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
       </action>
       <action id="btnAdd">
         <property name="Type">Action</property>
@@ -4089,13 +4078,11 @@
       <action id="deleteAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">delete</property>
       </action>
       <action id="deleteAction1">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="ShortLabel" translatable="yes" />
         <property name="StockId">delete</property>
       </action>
       <action id="btnDelete">
@@ -4104,6 +4091,7 @@
         <property name="Label" translatable="yes">Eliminar</property>
         <property name="ShortLabel" translatable="yes">Eliminar</property>
         <property name="StockId">delete</property>
+        <signal name="Activated" handler="OnBtnDeleteActivated" />
       </action>
       <action id="btnModify">
         <property name="Type">Action</property>
@@ -4111,6 +4099,7 @@
         <property name="Label" translatable="yes">Modificar</property>
         <property name="ShortLabel" translatable="yes">Modificar</property>
         <property name="StockId">modify</property>
+        <signal name="Activated" handler="OnBtnModifyActivated" />
       </action>
       <action id="btnSearch">
         <property name="Type">Action</property>
@@ -4118,6 +4107,7 @@
         <property name="Label" translatable="yes">Buscar</property>
         <property name="ShortLabel" translatable="yes">Buscar</property>
         <property name="StockId">search</property>
+        <signal name="Activated" handler="OnBtnSearchActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -4176,15 +4166,30 @@
               <widget class="Gtk.TreeView" id="twOpcion">
                 <property name="MemberName" />
                 <property name="WidthRequest">415</property>
-                <property name="HeightRequest">252</property>
+                <property name="HeightRequest">239</property>
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
+                <signal name="CursorChanged" handler="OnTwOpcionCursorChanged" />
               </widget>
             </child>
           </widget>
           <packing>
-            <property name="X">136</property>
-            <property name="Y">102</property>
+            <property name="X">139</property>
+            <property name="Y">82</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnBack">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Regresar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnBackClicked" />
+          </widget>
+          <packing>
+            <property name="X">43</property>
+            <property name="Y">353</property>
           </packing>
         </child>
       </widget>
@@ -4258,6 +4263,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnBackClicked" />
           </widget>
           <packing>
             <property name="X">43</property>
@@ -4275,6 +4281,7 @@
         <property name="Label" translatable="yes">  Guardar</property>
         <property name="ShortLabel" translatable="yes">  Guardar</property>
         <property name="StockId">save</property>
+        <signal name="Activated" handler="OnGuardarActionActivated" />
       </action>
       <action id="CancelarAction">
         <property name="Type">Action</property>
@@ -4295,7 +4302,7 @@
           <widget class="Gtk.Toolbar" id="toolbar3">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="__gtksharp_91_Stetic_Editor_ActionToolbar" type="Toolbar">
+            <node name="toolbar3" type="Toolbar">
               <node type="Toolitem" action="GuardarAction" />
               <node type="Toolitem" action="CancelarAction" />
             </node>
@@ -4316,7 +4323,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry2">
+          <widget class="Gtk.Entry" id="txtOpc">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
@@ -4334,6 +4341,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Regresar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnBackClicked" />
           </widget>
           <packing>
             <property name="X">43</property>

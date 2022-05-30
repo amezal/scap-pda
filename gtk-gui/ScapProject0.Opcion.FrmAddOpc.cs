@@ -90,6 +90,7 @@ namespace ScapProject0.Opcion
 			this.DefaultHeight = 300;
 			this.Show();
 			this.btnSave.Activated += new global::System.EventHandler(this.OnBtnSaveActivated);
+			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}
 }

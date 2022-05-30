@@ -31,7 +31,7 @@ namespace ScapProject0.Opcion
             {
                 if (dtbo.guardarOpcion(tbo))
                 {
-                    ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Se guardo correctamente");
+                    ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Se guardó correctamente");
                     ms.Run();
                     ms.Destroy();
 
@@ -46,6 +46,13 @@ namespace ScapProject0.Opcion
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        protected void OnBtnBackClicked(object sender, EventArgs e)
+        {
+            this.caller.Show();
+            this.Hide();
+
         }
     }
 }

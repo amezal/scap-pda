@@ -32,6 +32,8 @@ namespace ScapProject0.Opcion
 
 		private global::Gtk.TreeView twOpcion;
 
+		private global::Gtk.Button btnBack;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -39,17 +41,14 @@ namespace ScapProject0.Opcion
 			this.UIManager = new global::Gtk.UIManager();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
 			this.Action = new global::Gtk.Action("Action", null, null, null);
-			this.Action.ShortLabel = "";
 			w1.Add(this.Action, null);
 			this.btnAdd = new global::Gtk.Action("btnAdd", global::Mono.Unix.Catalog.GetString("Agregar"), null, "add");
 			this.btnAdd.IsImportant = true;
 			this.btnAdd.ShortLabel = global::Mono.Unix.Catalog.GetString("Agregar");
 			w1.Add(this.btnAdd, null);
 			this.deleteAction = new global::Gtk.Action("deleteAction", null, null, "delete");
-			this.deleteAction.ShortLabel = "";
 			w1.Add(this.deleteAction, null);
 			this.deleteAction1 = new global::Gtk.Action("deleteAction1", null, null, "delete");
-			this.deleteAction1.ShortLabel = "";
 			w1.Add(this.deleteAction1, null);
 			this.btnDelete = new global::Gtk.Action("btnDelete", global::Mono.Unix.Catalog.GetString("Eliminar"), null, "delete");
 			this.btnDelete.IsImportant = true;
@@ -109,14 +108,24 @@ namespace ScapProject0.Opcion
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 			this.twOpcion = new global::Gtk.TreeView();
 			this.twOpcion.WidthRequest = 415;
-			this.twOpcion.HeightRequest = 252;
+			this.twOpcion.HeightRequest = 239;
 			this.twOpcion.CanFocus = true;
 			this.twOpcion.Name = "twOpcion";
 			this.GtkScrolledWindow.Add(this.twOpcion);
 			this.fixed1.Add(this.GtkScrolledWindow);
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
-			w6.X = 136;
-			w6.Y = 102;
+			w6.X = 139;
+			w6.Y = 82;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.btnBack = new global::Gtk.Button();
+			this.btnBack.CanFocus = true;
+			this.btnBack.Name = "btnBack";
+			this.btnBack.UseUnderline = true;
+			this.btnBack.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed1.Add(this.btnBack);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnBack]));
+			w7.X = 43;
+			w7.Y = 353;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
@@ -126,6 +135,11 @@ namespace ScapProject0.Opcion
 			this.DefaultHeight = 408;
 			this.Show();
 			this.btnAdd.Activated += new global::System.EventHandler(this.OnBtnAddActivated);
+			this.btnDelete.Activated += new global::System.EventHandler(this.OnBtnDeleteActivated);
+			this.btnModify.Activated += new global::System.EventHandler(this.OnBtnModifyActivated);
+			this.btnSearch.Activated += new global::System.EventHandler(this.OnBtnSearchActivated);
+			this.twOpcion.CursorChanged += new global::System.EventHandler(this.OnTwOpcionCursorChanged);
+			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}
 }

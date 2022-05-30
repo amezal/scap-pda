@@ -16,7 +16,7 @@ namespace ScapProject0.Opcion
 
 		private global::Gtk.Label label2;
 
-		private global::Gtk.Entry entry2;
+		private global::Gtk.Entry txtOpc;
 
 		private global::Gtk.Button btnBack;
 
@@ -38,7 +38,7 @@ namespace ScapProject0.Opcion
 			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "ScapProject0.Opcion.FrmModOpc";
 			this.Title = global::Mono.Unix.Catalog.GetString("FrmModOpc");
-			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			// Container child ScapProject0.Opcion.FrmModOpc.Gtk.Container+ContainerChild
 			this.fixed2 = new global::Gtk.Fixed();
 			this.fixed2.Name = "fixed2";
@@ -62,13 +62,13 @@ namespace ScapProject0.Opcion
 			w3.X = 50;
 			w3.Y = 133;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.entry2 = new global::Gtk.Entry();
-			this.entry2.CanFocus = true;
-			this.entry2.Name = "entry2";
-			this.entry2.IsEditable = true;
-			this.entry2.InvisibleChar = '•';
-			this.fixed2.Add(this.entry2);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.entry2]));
+			this.txtOpc = new global::Gtk.Entry();
+			this.txtOpc.CanFocus = true;
+			this.txtOpc.Name = "txtOpc";
+			this.txtOpc.IsEditable = true;
+			this.txtOpc.InvisibleChar = '•';
+			this.fixed2.Add(this.txtOpc);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.txtOpc]));
 			w4.X = 178;
 			w4.Y = 122;
 			// Container child fixed2.Gtk.Fixed+FixedChild
@@ -89,6 +89,8 @@ namespace ScapProject0.Opcion
 			this.DefaultWidth = 464;
 			this.DefaultHeight = 300;
 			this.Show();
+			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
+			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}
 }
