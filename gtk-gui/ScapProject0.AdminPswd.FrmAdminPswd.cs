@@ -165,8 +165,11 @@ namespace ScapProject0.AdminPswd
 			this.Show();
 			//this.AgregarAction.Activated += new global::System.EventHandler(this.OnAgregarActionActivated);
 			this.AgregarAction1.Activated += new global::System.EventHandler(this.OnAddActionActivated);
-			this.ModificarAction2.Activated += new global::System.EventHandler(this.OnModifyActionActivated);
+			this.EliminarAction1.Activated += new global::System.EventHandler(this.OnEliminarAction1Activated);
+			this.ModificarAction2.Activated += new global::System.EventHandler(this.OnModificarAction2Activated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
+			this.trvwAdminPswd.CursorChanged += new global::System.EventHandler(this.OnTrvwAdminPswdCursorChanged);
+			this.trvwAdminPswd.RowActivated += new global::Gtk.RowActivatedHandler(this.OnTrvwAdminPswdRowActivated);
 		}
 	}
 }

@@ -12,17 +12,41 @@ namespace ScapProject0.AdminPswd
 
 		private global::Gtk.Fixed fixed6;
 
-		private global::Gtk.Button btnBack;
-
 		private global::Gtk.Toolbar toolbar4;
 
-		private global::Gtk.Entry entPwd;
+		private global::Gtk.Button btnBack;
+
+		private global::Gtk.Entry entName;
+
+		private global::Gtk.Entry entApellido;
+
+		private global::Gtk.Entry entEmail;
+
+		private global::Gtk.Entry entUser;
+
+		private global::Gtk.Entry entPIN;
+
+		private global::Gtk.Entry entPIN2;
+
+		private global::Gtk.Entry entId;
+
+		private global::Gtk.Button btnPIN;
+
+		private global::Gtk.Button btnPIN2;
+
+		private global::Gtk.Label label7;
 
 		private global::Gtk.Label label6;
 
-		private global::Gtk.Label label8;
+		private global::Gtk.Label label5;
 
-		private global::Gtk.ComboBox cbxUser;
+		private global::Gtk.Label label4;
+
+		private global::Gtk.Label label3;
+
+		private global::Gtk.Label label2;
+
+		private global::Gtk.Label label1;
 
 		protected virtual void Build()
 		{
@@ -48,68 +72,182 @@ namespace ScapProject0.AdminPswd
 			this.fixed6.Name = "fixed6";
 			this.fixed6.HasWindow = false;
 			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.btnBack = new global::Gtk.Button();
-			this.btnBack.CanFocus = true;
-			this.btnBack.Name = "btnBack";
-			this.btnBack.UseUnderline = true;
-			this.btnBack.Label = global::Mono.Unix.Catalog.GetString("Regresar");
-			this.fixed6.Add(this.btnBack);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.btnBack]));
-			w2.X = 62;
-			w2.Y = 333;
-			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.UIManager.AddUiFromString("<ui><toolbar name=\'toolbar4\'><toolitem name=\'GuardarAction\' action=\'GuardarAction" +
 					"\'/><toolitem name=\'CancelarAction\' action=\'CancelarAction\'/></toolbar></ui>");
 			this.toolbar4 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar4")));
 			this.toolbar4.Name = "toolbar4";
 			this.toolbar4.ShowArrow = false;
 			this.fixed6.Add(this.toolbar4);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.toolbar4]));
-			w3.X = 33;
-			w3.Y = 35;
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.toolbar4]));
+			w2.X = 33;
+			w2.Y = 35;
 			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.entPwd = new global::Gtk.Entry();
-			this.entPwd.WidthRequest = 200;
-			this.entPwd.CanFocus = true;
-			this.entPwd.Name = "entPwd";
-			this.entPwd.IsEditable = true;
-			this.entPwd.InvisibleChar = '•';
-			this.fixed6.Add(this.entPwd);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entPwd]));
-			w4.X = 212;
-			w4.Y = 244;
+			this.btnBack = new global::Gtk.Button();
+			this.btnBack.CanFocus = true;
+			this.btnBack.Name = "btnBack";
+			this.btnBack.UseUnderline = true;
+			this.btnBack.Label = global::Mono.Unix.Catalog.GetString("Regresar");
+			this.fixed6.Add(this.btnBack);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.btnBack]));
+			w3.X = 45;
+			w3.Y = 465;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entName = new global::Gtk.Entry();
+			this.entName.CanFocus = true;
+			this.entName.Name = "entName";
+			this.entName.IsEditable = true;
+			this.entName.InvisibleChar = '•';
+			this.fixed6.Add(this.entName);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entName]));
+			w4.X = 238;
+			w4.Y = 139;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entApellido = new global::Gtk.Entry();
+			this.entApellido.CanFocus = true;
+			this.entApellido.Name = "entApellido";
+			this.entApellido.IsEditable = true;
+			this.entApellido.InvisibleChar = '•';
+			this.fixed6.Add(this.entApellido);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entApellido]));
+			w5.X = 238;
+			w5.Y = 179;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entEmail = new global::Gtk.Entry();
+			this.entEmail.CanFocus = true;
+			this.entEmail.Name = "entEmail";
+			this.entEmail.IsEditable = true;
+			this.entEmail.InvisibleChar = '•';
+			this.fixed6.Add(this.entEmail);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entEmail]));
+			w6.X = 238;
+			w6.Y = 225;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entUser = new global::Gtk.Entry();
+			this.entUser.CanFocus = true;
+			this.entUser.Name = "entUser";
+			this.entUser.IsEditable = true;
+			this.entUser.InvisibleChar = '•';
+			this.fixed6.Add(this.entUser);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entUser]));
+			w7.X = 238;
+			w7.Y = 272;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entPIN = new global::Gtk.Entry();
+			this.entPIN.WidthRequest = 120;
+			this.entPIN.CanFocus = true;
+			this.entPIN.Name = "entPIN";
+			this.entPIN.IsEditable = true;
+			this.entPIN.InvisibleChar = '•';
+			this.fixed6.Add(this.entPIN);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entPIN]));
+			w8.X = 238;
+			w8.Y = 324;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entPIN2 = new global::Gtk.Entry();
+			this.entPIN2.WidthRequest = 120;
+			this.entPIN2.CanFocus = true;
+			this.entPIN2.Name = "entPIN2";
+			this.entPIN2.IsEditable = true;
+			this.entPIN2.InvisibleChar = '•';
+			this.fixed6.Add(this.entPIN2);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entPIN2]));
+			w9.X = 238;
+			w9.Y = 376;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entId = new global::Gtk.Entry();
+			this.entId.CanFocus = true;
+			this.entId.Name = "entId";
+			this.entId.IsEditable = true;
+			this.entId.InvisibleChar = '•';
+			this.fixed6.Add(this.entId);
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.entId]));
+			w10.X = 238;
+			w10.Y = 99;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.btnPIN = new global::Gtk.Button();
+			this.btnPIN.CanFocus = true;
+			this.btnPIN.Name = "btnPIN";
+			this.btnPIN.UseUnderline = true;
+			this.btnPIN.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed6.Add(this.btnPIN);
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.btnPIN]));
+			w11.X = 367;
+			w11.Y = 322;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.btnPIN2 = new global::Gtk.Button();
+			this.btnPIN2.CanFocus = true;
+			this.btnPIN2.Name = "btnPIN2";
+			this.btnPIN2.UseUnderline = true;
+			this.btnPIN2.Label = global::Mono.Unix.Catalog.GetString("Ver");
+			this.fixed6.Add(this.btnPIN2);
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.btnPIN2]));
+			w12.X = 368;
+			w12.Y = 374;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.label7 = new global::Gtk.Label();
+			this.label7.Name = "label7";
+			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString("Confirmar PIN:");
+			this.fixed6.Add(this.label7);
+			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label7]));
+			w13.X = 77;
+			w13.Y = 390;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label6 = new global::Gtk.Label();
 			this.label6.Name = "label6";
-			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("Usuario:");
+			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("PIN:");
 			this.fixed6.Add(this.label6);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label6]));
-			w5.X = 68;
-			w5.Y = 152;
+			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label6]));
+			w14.X = 149;
+			w14.Y = 345;
 			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.label8 = new global::Gtk.Label();
-			this.label8.Name = "label8";
-			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString("Password:");
-			this.fixed6.Add(this.label8);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label8]));
-			w6.X = 57;
-			w6.Y = 255;
+			this.label5 = new global::Gtk.Label();
+			this.label5.Name = "label5";
+			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Usuario:");
+			this.fixed6.Add(this.label5);
+			global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label5]));
+			w15.X = 125;
+			w15.Y = 284;
 			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.cbxUser = global::Gtk.ComboBox.NewText();
-			this.cbxUser.WidthRequest = 200;
-			this.cbxUser.Name = "cbxUser";
-			this.fixed6.Add(this.cbxUser);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.cbxUser]));
-			w7.X = 209;
-			w7.Y = 145;
+			this.label4 = new global::Gtk.Label();
+			this.label4.Name = "label4";
+			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Email:");
+			this.fixed6.Add(this.label4);
+			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label4]));
+			w16.X = 141;
+			w16.Y = 233;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.label3 = new global::Gtk.Label();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Apellido:");
+			this.fixed6.Add(this.label3);
+			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label3]));
+			w17.X = 118;
+			w17.Y = 187;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.label2 = new global::Gtk.Label();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
+			this.fixed6.Add(this.label2);
+			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label2]));
+			w18.X = 121;
+			w18.Y = 147;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.label1 = new global::Gtk.Label();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("ID:");
+			this.fixed6.Add(this.label1);
+			global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed6[this.label1]));
+			w19.X = 160;
+			w19.Y = 105;
 			this.Add(this.fixed6);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 493;
-			this.DefaultHeight = 420;
+			this.DefaultWidth = 506;
+			this.DefaultHeight = 537;
 			this.Show();
+			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
 			this.btnBack.Clicked += new global::System.EventHandler(this.OnBtnBackClicked);
 		}
 	}

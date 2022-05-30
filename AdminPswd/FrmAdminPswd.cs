@@ -10,7 +10,7 @@ namespace ScapProject0.AdminPswd
 
         //Objetos Globales
         Dt_tbl_user dtus = new Dt_tbl_user();
-        private int AdminPswdActual = 1;
+        private int userActual = 1;
 
         public FrmAdminPswd() :
                 base(Gtk.WindowType.Toplevel)
@@ -25,24 +25,21 @@ namespace ScapProject0.AdminPswd
                 this.trvwAdminPswd.AppendColumn(titulos[i], new CellRendererText(), "text", i);
             }
         }
+        public void refresh()
+        {
+            this.trvwAdminPswd.Model = dtus.ListarUser();
+        }
 
         protected void OnAddActionActivated(object sender, EventArgs e)
         {
-            //AdminPswd.FrmAddPswd frmAdd = new AdminPswd.FrmAddPswd();
+
             FrmAddPswd frmAdd = new FrmAddPswd();
             frmAdd.Show();
             frmAdd.Caller = this;
             this.Hide();
         }
 
-        protected void OnModifyActionActivated(object sender, EventArgs e)
-        {
-          //  AdminPswd.FrmModPswd frm = new AdminPswd.FrmModPswd();
-            FrmModPswd frm = new FrmModPswd(AdminPswdActual);
-            frm.Show();
-            frm.Caller = this;
-            this.Hide();
-        }
+
 
         private Gtk.Window caller;
 
@@ -52,6 +49,56 @@ namespace ScapProject0.AdminPswd
         {
             this.caller.Show();
             this.Hide();
+        }
+
+        protected void OnTrvwAdminPswdCursorChanged(object sender, EventArgs e)
+        {
+            trvwAdminPswd.GetCursor(out TreePath path, out TreeViewColumn treeviewColumn);
+            var model = trvwAdminPswd.Model;
+            model.GetIter(out TreeIter iter, path);
+            int idUser = Convert.ToInt32(model.GetValue(iter, 0).ToString());
+            userActual = idUser;
+            this.ModificarAction2.Sensitive = true;
+            this.EliminarAction1.Sensitive = true;
+        }
+
+        protected void OnTrvwAdminPswdRowActivated(object o, RowActivatedArgs args)
+        {
+            /*FrmModPswd frm = new FrmModPswd(userActual);
+            frm.Show();
+            frm.Caller = this;
+            this.Hide();
+            */           
+        }
+
+        protected void OnEliminarAction1Activated(object sender, EventArgs e)
+        {
+            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Warning,
+            ButtonsType.YesNo, "Desea eliminar a este usuario?");
+
+            int result = md.Run();
+            if (result == -8)
+            {
+                if (dtus.EliminarUser(userActual))
+                {
+                    MessageDialog ms = new MessageDialog(null, DialogFlags.Modal, MessageType.Info,
+                    ButtonsType.Ok, "Usuario eliminado");
+                    ms.Run();
+                    ms.Destroy();
+                }
+            }
+            md.Destroy();
+            this.trvwAdminPswd.Model = dtus.ListarUser();
+        }
+
+        protected void OnModificarAction2Activated(object sender, EventArgs e)
+        {
+            /*
+            FrmModPswd frm = new FrmModPswd(userActual);
+            frm.Show();
+            frm.Caller = this;
+            this.Hide();
+            */           
         }
     }
 }
