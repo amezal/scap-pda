@@ -16,7 +16,7 @@ namespace ScapProject0
 
 		private global::Gtk.Button button1;
 
-		private global::Gtk.Button button2;
+		private global::Gtk.Button btnOpcion;
 
 		private global::Gtk.Button button8;
 
@@ -92,15 +92,15 @@ namespace ScapProject0
 			w5.X = 90;
 			w5.Y = 260;
 			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.button2 = new global::Gtk.Button();
-			this.button2.WidthRequest = 221;
-			this.button2.HeightRequest = 29;
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString("Opcion");
-			this.fixed2.Add(this.button2);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button2]));
+			this.btnOpcion = new global::Gtk.Button();
+			this.btnOpcion.WidthRequest = 221;
+			this.btnOpcion.HeightRequest = 29;
+			this.btnOpcion.CanFocus = true;
+			this.btnOpcion.Name = "btnOpcion";
+			this.btnOpcion.UseUnderline = true;
+			this.btnOpcion.Label = global::Mono.Unix.Catalog.GetString("Opcion");
+			this.fixed2.Add(this.btnOpcion);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnOpcion]));
 			w6.X = 90;
 			w6.Y = 321;
 			// Container child fixed2.Gtk.Fixed+FixedChild
@@ -127,6 +127,7 @@ namespace ScapProject0
 			this.button5.Clicked += new global::System.EventHandler(this.OnButton5Clicked);
 			this.button6.Clicked += new global::System.EventHandler(this.OnButton6Clicked);
 			this.button7.Clicked += new global::System.EventHandler(this.OnButton7Clicked);
+			this.btnOpcion.Clicked += new global::System.EventHandler(this.OnBtnOpcionClicked);
 			this.button8.Clicked += new global::System.EventHandler(this.OnButton8Clicked);
 		}
 	}

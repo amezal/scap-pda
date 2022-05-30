@@ -35,18 +35,17 @@ namespace ScapProject0.Departamentos
             this.Hide();
         }
 
-        protected void OnModificarActionActivated(object sender, EventArgs e)
+        protected void OnBtnBuscarActivated(object sender, EventArgs e)
+        {
+            this.caller.Show();
+            this.Hide();
+        }
+
+        protected void OnBtnModificarActivated(object sender, EventArgs e)
         {
             FrmModDpto frmm = new FrmModDpto();
             frmm.Show();
             frmm.Caller = this;
-            this.Hide();
-        }
-
-
-        protected void OnButton1Clicked(object sender, EventArgs e)
-        {
-            this.caller.Show();
             this.Hide();
         }
     }
