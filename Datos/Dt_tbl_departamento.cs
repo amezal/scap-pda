@@ -18,10 +18,10 @@ namespace ScapProject0.Datos
         public ListStore ListarDpto()
         {
             ListStore datos = new ListStore(
-            typeof(string), typeof(string));
+            typeof(string), typeof(string), typeof(string), typeof(string));
             IDataReader idr = null;
             sb.Clear();
-            sb.Append("SELECT ID, Departamento From LMBA.VwDepartamento;");
+            sb.Append("SELECT * From LMBA.VwDepartamento;");
 
             try
             {
@@ -29,7 +29,8 @@ namespace ScapProject0.Datos
                 idr = con.Leer(CommandType.Text, sb.ToString());
                 while (idr.Read())
                 {
-                    datos.AppendValues(idr[0].ToString(), idr[1].ToString());
+                    datos.AppendValues(idr[0].ToString(), idr[1].ToString(), 
+                    idr[2].ToString(), idr[3].ToString());
                 }
             }
             catch (Exception e)
@@ -76,6 +77,37 @@ namespace ScapProject0.Datos
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
                 throw;
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+        }
+
+        public bool guardarDpto(Tbl_Departamento dpto)
+        {
+            bool guardado = false;
+            int x = 0;
+            sb.Clear();
+
+
+            sb.Append("INSERT INTO LMBA.Departamento");
+            sb.Append("(nombreDepartamento, ext, email, estado)");
+            sb.Append("VALUES('" + dpto.NombreDepartamento + "','" + dpto.Ext + "','" + dpto.Email + "','" + 1+ "');");
+
+            try
+            {
+                con.AbrirConexion();
+                x = con.Ejecutar(CommandType.Text, sb.ToString());
+                if (x > 0)
+                {
+                    guardado = true;
+                }
+                return guardado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
             finally
             {

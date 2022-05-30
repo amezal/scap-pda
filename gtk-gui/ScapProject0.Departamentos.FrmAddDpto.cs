@@ -16,11 +16,19 @@ namespace ScapProject0.Departamentos
 
 		private global::Gtk.Toolbar toolbar2;
 
+		private global::Gtk.Button btnBackAddDpto;
+
 		private global::Gtk.Label label3;
 
-		private global::Gtk.Entry entry1;
+		private global::Gtk.Entry txtNombre;
 
-		private global::Gtk.Button btnBackAddDpto;
+		private global::Gtk.Entry txtExt;
+
+		private global::Gtk.Entry txtEmail;
+
+		private global::Gtk.Label label1;
+
+		private global::Gtk.Label label2;
 
 		protected virtual void Build()
 		{
@@ -59,33 +67,69 @@ namespace ScapProject0.Departamentos
 			w2.X = 25;
 			w2.Y = 15;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
-			this.fixed3.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label3]));
-			w3.X = 54;
-			w3.Y = 108;
-			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.entry1 = new global::Gtk.Entry();
-			this.entry1.CanFocus = true;
-			this.entry1.Name = "entry1";
-			this.entry1.IsEditable = true;
-			this.entry1.InvisibleChar = '•';
-			this.fixed3.Add(this.entry1);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.entry1]));
-			w4.X = 137;
-			w4.Y = 99;
-			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.btnBackAddDpto = new global::Gtk.Button();
 			this.btnBackAddDpto.CanFocus = true;
 			this.btnBackAddDpto.Name = "btnBackAddDpto";
 			this.btnBackAddDpto.UseUnderline = true;
 			this.btnBackAddDpto.Label = global::Mono.Unix.Catalog.GetString("Regresar");
 			this.fixed3.Add(this.btnBackAddDpto);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.btnBackAddDpto]));
-			w5.X = 40;
-			w5.Y = 226;
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.btnBackAddDpto]));
+			w3.X = 40;
+			w3.Y = 226;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label3 = new global::Gtk.Label();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Nombre:");
+			this.fixed3.Add(this.label3);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label3]));
+			w4.X = 81;
+			w4.Y = 83;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.txtNombre = new global::Gtk.Entry();
+			this.txtNombre.CanFocus = true;
+			this.txtNombre.Name = "txtNombre";
+			this.txtNombre.IsEditable = true;
+			this.txtNombre.InvisibleChar = '•';
+			this.fixed3.Add(this.txtNombre);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtNombre]));
+			w5.X = 159;
+			w5.Y = 73;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.txtExt = new global::Gtk.Entry();
+			this.txtExt.CanFocus = true;
+			this.txtExt.Name = "txtExt";
+			this.txtExt.IsEditable = true;
+			this.txtExt.InvisibleChar = '•';
+			this.fixed3.Add(this.txtExt);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtExt]));
+			w6.X = 160;
+			w6.Y = 123;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.txtEmail = new global::Gtk.Entry();
+			this.txtEmail.CanFocus = true;
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.IsEditable = true;
+			this.txtEmail.InvisibleChar = '•';
+			this.fixed3.Add(this.txtEmail);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.txtEmail]));
+			w7.X = 161;
+			w7.Y = 174;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label1 = new global::Gtk.Label();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Extensión:");
+			this.fixed3.Add(this.label1);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label1]));
+			w8.X = 77;
+			w8.Y = 129;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label2 = new global::Gtk.Label();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Email:");
+			this.fixed3.Add(this.label2);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label2]));
+			w9.X = 106;
+			w9.Y = 180;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
@@ -94,6 +138,7 @@ namespace ScapProject0.Departamentos
 			this.DefaultWidth = 465;
 			this.DefaultHeight = 300;
 			this.Show();
+			this.GuardarAction.Activated += new global::System.EventHandler(this.OnGuardarActionActivated);
 			this.btnBackAddDpto.Clicked += new global::System.EventHandler(this.OnBtnBackAddDptoClicked);
 		}
 	}
