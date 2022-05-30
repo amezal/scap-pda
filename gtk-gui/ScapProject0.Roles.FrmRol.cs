@@ -109,6 +109,8 @@ namespace ScapProject0.Roles
 			this.DefaultWidth = 726;
 			this.DefaultHeight = 489;
 			this.Show();
+			this.trvwRol.CursorChanged += new global::System.EventHandler(this.OnTrvwRolCursorChanged);
+			this.trvwRol.RowActivated += new global::Gtk.RowActivatedHandler(this.OnTrvwRolRowActivated);
 		}
 	}
 }
